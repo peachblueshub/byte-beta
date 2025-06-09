@@ -128,7 +128,7 @@ body.scrolled-to-bottom .footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .hero-text {
@@ -199,7 +199,7 @@ body.scrolled-to-bottom .footer {
 }
 
 .hero-right .image{
-  max-width: 500px;
+  max-width: 300px;
   width: 100%;
   height: auto;
   display: flex;
@@ -208,6 +208,7 @@ body.scrolled-to-bottom .footer {
 }
 
 .image img {
+  max-width: 300px;
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -215,7 +216,7 @@ body.scrolled-to-bottom .footer {
 
 .image{
   width: 100%;
-  max-width: 200px;
+  max-width: 300px;
   height: 350px;
   border-radius: 12px;
 }
@@ -227,7 +228,7 @@ body.scrolled-to-bottom .footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 300px;
+  height: 200px;
   border-radius: 50px 50px 0px 0px;
   background-color: #FFFBEE;
   color: #141414;
@@ -260,16 +261,16 @@ body.scrolled-to-bottom .footer {
   background-color: #fbac18;
   border: none;
   color: #141414;
-  padding: 1.2rem 2rem; 
+  padding: 1rem 1.5rem; 
   border-radius: 100px;
   border: 5px solid #141414;
   cursor: pointer;
   font-family: "Barlow", sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   text-decoration: none;
-  width: 300px;
-  height: 40px; /* altura fixa */
+  width: 150px;
+  height: 30px; /* altura fixa */
   text-align: center;
   line-height: 1.2; /* garante que o texto não fique com espaçamento exagerado */
 }
@@ -279,7 +280,8 @@ body.scrolled-to-bottom .footer {
 }
 
 .chamada-footer{
-  font-size:2rem;
+  font-size:1.5rem;
+  color:#141414;
 }
 
 /* login */
@@ -484,41 +486,56 @@ padding: 66px 20px;
 
 .container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin-left:10%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 50px;
+  left:50px;
 }
+
 
 .text-block,
 .image-block {
-  flex: 1 1 500px;
+  flex: 1 1 200px;
   display: flex;
   flex-direction: column;
 }
 
 .image-block img{
+  max-width: 400px;
   width: 100%;
   height: auto;
   display: block;
-  border-radius:10px;
+}
+
+.image-block-page3 img{
+  flex: 200px;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-left:10px;
 }
 
 .titulo-pagina{
+  padding-left:50px;
   font-size:2.5rem;
   color:#FFFBEE;
 }
 
 .paragrafo-pagina{
+  padding-left:50px;
   font-size: 1.5rem;
   font-family: "Barlow", sans-serif;
   font-weight: 400;
   color:#FFFBEE;
 }
 
-/*responsividade
+/*responsividade*/
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
