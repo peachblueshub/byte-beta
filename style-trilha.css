@@ -51,6 +51,13 @@ body {
   font-weight: 700;
 }
 
+  .botao-trilha:disabled {
+  background-color: #BABABA;
+  filter: none; /* remove sombra */
+  cursor: not-allowed;
+  pointer-events: none; /* impede interações */
+}
+
   /* centralizando o mapa na tela */
   display: flex;
   justify-content: center;
