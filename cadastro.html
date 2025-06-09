@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BYTE - Cadastro</title>
-  <link rel="icon" type="image/x-icon" href="fav.svg">
-  <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="icon" type="image/x-icon" href="/img/fav.svg">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Bebas+Neue&family=Boldonse&family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -14,65 +14,65 @@
 <body>
 
 <nav class="menu">
-<div class="menu-left">
-<a href="index.html" class="logo">
-<img src="00.png" alt="Logo Byte" />
-</a>
-</div>
-<div class="menu-right">
-<a href="login.html" class="menu-btn">LOGIN</a>
-<a href="escolha.html" class="menu-btn">CADASTRE-SE</a>
-</div>
+  <div class="menu-left">
+    <a href="index.html" class="logo">
+      <img src="/img/00.png" alt="Logo Byte" />
+    </a>
+  </div>
+  <div class="menu-right">
+    <a href="login.html" class="menu-btn">LOGIN</a>
+    <a href="escolha.html" class="menu-btn">CADASTRE-SE</a>
+  </div>
 </nav>
 
-  <main class="login-wrapper">
+<main class="login-wrapper">
   <div class="login-container">
-  <section class="form-section">
-  <header>
-  <h2>Legal! Agora que já sei o nível, vamos criar seu perfil</h2>
-  </header>
+    <section class="form-section">
+      <header>
+        <h2>Legal! Agora que já sei o nível, vamos criar seu perfil</h2>
+      </header>
 
-  <form action="#" method="POST">
-  <div class="form-group">
-  <label for="nome">Nome</label>
-  <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required />
+      <!-- FORMULÁRIO COM ONSUBMIT CORRIGIDO -->
+      <form action="#" method="POST" onsubmit="redirectWord(event)">
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="Digite seu melhor e-mail" required />
+        </div>
+
+        <div class="form-group">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" name="senha" placeholder="Crie uma senha" required />
+        </div>
+
+        <div class="form-group">
+          <label for="confirmar-senha">Repetir senha</label>
+          <input type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Repita a senha" required />
+        </div>
+
+        <button type="submit">CRIAR CONTA</button>
+      </form>
+    </section>
+
+    <aside class="image-section">
+      <figure>
+        <img src="/img/02.png" alt="Imagem ilustrativa de cadastro" />
+      </figure>
+    </aside>
   </div>
+</main>
 
-  <div class="form-group">
-  <label for="email">E-mail</label>
-  <input type="email" id="email" name="email" placeholder="Digite seu melhor e-mail" required />
-  </div>
-
-  <div class="form-group">
-  <label for="senha">Senha</label>
-  <input type="password" id="senha" name="senha" placeholder="Crie uma senha" required />
-  </div>
-
-  <div class="form-group">
-  <label for="confirmar-senha">Repetir senha</label>
-  <input type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Repita a senha" required />
-  </div>
-
-  <!-- AJUSTAR ONSUBMIT -->
-  <button type="submit" onclick="redirectWord()">CRIAR CONTA
-
-  <script>function redirectWord(){
-  window.location.href="mapa-word.html";
+<!-- SCRIPT FORA DO BOTÃO -->
+<script>
+  function redirectWord(event) {
+    event.preventDefault(); // Impede o envio automático do formulário
+    window.location.href = "mapa-word.html"; // Redireciona para a próxima página
   }
-  </script>
-
-  </button> 
-  </form>
-  </section>
-
-  <aside class="image-section">
-  <figure>
-  <img src="02.png" alt="Imagem ilustrativa de cadastro" />
-  </figure>
-  </aside>
-
-  </div>
-  </main>
+</script>
 
 </body>
 </html>
