@@ -93,3 +93,10 @@ body {
 .map-button:hover {
   box-shadow: 0 6px 0 #141414;
 }
+
+.map-button:disabled{
+  background-color: #BABABA;
+  filter: none; 
+  cursor: not-allowed;
+  pointer-events: none;
+}
