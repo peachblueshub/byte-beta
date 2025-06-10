@@ -100,3 +100,40 @@ body {
   cursor: not-allowed;
   pointer-events: none;
 }
+
+/* responsividade */
+
+
+@media (max-width: 1024px) {
+  .map-button {
+  position: absolute;
+  display: flex;
+  background-color: #FFB031;
+  border: 2px solid #141414;
+  border-radius: 100px;
+  max-width: 100px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  width: 100%;
+  height: 20px;
+  cursor: pointer;
+  transition: box-shadow;
+  font-size: 0.7rem;
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  }
+}
+
+@media (max-width: 768px) {
+  .map-button {
+  position: absolute;
+  background-color: #FFB031;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: box-shadow;
+  font-size: 0.7rem;
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  }
+}
