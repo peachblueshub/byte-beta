@@ -116,6 +116,7 @@ h1 {
   font-size: 2rem;
   margin-bottom: 30px;
   font-family: boldonse;
+  text-align: center;
 }
 
 .frase {
@@ -402,7 +403,6 @@ h1 {
     font-size: 0.8rem;
   }
 }
-
 
 
 /* responsividade lições */
