@@ -324,7 +324,60 @@ h1 {
 }
 
 
-/* responsividade */
+
+/* responsividade nav topo */
+
+@media (max-width: 1024px) {
+  .barra-progresso-container {
+    top: 60px;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 40px;
+    border-width: 3px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  
+  #navegacao-trilha {
+    right: 20px;
+    gap: 6px;
+    flex-wrap: wrap;
+    max-width: 90vw;
+    justify-content: flex-end;
+  }
+
+  .botao-trilha {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .barra-progresso-container {
+    width: 100%;
+    margin-top: 30px;
+    border-width: 2px;
+    left: 0;
+    transform: none;
+  }
+
+  #navegacao-trilha {
+    top: 30px;
+    right: 10px;
+    gap: 5px;
+    max-width: 95vw;
+  }
+
+  .botao-trilha {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+/* responsividade lições */
 @media (max-width: 768px) {
   .cutscene-conteudo {
     flex-direction: column;
