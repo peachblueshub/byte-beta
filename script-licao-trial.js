@@ -5,7 +5,9 @@ const progressoBar = document.getElementById("progressoLicao");
 const exp = document.getElementById("explicacao1");
 const confirmBtn = document.getElementById("confirmar");
 const proximaBtn = document.getElementById("botaoProxima");
+const revisarBtn = document.getElementById("botaoRevisar");
 const espaco1 = document.getElementById("espaco1");
+
 
 function selecionar(botao) {
   // Remove seleção anterior
@@ -47,12 +49,14 @@ function confirmarResposta() {
     progressoBar.style.width = "100%";
     confirmBtn.style.display = "none";
     proximaBtn.style.display = "inline-block";
+    revisarBtn.style.display = "none";
   } else {
     exp.textContent = "Quase lá! Tente novamente clicando em revisar.";
     exp.style.display = "block";
     progressoBar.style.width = "0%"; 
     confirmBtn.style.display = "none";
     proximaBtn.style.display = "none"; 
+    revisarBtn.style.display = "inline-block"; 
   }
 }
 
