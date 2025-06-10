@@ -260,6 +260,7 @@ body.scrolled-to-bottom .footer {
   align-items: center;
   min-height: 80vh;
   padding: 6rem;
+  overflow-y: hidden;
 }
 
 .login-container {
@@ -609,6 +610,7 @@ button[type="submit"]:hover {
     max-width: 700px;
     justify-content: center;
     align-items: center;
+        overflow: hidden;
   }
 
   .form-section, .image-section {
