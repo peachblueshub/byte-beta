@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>BYTE - Primeira lição</title>
+  <link rel="icon" type="image/x-icon" href="fav.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style-licao-trial.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="barra-progresso-container" aria-label="Progresso do usuário">
+    <div class="barra-progresso" id="progressoLicao" style="width: 0%;"></div>
+  </div>
+
+  <nav id="navegacao-trilha" aria-label="Navegação lateral">
+    <p class="boasvindas-usuario">Olá, Usuário!</p>
+    <button class="botao-trilha ativo" title="Você está na trilha do Word">Word</button>
+    <a href="mapa-word.html" class="botao-trilha">Sair</a>
+  </nav>
+
+  <main>
+    <article id="licao1" class="tela ativa" aria-labelledby="tituloLicao1">
+      <header>
+        <h1 id="tituloLicao1">Lição única: Para que serve o Word?</h1>
+      </header>
+
+      <p class="frase">O Microsoft Word é usado para <span id="espaco1" aria-live="polite">________</span> documentos.</p>
+
+      <nav class="opcoes" aria-label="Escolha a resposta da lição">
+        <button class="palavra" type="button" onclick="selecionar(this)">Editar</button>
+        <button class="palavra" type="button" onclick="selecionar(this)">Desenhar</button>
+        <button class="palavra" type="button" onclick="selecionar(this)">Navegar</button>
+      </nav>
+
+      <aside id="explicacao1" class="explicacao" role="region" aria-live="polite" style="display: none;"></aside>
+
+      <footer class="botoes-controle" aria-label="Controles da lição">
+        <button class="botao" type="button" onclick="reiniciarLicao()">Revisar</button>
+        <button id="confirmar" class="botao confirmar" type="button" onclick="confirmarResposta()">Confirmar</button>
+        <button id="botaoProxima" class="botao" style="display: none;" type="button" onclick="finalizar()">Finalizar</button>
+      </footer>
+    </article>
+  </main>
+
+  <script src="script-licao-trial.js"></script>
+</body>
+</html>
