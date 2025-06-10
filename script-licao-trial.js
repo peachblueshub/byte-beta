@@ -1,4 +1,3 @@
-// Variáveis globais simples
 let respostaSelecionada = null;
 const correta = "Editar";
 
@@ -20,38 +19,47 @@ function selecionar(botao) {
 }
 
 function confirmarResposta() {
-if (!respostaSelecionada) return;
+  if (!respostaSelecionada) return;
 
-const botoes = document.querySelectorAll(".palavra");
+  const botoes = document.querySelectorAll(".palavra");
 
-botoes.forEach(btn => {
-btn.disabled = true;
-if (btn.textContent === correta) {
-btn.classList.add("certa");
-} else if (btn.classList.contains("selecionada")) {
-btn.classList.add("errada");
-}
-});
+  botoes.forEach(btn => {
+  btn.disabled = true;
+  if (respostaSelecionada === correta) {
+  
+  if (btn.textContent === correta) {
+  btn.classList.add("certa");
+      }
+  } else {
+     
+  if (btn.classList.contains("selecionada")) {
+  btn.classList.add("errada");
+      }
+    }
+  });
 
-espaco1.textContent = respostaSelecionada;
 
-if (respostaSelecionada === correta) {
-exp.textContent = "Muito bem! O Word é usado para editar e criar documentos de texto.";
-} else {
-exp.textContent = "Ops! A resposta correta é 'Editar'. O Word é feito para trabalhar com textos.";
-}
+  espaco1.textContent = respostaSelecionada;
 
-exp.style.display = "block";
-progressoBar.style.width = "100%";
-confirmBtn.style.display = "none";
-proximaBtn.style.display = "inline-block";
+  if (respostaSelecionada === correta) {
+    exp.textContent = "Muito bem! Você completou a sua primeira lição no Byte! Finalize o seu cadastro para ter acesso a todas as lições.";
+    exp.style.display = "block";
+    progressoBar.style.width = "100%";
+    confirmBtn.style.display = "none";
+    proximaBtn.style.display = "inline-block";
+  } else {
+    exp.textContent = "Quase lá! Tente novamente clicando em revisar.";
+    exp.style.display = "block";
+    progressoBar.style.width = "0%"; 
+    confirmBtn.style.display = "none";
+    proximaBtn.style.display = "none"; 
+  }
 }
 
 function reiniciarLicao() {
-window.location.reload();
+  window.location.reload();
 }
 
 function finalizar() {
-alert("Parabéns! Você concluiu sua primeira lição!");
-window.location.href = "mapa-word.html";
+  window.location.href = "cadastro.html";
 }
