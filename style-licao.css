@@ -140,9 +140,21 @@ main {
 }
 
 .texto-cutscene p {
-    color: #FFFBEE;
+  color: #FFFBEE;
   font-size: 1.2rem;
   line-height: 1.5;
+}
+
+figure img{
+  width:100%; 
+  border-radius:05px;
+  margin-top: 10px;
+}
+
+figcaption{
+  color:#FFFBEE;
+  font-size: 1.2rem;
+  margin-top: 10px;
 }
 
 /* botões padrão */
