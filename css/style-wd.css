@@ -70,6 +70,16 @@ body {
   min-width: 250px;
 }
 
+.clicavel {
+  cursor: pointer;
+}
+
+.clicavel:hover {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+  transition: 0.2s;
+}
+
 
 /* controles */
 

@@ -69,7 +69,10 @@ function createMap() {
         isoY -= (73 - tileHeight);
       } else if (tipo === 'T' || tipo === 'A') {
         isoY -= (77 - tileHeight);
-      }
+      } else if (tipo === 'P') {
+    tile.classList.add("clicavel");
+      } 
+
 
       tile.style.left = `${isoX + 400}px`;
       tile.style.top = `${isoY}px`;
