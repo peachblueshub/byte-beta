@@ -55,7 +55,7 @@ function createMap() {
         isoY -= (150 - tileHeight);
       } else if (tipo === 'C') {
         tile.style.height = '148px';
-        isoY -= (144.5 - tileHeight);
+        isoY -= (144.4 - tileHeight);
       } else if (tipo === 'S') {
         tile.style.height = '100px';
         isoY -= (97 - tileHeight);
