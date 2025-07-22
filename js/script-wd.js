@@ -134,7 +134,6 @@ function createMap() {
             <div class="tile-texto">${desc.texto}</div>
             <a href="${desc.link}" target="_self" class="tile-link"><button>Começar</button></a>
 `;
-
             tileInfo.style.display = "block";
           } else {
             tileInfo.innerText = `Tile clicável sem descrição personalizada.`;
