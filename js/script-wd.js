@@ -33,7 +33,7 @@ const tileImages = {
 // Descrições personalizadas para tiles 'P'
 const tileDescriptionsP = {
   "3_0": {
-    titulo: "Lição 01: Introdução ao Word",
+    titulo: "Lição 01 - Básico: Introdução ao Word",
     texto: "Aqui começa a sua jornada! Descubra o que é o Microsoft Word.",
     link: "./licao-word-iniciante.html"
   },
