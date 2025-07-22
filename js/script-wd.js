@@ -132,7 +132,7 @@ function createMap() {
             tileInfo.innerHTML = `
             <div class="tile-title">${desc.titulo}</div>
             <div class="tile-texto">${desc.texto}</div>
-            <a href="${desc.link}" target="_blank" class="tile-link"><button>Começar</button></a>
+            <a href="${desc.link}" target="_self" class="tile-link"><button>Começar</button></a>
 `;
 
             tileInfo.style.display = "block";
