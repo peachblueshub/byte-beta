@@ -30,6 +30,45 @@ const tileImages = {
   'V': './img-wd/13.png'
 };
 
+// Descrições personalizadas para tiles 'P'
+const tileDescriptionsP = {
+  "3_0": {
+    titulo: "Lição 01: Introdução ao Word",
+    texto: "Aqui começa a sua jornada! Descubra o que é o Microsoft Word.",
+    link: "./licao-word-iniciante.html"
+  },
+  "3_1": {
+    titulo: "Formatar Texto",
+    texto: "Aprenda a aplicar negrito, itálico e sublinhado.",
+    link: "./formatar-texto.html"
+  },
+  "4_1": {
+    titulo: "Inserir Imagens",
+    texto: "Veja como adicionar e posicionar imagens em seu documento.",
+    link: "./inserir-imagens.html"
+  },
+  "5_1": {
+    titulo: "Cabeçalho e Rodapé",
+    texto: "Entenda como configurar cabeçalhos e rodapés com praticidade.",
+    link: "./cabecalho-roda.html"
+  },
+  "5_2": {
+    titulo: "Salvar e Compartilhar",
+    texto: "Descubra como salvar e compartilhar seu documento com segurança.",
+    link: "./salvar-compartilhar.html"
+  },
+  "0_3": {
+    titulo: "Revisão Ortográfica",
+    texto: "Use o corretor ortográfico e outras ferramentas de revisão.",
+    link: "./revisao.html"
+  },
+  "1_3": {
+    titulo: "Atalho de Teclado",
+    texto: "Melhore sua produtividade com atalhos úteis.",
+    link: "./atalhos.html"
+  }
+};
+
 function isWalkable(x, y) {
   const tipo = tileMap[y]?.[x];
   return !['R', 'G', 'C', 'S', 'A', 'T', 'L', 'V'].includes(tipo);
@@ -70,9 +109,8 @@ function createMap() {
       } else if (tipo === 'T' || tipo === 'A') {
         isoY -= (77 - tileHeight);
       } else if (tipo === 'P') {
-    tile.classList.add("clicavel");
-      } 
-
+        tile.classList.add("clicavel");
+      }
 
       tile.style.left = `${isoX + 400}px`;
       tile.style.top = `${isoY}px`;
@@ -86,12 +124,28 @@ function createMap() {
         const destY = parseInt(tile.dataset.y);
         const tipo = tile.dataset.tipo;
 
-        tileInfo.innerText = `Tipo: ${tipo} | Posição: (${destX}, ${destY})`;
-
         if (tipo === "P") {
+          const key = `${destX}_${destY}`;
+          const desc = tileDescriptionsP[key];
+
+          if (desc) {
+            tileInfo.innerHTML = `
+            <div class="tile-title">${desc.titulo}</div>
+            <div class="tile-texto">${desc.texto}</div>
+            <a href="${desc.link}" target="_blank" class="tile-link"><button>Começar</button></a>
+`;
+
+            tileInfo.style.display = "block";
+          } else {
+            tileInfo.innerText = `Tile clicável sem descrição personalizada.`;
+            tileInfo.style.display = "block";
+          }
+
           playerX = destX;
           playerY = destY;
           updatePlayerPosition();
+        } else {
+          tileInfo.style.display = "none";
         }
       });
 
