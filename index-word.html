@@ -33,13 +33,22 @@
   <!-- Informações dos tiles -->
   <div id="tileInfo"></div>
 
-<!-- Overlay e cards -->
-<div id="overlay" class="escondido">
-  <div id="opcoesCards">
-    <button id="fecharOverlay" aria-label="Fechar menu">✕</button>
-    <div class="cards-container" id="cardsContainer"></div>
+<!-- Overlay para módulo -->
+<div id="overlay-modulo" class="overlay-escondido">
+  <div class="opcoesCards-modulo">
+    <button class="fecharOverlay" aria-label="Fechar menu">✕</button>
+    <div class="cards-container" id="cardsModulo"></div>
   </div>
 </div>
+
+<!-- Overlay para curso -->
+<div id="overlay-curso" class="overlay-escondido">
+  <div class="opcoesCards-curso">
+    <button class="fecharOverlay" aria-label="Fechar menu">✕</button>
+    <div class="cards-container" id="cardsCurso"></div>
+  </div>
+</div>
+
 
   <!-- Rodapé -->
   <footer class="footer-fixed">
@@ -53,9 +62,12 @@
   const btnWord = document.getElementById('btnWord');
   const menuWord = document.getElementById('menuWord');
   const dropdownOptions = document.querySelectorAll('.dropdown-option');
-  const overlay = document.getElementById('overlay');
-  const cardsContainer = document.getElementById('cardsContainer');
-  const fecharOverlay = document.getElementById('fecharOverlay');
+const overlayModulo = document.getElementById('overlay-modulo');
+const overlayCurso = document.getElementById('overlay-curso');
+const cardsModulo = document.getElementById('cardsModulo');
+const cardsCurso = document.getElementById('cardsCurso');
+const fecharButtons = document.querySelectorAll('.fecharOverlay');
+
 
   // Dados dos cards com ações específicas
   const cardsData = {
@@ -81,7 +93,7 @@
     ],
     curso: [
       {
-        img1: './img-wd/curso1a.png',
+        img1: './img/37.png',
         titulo: 'Excel',
         texto: 'Faça planilhas como um expert.',
         acao: () => window.location.href = 'excel.html',
@@ -108,36 +120,57 @@
   });
 
   // Mostrar cards da opção clicada
-  dropdownOptions.forEach(opcao => {
-    opcao.addEventListener('click', () => {
-      const tipo = opcao.getAttribute('data-opcao');
-      const cards = cardsData[tipo];
-      cardsContainer.innerHTML = '';
+dropdownOptions.forEach(opcao => {
+  opcao.addEventListener('click', () => {
+    const tipo = opcao.getAttribute('data-opcao');
+    const cards = cardsData[tipo];
 
+    if (tipo === 'dificuldade') {
+      cardsModulo.innerHTML = '';
       cards.forEach(card => {
         const div = document.createElement('div');
-        div.className = 'card-opcao';
+        div.className = 'card-opcao card-modulo';
         div.innerHTML = `
           <img src="${card.img1}" alt="Imagem" class="img-topo" />
           <h3>${card.titulo}</h3>
           <p>${card.texto}</p>
           <button>Selecionar</button>
         `;
-
-        // Torna o card clicável
         div.querySelector('button').addEventListener('click', card.acao);
-        cardsContainer.appendChild(div);
+        cardsModulo.appendChild(div);
       });
-
-      overlay.classList.remove('escondido');
-      menuWord.classList.remove('mostrar');
-    });
+      overlayModulo.classList.remove('overlay-escondido');
+} else if (tipo === 'curso') {
+  cardsCurso.innerHTML = '';
+  cards.forEach((card, index) => {
+    const div = document.createElement('div');
+    div.className = `card-opcao card-curso card-curso-${index + 1}`;
+    div.innerHTML = `
+      <img src="${card.img1}" alt="Imagem" class="img-topo" />
+      <h3>${card.titulo}</h3>
+      <p>${card.texto}</p>
+      <button>Selecionar</button>
+    `;
+    div.querySelector('button').addEventListener('click', card.acao);
+    cardsCurso.appendChild(div);
   });
+  overlayCurso.classList.remove('overlay-escondido');
+}
+
+
+    menuWord.classList.remove('mostrar');
+  });
+});
+
 
   // Fechar overlay
-  fecharOverlay.addEventListener('click', () => {
-    overlay.classList.add('escondido');
+fecharButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    overlayModulo.classList.add('overlay-escondido');
+    overlayCurso.classList.add('overlay-escondido');
   });
+});
+
 </script>
 
 

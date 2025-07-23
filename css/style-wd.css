@@ -282,7 +282,7 @@ filter: drop-shadow(0px 5px #141414);
 }
 
 /* Botão de fechar (X) */
-#fecharOverlay {
+.fecharOverlay {
   position: absolute;
   top: 8px;
   right: 10px;
@@ -295,8 +295,76 @@ filter: drop-shadow(0px 5px #141414);
   z-index: 10;
 }
 
+
 /* Escondido por padrão */
 .escondido {
   display: none !important;
 }
 
+/* Overlays separados */
+#overlay-modulo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #409BFF; /* azul claro */
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#overlay-curso {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #C96CFF; /* laranja */
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-escondido {
+  display: none !important;
+}
+
+.opcoesCards-modulo,
+.opcoesCards-curso {
+  position: relative;
+  padding: 30px 20px 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 900px;
+  width: 100%;
+}
+
+.card-modulo {
+  background-color: #FFFBEE;
+}
+
+.card-curso {
+  background-color: #fff4db;
+}
+
+.card-curso button {
+  background-color: #ffb031;
+}
+
+/* Cards do menu Alterar Curso com cores únicas */
+.card-curso-1 {
+  background-color: #07D346; /* Verde claro - Excel */
+}
+
+.card-curso-2 {
+  background-color: #F24C27; /* Rosa claro - PowerPoint */
+}
+
+.card-curso-3 {
+  background-color: #409BFF; /* Azul lavanda - Word */
+}
