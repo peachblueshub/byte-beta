@@ -223,7 +223,7 @@ filter: drop-shadow(0px 5px #141414);
   width: 100%;
 }
 
-/* Container de todos os cards */
+/* Container com os cards lado a lado */
 .cards-container {
   display: flex;
   justify-content: center;
@@ -231,7 +231,7 @@ filter: drop-shadow(0px 5px #141414);
   width: 100%;
 }
 
-/* Cada card individual */
+/* Card individual */
 .card-opcao {
   background-color: #ffffff;
   border: 3px solid #141414;
@@ -248,6 +248,15 @@ filter: drop-shadow(0px 5px #141414);
   max-width: 100%;
   border-radius: 6px;
   margin-bottom: 8px;
+}
+
+.card-opcao h3 {
+  font-family: "UnifrakturMaguntia", cursive;
+  font-weight: 400;
+  font-style: normal;
+  margin: 6px 0 4px;
+  font-size: 2.5rem;
+  color: #141414;
 }
 
 .card-opcao p {
@@ -274,7 +283,7 @@ filter: drop-shadow(0px 5px #141414);
 #fecharOverlay {
   position: absolute;
   top: 8px;
-  left: 8px;
+  right: 10px;
   background: none;
   border: none;
   font-size: 24px;
@@ -288,3 +297,4 @@ filter: drop-shadow(0px 5px #141414);
 .escondido {
   display: none !important;
 }
+
