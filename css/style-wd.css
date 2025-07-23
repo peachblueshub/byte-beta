@@ -199,7 +199,7 @@ filter: drop-shadow(0px 5px #141414);
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(64, 155, 255, 0.95);
+  background-color: #409BFF;
   width: 100%;
   height: 100%;
   z-index: 99;
@@ -212,10 +212,10 @@ filter: drop-shadow(0px 5px #141414);
 /* Área central dos cards */
 #opcoesCards {
   position: relative;
-  background-color: #FFFBEE;
+  /* background-color: #FFFBEE; */
   padding: 30px 20px 20px;
   border-radius: 12px;
-  border: 4px solid #141414;
+  /* border: 4px solid #141414; */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -233,9 +233,9 @@ filter: drop-shadow(0px 5px #141414);
 
 /* Card individual */
 .card-opcao {
-  background-color: #ffffff;
+  background-color: #FFFBEE;
   border: 3px solid #141414;
-  border-radius: 12px;
+  border-radius: 20px;
   width: 220px;
   padding: 15px;
   text-align: center;
@@ -245,23 +245,23 @@ filter: drop-shadow(0px 5px #141414);
 }
 
 .card-opcao img {
-  max-width: 100%;
+  max-width: 70%;
   border-radius: 6px;
   margin-bottom: 8px;
 }
 
 .card-opcao h3 {
-  font-family: "UnifrakturMaguntia", cursive;
+  font-family: "Boldonse";
   font-weight: 400;
   font-style: normal;
-  margin: 6px 0 4px;
-  font-size: 2.5rem;
+  margin-bottom: 2px;
+  font-size: 1.7rem;
   color: #141414;
 }
 
 .card-opcao p {
   font-size: 0.95rem;
-  margin: 10px 0;
+  margin-bottom: 30px;
   color: #141414;
 }
 
@@ -270,7 +270,7 @@ filter: drop-shadow(0px 5px #141414);
   color: #FFFBEE;
   border: 2px solid #141414;
   padding: 8px 16px;
-  border-radius: 6px;
+  border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
 }
