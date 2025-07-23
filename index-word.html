@@ -13,7 +13,16 @@
   <!-- Menu lateral -->
   <nav id="navegacao-trilha" aria-label="Navegação lateral">
     <p class="boasvindas-usuario">Usuário</p>
-    <button class="botao-trilha ativo" title="Você está na trilha do Word">Word</button>
+
+    <!-- Botão Word com dropdown -->
+    <div class="dropdown">
+      <button class="botao-trilha ativo" id="btnWord" title="Você está na trilha do Word">Word</button>
+      <div class="dropdown-menu" id="menuWord">
+        <button class="dropdown-option" data-opcao="dificuldade">Alterar dificuldade</button>
+        <button class="dropdown-option" data-opcao="curso">Alterar curso</button>
+      </div>
+    </div>
+
     <a href="index.html" class="botao-trilha">Sair</a>
   </nav>
 
@@ -23,6 +32,14 @@
   <!-- Informações dos tiles -->
   <div id="tileInfo"></div>
 
+<!-- Overlay e cards -->
+<div id="overlay" class="escondido">
+  <div id="opcoesCards">
+    <button id="fecharOverlay" aria-label="Fechar menu">✕</button>
+    <div class="cards-container" id="cardsContainer"></div>
+  </div>
+</div>
+
   <!-- Rodapé -->
   <footer class="footer-fixed">
     <img src="./img-wd/27.png" alt="Ícone ilustrativo" />
@@ -30,5 +47,92 @@
   </footer>
 
   <script src="./js/script-wd.js"></script>
+
+<script>
+  const btnWord = document.getElementById('btnWord');
+  const menuWord = document.getElementById('menuWord');
+  const dropdownOptions = document.querySelectorAll('.dropdown-option');
+  const overlay = document.getElementById('overlay');
+  const cardsContainer = document.getElementById('cardsContainer');
+  const fecharOverlay = document.getElementById('fecharOverlay');
+
+  // Dados dos cards para cada opção
+  const cardsData = {
+    dificuldade: [
+      {
+        img1: './img-wd/35.png',
+        img2: './img-wd/38.svg',
+        texto: 'Nível Básico: Comece pelo essencial do Word.',
+      },
+      {
+        img1: './img-wd/36.png',
+        img2: './img-wd/dif2b.png',
+        texto: 'Nível Intermediário: Aprimore suas habilidades.',
+      },
+      {
+        img1: './img-wd/dif3a.png',
+        img2: './img-wd/dif3b.png',
+        texto: 'Nível Avançado: Torne-se um mestre no Word.',
+      },
+    ],
+    curso: [
+      {
+        img1: './img-wd/curso1a.png',
+        img2: './img-wd/curso1b.png',
+        texto: 'Trocar para Excel: Aprenda planilhas como um expert.',
+      },
+      {
+        img1: './img-wd/curso2a.png',
+        img2: './img-wd/curso2b.png',
+        texto: 'Trocar para PowerPoint: Crie apresentações incríveis.',
+      },
+      {
+        img1: './img-wd/curso3a.png',
+        img2: './img-wd/curso3b.png',
+        texto: 'Windows Básico: Domine o sistema operacional.',
+      },
+    ]
+  };
+
+  // Alternar menu dropdown
+  btnWord.addEventListener('click', () => {
+    menuWord.classList.toggle('mostrar');
+    overlay.classList.add('escondido'); // fecha overlay se aberto
+  });
+
+  // Mostrar cards personalizados
+  dropdownOptions.forEach(opcao => {
+    opcao.addEventListener('click', () => {
+      const tipo = opcao.getAttribute('data-opcao');
+      const cards = cardsData[tipo];
+
+      // Limpar cards anteriores
+      cardsContainer.innerHTML = '';
+
+      // Adicionar novos cards
+      cards.forEach(card => {
+        const div = document.createElement('div');
+        div.className = 'card-opcao';
+        div.innerHTML = `
+          <img src="${card.img1}" alt="Imagem 1" class="img-topo" />
+          <img src="${card.img2}" alt="Imagem 2" class="img-base" />
+          <p>${card.texto}</p>
+          <button>Selecionar</button>
+        `;
+        cardsContainer.appendChild(div);
+      });
+
+      // Exibir overlay e esconder menu
+      overlay.classList.remove('escondido');
+      menuWord.classList.remove('mostrar');
+    });
+  });
+
+  // Fechar overlay
+  fecharOverlay.addEventListener('click', () => {
+    overlay.classList.add('escondido');
+  });
+</script>
+
 </body>
 </html>
