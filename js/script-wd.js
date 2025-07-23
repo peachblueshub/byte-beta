@@ -214,3 +214,17 @@ document.addEventListener("keydown", (e) => {
 
 createMap();
 updatePlayerPosition();
+
+// Exibir automaticamente a primeira descrição ao carregar a página
+(function showInitialTileInfo() {
+  const key = "3_0";
+  const desc = tileDescriptionsP[key];
+  if (desc) {
+    tileInfo.innerHTML = `
+      <div class="tile-title">${desc.titulo}</div>
+      <div class="tile-texto">${desc.texto}</div>
+      <a href="${desc.link}" target="_self" class="tile-link"><button>Começar</button></a>
+    `;
+    tileInfo.style.display = "block";
+  }
+})();
