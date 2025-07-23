@@ -82,7 +82,7 @@ body {
   top: 20px;
   left: 20px;
   background: #FFFBEE;
-  border: 3px solid #141414;
+  border: 2.5px solid #141414;
   padding: 10px 15px;
   font-size: 1rem;
   border-radius: 15px;
@@ -95,9 +95,9 @@ body {
 #tileInfo button {
   margin-top: 2px;
   padding: 8px 12px;
-  background-color: #409BFF;
-  border: 3px solid #141414;
-  color: #FFFBEE;
+  background-color: #ffb031;
+  border: 2.5px solid #141414;
+  color: #141414;
   border-radius: 20px;
   font-weight: 600;
   cursor: pointer;
@@ -265,7 +265,7 @@ filter: drop-shadow(0px 5px #141414);
 }
 
 .card-opcao button {
-  background-color: #409BFF;
+  background-color: #ffb031;
   color: #141414;
   border: 2px solid #141414;
   padding: 8px 16px;
