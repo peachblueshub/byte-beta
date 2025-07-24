@@ -209,8 +209,30 @@ document.addEventListener("keydown", (e) => {
     playerX = targetX;
     playerY = targetY;
     updatePlayerPosition();
+
+    // Verificar se é um tile P e ativar descrição
+    const tipo = tileMap[playerY][playerX];
+    if (tipo === "P") {
+      const key = `${playerX}_${playerY}`;
+      const desc = tileDescriptionsP[key];
+
+      if (desc) {
+        tileInfo.innerHTML = `
+          <div class="tile-title">${desc.titulo}</div>
+          <div class="tile-texto">${desc.texto}</div>
+          <a href="${desc.link}" target="_self" class="tile-link"><button>Começar</button></a>
+        `;
+        tileInfo.style.display = "block";
+      } else {
+        tileInfo.innerText = `Tile clicável sem descrição personalizada.`;
+        tileInfo.style.display = "block";
+      }
+    } else {
+      tileInfo.style.display = "none";
+    }
   }
 });
+
 
 createMap();
 updatePlayerPosition();
