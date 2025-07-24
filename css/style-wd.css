@@ -81,7 +81,7 @@ body {
   top: 20px;
   left: 20px;
   background: #FFFBEE;
-  border: 2.5px solid #141414;
+  border: 3px solid #141414;
   padding: 10px 15px;
   font-size: 1rem;
   border-radius: 15px;
@@ -95,7 +95,7 @@ body {
   margin-top: 2px;
   padding: 8px 12px;
   background-color: #ffb031;
-  border: 2.5px solid #141414;
+  border: 3px solid #141414;
   color: #141414;
   border-radius: 20px;
   font-weight: 600;
