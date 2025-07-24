@@ -37,7 +37,7 @@ body {
   text-decoration: none;
   color: #141414;
   text-align: center;
-  transition: background-color 0.2s ease;
+  font-weight: 200;
 }
 
 .botao-trilha:hover {

@@ -6,6 +6,7 @@ const cols = 8;
 const tileWidth = 150;
 const tileHeight = 76;
 
+// Geração de mapa
 const tileMap = [
   ['V', 'C', 'G', 'P', 'V', 'G', 'C', 'L'],
   ['C', 'V', 'G', 'P', 'P', 'P', 'S', 'L'],
@@ -30,7 +31,7 @@ const tileImages = {
   'V': './img-wd/13.png'
 };
 
-// Descrições personalizadas para tiles 'P'
+// Descrições personalizadas para tiles andáveis 'P'
 const tileDescriptionsP = {
   "3_0": {
     titulo: "Lição 01 - Básico: Introdução ao Word",
@@ -69,6 +70,8 @@ const tileDescriptionsP = {
   }
 };
 
+
+// Verifica se o tile é andável
 function isWalkable(x, y) {
   const tipo = tileMap[y]?.[x];
   return !['R', 'G', 'C', 'S', 'A', 'T', 'L', 'V'].includes(tipo);
@@ -184,6 +187,7 @@ function updatePlayerPosition() {
   player.style.top = `${isoY - 77}px`;
 }
 
+// Movimentação da personagem
 document.addEventListener("keydown", (e) => {
   let targetX = playerX;
   let targetY = playerY;
