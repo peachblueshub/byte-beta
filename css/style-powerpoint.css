@@ -1,0 +1,368 @@
+body {
+  margin: 0;
+  background-color: #f24c27;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Barlow", sans-serif;
+}
+
+#navegacao-trilha {
+  position: fixed;
+  top: 30px;
+  right: 50px;
+  display: flex;
+  flex-direction: row; /* Horizontal */
+  align-items: center; /* Alinhamento vertical central */
+  gap: 12px;
+  z-index: 15;
+}
+
+.boasvindas-usuario {
+  color: #FFFBEE;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.botao-trilha {
+  background-color: #FFFBEE;
+  border: 2px solid #141414;
+  padding: 10px 18px;
+  font-family: "Barlow", sans-serif;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #141414;
+  text-align: center;
+  font-weight: 400;
+}
+
+.botao-trilha:hover {
+  background-color: #BABABA;
+  filter: drop-shadow(0px 5px #141414);
+}
+
+.botao-trilha.ativo {
+  background-color: #f24c27;
+  color: #FFFBEE;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* mapa da área */
+
+#gameArea {
+  position: relative;
+  width: 1000px;
+  height: 600px;
+}
+
+.tile {
+  position: absolute;
+  width: 150px;
+  height: 79px;
+  background-size: cover;
+}
+
+#player {
+  position: absolute;
+  width: 90px;
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 10;
+}
+
+#tileInfo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #FFFBEE;
+  border: 2px solid #141414;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 15px;
+  color: #141414;
+  z-index: 20;
+  min-width: 250px;
+  display: none;
+}
+
+#tileInfo button {
+  margin-top: 2px;
+  padding: 8px 12px;
+  background-color: #ffb031;
+  border: 2px solid #141414;
+  color: #141414;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#tileInfo button:hover{
+filter: drop-shadow(0px 5px #141414);
+}
+
+#tileInfo .tile-title {
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+#tileInfo .tile-texto {
+  font-weight: 400;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+#tileInfo .tile-link button {
+  font-weight: 600; /* peso do texto do botão */
+}
+
+
+.clicavel {
+  cursor: pointer;
+}
+
+.clicavel:hover {
+  filter: brightness(1.1);
+  transform: scale(1);
+  transition: 0.2s;
+}
+
+.footer-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #141414;
+  padding-left: 2%;
+  font-size: 14px;
+  border-top-right-radius: 8px;
+}
+
+.footer-fixed img {
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+/* Dropdown menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background-color: #FFFBEE;
+  border: 2px solid #141414;
+  border-radius: 10px;
+  padding: 8px 0;
+  display: none;
+  flex-direction: column;
+  z-index: 100;
+  width: max-content;
+}
+
+.dropdown-menu.mostrar {
+  display: flex;
+}
+
+.dropdown-option {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  font-family: "Barlow", sans-serif;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  color: #141414;
+}
+
+.dropdown-option:hover {
+  /* background-color: #BABABA; */
+  font-weight: 700;
+}
+
+/* Overlay cobrindo tela */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f24c27;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 40px; */
+}
+
+/* Área central dos cards */
+#opcoesCards {
+  position: relative;
+  /* background-color: #FFFBEE; */
+  padding: 30px 20px 20px;
+  border-radius: 12px;
+  /* border: 4px solid #141414; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 900px;
+  width: 100%;
+}
+
+/* Container com os cards lado a lado */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Card individual */
+.card-opcao {
+  background-color: #FFFBEE;
+  border: 2px solid #141414;
+  border-radius: 20px;
+  width: 220px;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-opcao img {
+  max-width: 70%;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.card-opcao h3 {
+  font-family: "Boldonse";
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 2px;
+  font-size: 1.7rem;
+  color: #141414;
+}
+
+.card-opcao p {
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+  color: #141414;
+}
+
+.card-opcao button {
+  background-color: #ffb031;
+  color: #141414;
+  border: 2px solid #141414;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.card-opcao button:hover {
+  color: #141414;
+  background-color: #ffb031;
+  filter: drop-shadow(0px 5px #141414);
+}
+
+/* Botão de fechar (X) */
+.fecharOverlay {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #141414;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+}
+
+
+/* Escondido por padrão */
+.escondido {
+  display: none !important;
+}
+
+/* Overlays separados */
+#overlay-modulo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f24c27; /* azul claro */
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#overlay-curso {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #C96CFF; /* laranja */
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-escondido {
+  display: none !important;
+}
+
+.opcoesCards-modulo,
+.opcoesCards-curso {
+  position: relative;
+  padding: 30px 20px 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 900px;
+  width: 100%;
+}
+
+.card-modulo {
+  background-color: #FFFBEE;
+}
+
+.card-curso {
+  background-color: #fff4db;
+}
+
+.card-curso button {
+  background-color: #ffb031;
+}
+
+/* Cards do menu Alterar Curso com cores únicas */
+.card-curso-1 {
+  background-color: #07D346; /* Verde claro - Excel */
+}
+
+.card-curso-2 {
+  background-color: #F24C27; /* Rosa claro - PowerPoint */
+}
+
+.card-curso-3 {
+  background-color: #f24c27; /* Azul lavanda - Word */
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Byte | Aprenda Microsoft Word</title>
-  <link rel="stylesheet" href="./css/style-powerpoint.css" />
+  <link rel="stylesheet" href="./css/style-wd.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Bebas+Neue&family=Boldonse&family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
@@ -17,7 +17,7 @@
 
     <!-- Botão Word com dropdown -->
     <div class="dropdown">
-    <button class="botao-trilha ativo" id="btnWord" title="Você está na trilha do PowerPoint">PowerPoint</button>
+    <button class="botao-trilha ativo" id="btnWord" title="Você está na trilha do Word">Word</button>
     <div class="dropdown-menu" id="menuWord">
     <button class="dropdown-option" data-opcao="dificuldade">Alterar módulo</button>
     <button class="dropdown-option" data-opcao="curso">Alterar curso</button>
@@ -56,7 +56,7 @@
     <p></p>
   </footer>
 
-  <script src="./js/script-powerpoint.js"></script>
+  <script src="./js/script-wd.js"></script>
 
 <script>
   const btnWord = document.getElementById('btnWord');
@@ -75,7 +75,7 @@ const fecharButtons = document.querySelectorAll('.fecharOverlay');
       {
         img1: './img-wd/35.png',
         titulo: 'Básico',
-        texto: 'Comece pelo essencial do PowerPoint.',
+        texto: 'Comece pelo essencial do Word.',
         acao: () => window.location.href = 'index-word.html',
       },
       {
@@ -87,7 +87,7 @@ const fecharButtons = document.querySelectorAll('.fecharOverlay');
       {
         img1: './img-wd/37.png',
         titulo: 'Avançado',
-        texto: 'Torne-se um mestre no PowerPoint.',
+        texto: 'Torne-se um mestre no Word.',
         acao: () => alert('Você escolheu o nível Avançado!'),
       },
     ],
