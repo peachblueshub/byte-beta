@@ -170,12 +170,12 @@ updatePlayerPosition();
 
 const player = document.createElement("div");
 player.id = "player";
-player.style.backgroundImage = "url('./img-wd/25.png')";
+player.style.backgroundImage = "url('./img-wd/23.png')";
 gameArea.appendChild(player);
 
-let playerX = 3;
-let playerY = 0;
-let currentDirection = "down";
+let playerX = 0;
+let playerY = 3;
+let currentDirection = "right";
 
 function updatePlayerSprite(direction) {
   const sprites = {
