@@ -143,9 +143,21 @@ function createMap() {
             tileInfo.style.display = "block";
           }
 
-          playerX = destX;
-          playerY = destY;
-          updatePlayerPosition();
+        // Determina a direção com base na diferença entre a posição atual e a nova
+        if (destX > playerX) {
+  updatePlayerSprite("right");
+} else if (destX < playerX) {
+  updatePlayerSprite("left");
+} else if (destY > playerY) {
+  updatePlayerSprite("down");
+} else if (destY < playerY) {
+  updatePlayerSprite("up");
+}
+
+// Atualiza posição do jogador e movimento
+playerX = destX;
+playerY = destY;
+updatePlayerPosition();
         } else {
           tileInfo.style.display = "none";
         }
