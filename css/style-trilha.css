@@ -102,8 +102,6 @@ body {
 }
 
 /* responsividade */
-
-
 @media (max-width: 1024px) {
   .map-button {
   position: absolute;
