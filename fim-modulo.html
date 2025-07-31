@@ -5,7 +5,7 @@
   <title>BYTE - Aprenda Word do seu jeito</title>
   <link rel="icon" type="image/x-icon" href="fav.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style-licao.css" />
+  <link rel="stylesheet" href="./css/style-licao.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Bebas+Neue&family=Boldonse&family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
@@ -13,24 +13,40 @@
 </head>
 <body>
 
-    <!------------------------- BARRA DE PROGRESSO ------------------------->
+
+  <!-- TOPO FIXO COM MENU + BARRA DE PROGRESSO -->
+<div class="topo-interface">
+  <!-- Menu -->
+  <nav id="navegacao-trilha" aria-label="Navegação lateral">
+    <p class="boasvindas-usuario">Usuário</p>
+    <button class="botao-trilha ativo" title="Você está na trilha do Word">Word</button>
+    <a href="index-word.html" class="botao-trilha">Sair</a>
+  </nav>
+
+  <!-- Barra de Progresso -->
+  <section class="barra-progresso-container" aria-label="Progresso do usuário">
+    <section class="barra-progresso" id="progressoLicoes" style="width: 0%;"></section>
+  </section>
+</div>
+
+    <!-- ----------------------- BARRA DE PROGRESSO -----------------------
     
   <div class="barra-progresso-container" aria-label="Progresso do usuário">
     <div class="barra-progresso" id="progressoLicoes" style="width:100%;"></div>
   </div>
 
-    <!--------------------------- MENU ------------------------------------>
+    <------------------------ MENU ------------------------------------>
 
-  <nav id="navegacao-trilha" aria-label="Navegação lateral">
+  <!-- <nav id="navegacao-trilha" aria-label="Navegação lateral">
     <p class="boasvindas-usuario">Usuário</p>
     <button class="botao-trilha ativo" title="Você está na trilha do Word">Word</button>
     <a href="mapa-word.html" class="botao-trilha">Sair</a>
-  </nav>
+  </nav> --> 
 <body>
 <main class="pagina-concluida">
 <section class="container-concluido">
 <figure>
-<img src="02.png" alt="Gatinho comemorando a conclusão das lições" class="imagem-concluido" />
+<img src="./img/02.png" alt="Gatinho comemorando a conclusão das lições" class="imagem-concluido" />
 </figure>
 <h1 class="texto-concluido">Lições concluídas!</h1>
 
