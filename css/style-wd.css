@@ -40,15 +40,19 @@ body {
 }
 
 .botao-trilha:hover {
-  background-color: #BABABA;
   filter: drop-shadow(0px 5px #141414);
 }
 
 .botao-trilha.ativo {
-  background-color: #409bff;
-  color: #FFFBEE;
+  background-color: #FFFBEE;
+  color: #409bff;
   font-weight: 800;
   cursor: pointer;
+}
+
+.botao-trilha.ativo:hover {
+  background-color: #409bff;
+  color: #FFFBEE; 
 }
 
 /* mapa da área */
@@ -192,7 +196,6 @@ filter: drop-shadow(0px 5px #141414);
   font-weight: 700;
 }
 
-
 /* Dropdown Pontos */
 
 .pontuacao-dropdown {
@@ -203,14 +206,25 @@ filter: drop-shadow(0px 5px #141414);
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #e90000;
+  color: #FFB031;
+    cursor: pointer;
 }
 
 #valorPontuacao {
   font-weight: 700;
   font-size: 1.1rem;
-  color: #e90000;
+  color: #FFB031;
 
+}
+
+.pontuacao-dropdown button:hover{
+  background:#FFB031;
+  color:#FFFBEE;
+}
+
+.botao-trilha:hover #valorPontuacao {
+  background-color: #ffb031;
+  color: #FFFBEE; 
 }
 
 #menuPontuacao {
@@ -227,9 +241,7 @@ filter: drop-shadow(0px 5px #141414);
   width: 280px;
   font-size: 0.95rem;
   color: #141414;
-  /* transition: transform 0.2s ease; */
 }
-
 
 #menuPontuacao.mostrar {
   display: flex;
@@ -238,7 +250,6 @@ filter: drop-shadow(0px 5px #141414);
 #menuPontuacao p {
   margin-bottom: 8px;
 }
-
 
 /* Overlay cobrindo tela */
 #overlay {

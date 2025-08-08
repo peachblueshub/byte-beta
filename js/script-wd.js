@@ -272,12 +272,13 @@ updatePlayerPosition();
 
   const btnWord = document.getElementById('btnWord');
   const menuWord = document.getElementById('menuWord');
+
   const dropdownOptions = document.querySelectorAll('.dropdown-option');
-const overlayModulo = document.getElementById('overlay-modulo');
-const overlayCurso = document.getElementById('overlay-curso');
-const cardsModulo = document.getElementById('cardsModulo');
-const cardsCurso = document.getElementById('cardsCurso');
-const fecharButtons = document.querySelectorAll('.fecharOverlay');
+  const overlayModulo = document.getElementById('overlay-modulo');
+  const overlayCurso = document.getElementById('overlay-curso');
+  const cardsModulo = document.getElementById('cardsModulo');
+  const cardsCurso = document.getElementById('cardsCurso');
+  const fecharButtons = document.querySelectorAll('.fecharOverlay');
 
 
   // Dados dos cards com ações específicas
@@ -329,6 +330,8 @@ const fecharButtons = document.querySelectorAll('.fecharOverlay');
     menuWord.classList.toggle('mostrar');
     overlay.classList.add('escondido'); // sempre esconde cards ao abrir menu
   });
+
+
 
   // Fecha o menu ao clicar fora
 document.addEventListener("click", function (event) {
