@@ -330,6 +330,15 @@ const fecharButtons = document.querySelectorAll('.fecharOverlay');
     overlay.classList.add('escondido'); // sempre esconde cards ao abrir menu
   });
 
+  // Fecha o menu ao clicar fora
+document.addEventListener("click", function (event) {
+  const isClickInside = btnWord.contains(event.target) || menuWord.contains(event.target);
+  if (!isClickInside) {
+    menuWord.classList.remove("mostrar");
+  }
+});
+
+
   // Mostrar cards da opção clicada
 dropdownOptions.forEach(opcao => {
   opcao.addEventListener('click', () => {
@@ -374,14 +383,13 @@ dropdownOptions.forEach(opcao => {
 });
 
 
-  // Fechar overlay
+  // Fechar overlay de escolher módulo e curso
 fecharButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     overlayModulo.classList.add('overlay-escondido');
     overlayCurso.classList.add('overlay-escondido');
   });
 });
-
 
 
 //Dropdown Pontos
