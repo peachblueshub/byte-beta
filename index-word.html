@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Bebas+Neue&family=Boldonse&family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
@@ -15,16 +16,29 @@
   <nav id="navegacao-trilha" aria-label="Navegação lateral">
     <p class="boasvindas-usuario">Usuário</p>
 
-    <!-- Botão Word com dropdown -->
-    <div class="dropdown">
-    <button class="botao-trilha ativo" id="btnWord" title="Você está na trilha do Word">Word</button>
-    <div class="dropdown-menu" id="menuWord">
+<!-- Botão Word com dropdown -->
+<div class="dropdown">
+  <button class="botao-trilha ativo" id="btnWord" title="Você está na trilha do Word">Word</button>
+  <div class="dropdown-menu" id="menuWord">
     <button class="dropdown-option" data-opcao="dificuldade">Alterar módulo</button>
     <button class="dropdown-option" data-opcao="curso">Alterar curso</button>
-    </div>
-    </div>
+  </div>
+</div>
 
-    <a href="index.html" class="botao-trilha">Sair</a>
+<!-- Bloco de pontuação -->
+<div class="pontuacao-dropdown">
+  <button class="botao-trilha" id="botaoPontuacao" title="Clique para ver mais">
+    <span class="material-icons">favorite</span>
+    <span id="valorPontuacao">0</span>
+  </button>
+  <div class="dropdown-menu" id="menuPontuacao">
+    <p><strong>Pontuação</strong></p>
+    <p>Você ganha pontos ao completar tarefas. É necessário ter <strong>80 pontos</strong> para desbloquear o próximo módulo.</p>
+  </div>
+</div>
+
+<a href="index.html" class="botao-trilha">Sair</a>
+
   </nav>
 
   <!-- Área do jogo -->
@@ -57,122 +71,6 @@
   </footer>
 
   <script src="./js/script-wd.js"></script>
-
-<script>
-  const btnWord = document.getElementById('btnWord');
-  const menuWord = document.getElementById('menuWord');
-  const dropdownOptions = document.querySelectorAll('.dropdown-option');
-const overlayModulo = document.getElementById('overlay-modulo');
-const overlayCurso = document.getElementById('overlay-curso');
-const cardsModulo = document.getElementById('cardsModulo');
-const cardsCurso = document.getElementById('cardsCurso');
-const fecharButtons = document.querySelectorAll('.fecharOverlay');
-
-
-  // Dados dos cards com ações específicas
-  const cardsData = {
-    dificuldade: [
-      {
-        img1: './img-wd/35.png',
-        titulo: 'Básico',
-        texto: 'Comece pelo essencial do Word.',
-        acao: () => window.location.href = 'index-word.html',
-      },
-      {
-        img1: './img-wd/36.png',
-        titulo: 'Médio',
-        texto: 'Aprimore suas habilidades.',
-        acao: () => alert('Você escolheu o nível Intermediário!'),
-      },
-      {
-        img1: './img-wd/37.png',
-        titulo: 'Avançado',
-        texto: 'Torne-se um mestre no Word.',
-        acao: () => alert('Você escolheu o nível Avançado!'),
-      },
-    ],
-    curso: [
-      {
-        img1: './img/37.png',
-        titulo: 'Excel',
-        texto: 'Faça planilhas como um expert.',
-        acao: () => window.location.href = 'excel.html',
-      },
-      {
-        img1: './img/38.png',
-        titulo: 'PowerPoint',
-        texto: 'Crie apresentações incríveis.',
-        acao: () => window.location.href = 'index-powerpoint.html',
-      },
-      {
-        img1: './img/39.png',
-        titulo: 'Word',
-        texto: 'Domine a edição de texto.',
-        acao: () => window.location.href = 'index-word.html',
-      },
-    ]
-  };
-
-  // Alternar menu dropdown
-  btnWord.addEventListener('click', () => {
-    menuWord.classList.toggle('mostrar');
-    overlay.classList.add('escondido'); // sempre esconde cards ao abrir menu
-  });
-
-  // Mostrar cards da opção clicada
-dropdownOptions.forEach(opcao => {
-  opcao.addEventListener('click', () => {
-    const tipo = opcao.getAttribute('data-opcao');
-    const cards = cardsData[tipo];
-
-    if (tipo === 'dificuldade') {
-      cardsModulo.innerHTML = '';
-      cards.forEach(card => {
-        const div = document.createElement('div');
-        div.className = 'card-opcao card-modulo';
-        div.innerHTML = `
-          <img src="${card.img1}" alt="Imagem" class="img-topo" />
-          <h3>${card.titulo}</h3>
-          <p>${card.texto}</p>
-          <button>Selecionar</button>
-        `;
-        div.querySelector('button').addEventListener('click', card.acao);
-        cardsModulo.appendChild(div);
-      });
-      overlayModulo.classList.remove('overlay-escondido');
-} else if (tipo === 'curso') {
-  cardsCurso.innerHTML = '';
-  cards.forEach((card, index) => {
-    const div = document.createElement('div');
-    div.className = `card-opcao card-curso card-curso-${index + 1}`;
-    div.innerHTML = `
-      <img src="${card.img1}" alt="Imagem" class="img-topo" />
-      <h3>${card.titulo}</h3>
-      <p>${card.texto}</p>
-      <button>Selecionar</button>
-    `;
-    div.querySelector('button').addEventListener('click', card.acao);
-    cardsCurso.appendChild(div);
-  });
-  overlayCurso.classList.remove('overlay-escondido');
-}
-
-
-    menuWord.classList.remove('mostrar');
-  });
-});
-
-
-  // Fechar overlay
-fecharButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    overlayModulo.classList.add('overlay-escondido');
-    overlayCurso.classList.add('overlay-escondido');
-  });
-});
-
-</script>
-
 
 </body>
 </html>

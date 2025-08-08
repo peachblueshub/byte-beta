@@ -266,3 +266,148 @@ updatePlayerPosition();
     tileInfo.style.display = "block";
   }
 })();
+
+
+// Selecionar curso e módulo
+
+  const btnWord = document.getElementById('btnWord');
+  const menuWord = document.getElementById('menuWord');
+  const dropdownOptions = document.querySelectorAll('.dropdown-option');
+const overlayModulo = document.getElementById('overlay-modulo');
+const overlayCurso = document.getElementById('overlay-curso');
+const cardsModulo = document.getElementById('cardsModulo');
+const cardsCurso = document.getElementById('cardsCurso');
+const fecharButtons = document.querySelectorAll('.fecharOverlay');
+
+
+  // Dados dos cards com ações específicas
+  const cardsData = {
+    dificuldade: [
+      {
+        img1: './img-wd/35.png',
+        titulo: 'Básico',
+        texto: 'Comece pelo essencial do Word.',
+        acao: () => window.location.href = 'index-word.html',
+      },
+      {
+        img1: './img-wd/36.png',
+        titulo: 'Médio',
+        texto: 'Aprimore suas habilidades.',
+        acao: () => alert('Você escolheu o nível Intermediário!'),
+      },
+      {
+        img1: './img-wd/37.png',
+        titulo: 'Avançado',
+        texto: 'Torne-se um mestre no Word.',
+        acao: () => alert('Você escolheu o nível Avançado!'),
+      },
+    ],
+    curso: [
+      {
+        img1: './img/37.png',
+        titulo: 'Excel',
+        texto: 'Faça planilhas como um expert.',
+        acao: () => window.location.href = 'excel.html',
+      },
+      {
+        img1: './img/38.png',
+        titulo: 'PowerPoint',
+        texto: 'Crie apresentações incríveis.',
+        acao: () => window.location.href = 'index-powerpoint.html',
+      },
+      {
+        img1: './img/39.png',
+        titulo: 'Word',
+        texto: 'Domine a edição de texto.',
+        acao: () => window.location.href = 'index-word.html',
+      },
+    ]
+  };
+
+  // Alternar menu dropdown
+  btnWord.addEventListener('click', () => {
+    menuWord.classList.toggle('mostrar');
+    overlay.classList.add('escondido'); // sempre esconde cards ao abrir menu
+  });
+
+  // Mostrar cards da opção clicada
+dropdownOptions.forEach(opcao => {
+  opcao.addEventListener('click', () => {
+    const tipo = opcao.getAttribute('data-opcao');
+    const cards = cardsData[tipo];
+
+    if (tipo === 'dificuldade') {
+      cardsModulo.innerHTML = '';
+      cards.forEach(card => {
+        const div = document.createElement('div');
+        div.className = 'card-opcao card-modulo';
+        div.innerHTML = `
+          <img src="${card.img1}" alt="Imagem" class="img-topo" />
+          <h3>${card.titulo}</h3>
+          <p>${card.texto}</p>
+          <button>Selecionar</button>
+        `;
+        div.querySelector('button').addEventListener('click', card.acao);
+        cardsModulo.appendChild(div);
+      });
+      overlayModulo.classList.remove('overlay-escondido');
+} else if (tipo === 'curso') {
+  cardsCurso.innerHTML = '';
+  cards.forEach((card, index) => {
+    const div = document.createElement('div');
+    div.className = `card-opcao card-curso card-curso-${index + 1}`;
+    div.innerHTML = `
+      <img src="${card.img1}" alt="Imagem" class="img-topo" />
+      <h3>${card.titulo}</h3>
+      <p>${card.texto}</p>
+      <button>Selecionar</button>
+    `;
+    div.querySelector('button').addEventListener('click', card.acao);
+    cardsCurso.appendChild(div);
+  });
+  overlayCurso.classList.remove('overlay-escondido');
+}
+
+
+    menuWord.classList.remove('mostrar');
+  });
+});
+
+
+  // Fechar overlay
+fecharButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    overlayModulo.classList.add('overlay-escondido');
+    overlayCurso.classList.add('overlay-escondido');
+  });
+});
+
+
+
+//Dropdown Pontos
+const botaoPontuacao = document.getElementById("botaoPontuacao");
+const menuPontuacao = document.getElementById("menuPontuacao");
+
+botaoPontuacao.addEventListener("click", function (e) {
+  e.stopPropagation(); // Impede o clique de propagar para o document
+  menuPontuacao.classList.toggle("mostrar");
+
+  // Resetar transformações anteriores
+  menuPontuacao.style.transform = "translateX(0)";
+
+  // Verifica se está saindo da tela
+  const rect = menuPontuacao.getBoundingClientRect();
+  if (rect.right > window.innerWidth) {
+    menuPontuacao.style.transform = "translateX(-40%)";
+  }
+});
+
+// Fecha ao clicar fora do menu
+document.addEventListener("click", function (event) {
+  const isClickInside = botaoPontuacao.contains(event.target) || menuPontuacao.contains(event.target);
+
+  if (!isClickInside) {
+    menuPontuacao.classList.remove("mostrar");
+  }
+});
+
