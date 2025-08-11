@@ -6,6 +6,30 @@ const cols = 8;
 const tileWidth = 150;
 const tileHeight = 76;
 
+  function scaleGameArea() {
+    const gameArea = document.getElementById('gameArea');
+    const wrapper = document.querySelector('.gameWrapper');
+
+    const originalWidth = 1000;
+    const originalHeight = 700;
+
+    const availableWidth = window.innerWidth;
+    const availableHeight = window.innerHeight;
+
+    const scaleX = availableWidth / originalWidth;
+    const scaleY = availableHeight / originalHeight;
+
+    const scale = Math.min(scaleX, scaleY, 1); // Nunca maior que 1
+
+    gameArea.style.transform = `scale(${scale})`;
+
+    // Ajusta altura da wrapper para manter layout flex
+    wrapper.style.height = `${originalHeight * scale}px`;
+  }
+
+  window.addEventListener('resize', scaleGameArea);
+  window.addEventListener('load', scaleGameArea);
+
 // Geração de mapa
 const tileMap = [
   ['V', 'C', 'S', 'C', 'V', 'G', 'C', 'L'],

@@ -1,11 +1,8 @@
 body {
   margin: 0;
   background-color: #409bff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   font-family: "Barlow", sans-serif;
+  min-height: 100vh;
 }
 
 #navegacao-trilha {
@@ -68,10 +65,28 @@ body {
 
 /* mapa da área */
 
+.gameContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.gameWrapper {
+  width: 100%;
+  max-width: 1000px;
+  overflow: visible;
+  position: relative;
+}
+
+
 #gameArea {
   position: relative;
   width: 1000px;
-  height: 600px;
+  height: 700px;
+  transform-origin: top left;
 }
 
 .tile {
