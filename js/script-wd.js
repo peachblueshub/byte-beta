@@ -8,7 +8,7 @@ const tileHeight = 76;
 
 // Geração de mapa
 const tileMap = [
-  ['V', 'C', 'G', 'G', 'V', 'G', 'C', 'L'],
+  ['V', 'C', 'S', 'C', 'V', 'G', 'C', 'L'],
   ['C', 'V', 'G', 'G', 'G', 'G', 'S', 'L'],
   ['T', 'S', 'A', 'C', 'G', 'G', 'A', 'L'],
   ['V', 'P', 'P', 'P', 'P', 'P', 'R', 'L'],
