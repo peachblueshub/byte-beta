@@ -422,3 +422,29 @@ document.addEventListener("click", function (event) {
   }
 });
 
+//Dropdown Vidas
+const botaoVidas = document.getElementById("botaoVidas");
+const menuVidas = document.getElementById("menuVidas");
+
+botaoVidas.addEventListener("click", function (e) {
+  e.stopPropagation(); // Impede o clique de propagar para o document
+  menuVidas.classList.toggle("mostrar");
+
+  // Resetar transformações anteriores
+  menuVidas.style.transform = "translateX(0)";
+
+  // Verifica se está saindo da tela
+  const rect = menuVidas.getBoundingClientRect();
+  if (rect.right > window.innerWidth) {
+    menuVidas.style.transform = "translateX(-40%)";
+  }
+});
+
+// Fecha ao clicar fora do menu
+document.addEventListener("click", function (event) {
+  const isClickInside = botaoVidas.contains(event.target) || menuVidas.contains(event.target);
+
+  if (!isClickInside) {
+    menuVidas.classList.remove("mostrar");
+  }
+});
