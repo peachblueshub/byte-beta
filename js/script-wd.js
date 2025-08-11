@@ -8,11 +8,11 @@ const tileHeight = 76;
 
 // Geração de mapa
 const tileMap = [
-  ['V', 'C', 'G', 'P', 'V', 'G', 'C', 'L'],
-  ['C', 'V', 'G', 'P', 'P', 'P', 'S', 'L'],
-  ['T', 'S', 'A', 'C', 'G', 'P', 'A', 'L'],
-  ['P', 'P', 'P', 'P', 'P', 'P', 'R', 'L'],
-  ['V', 'G', 'R', 'G', 'G', 'G', 'G', 'L'],
+  ['V', 'C', 'G', 'G', 'V', 'G', 'C', 'L'],
+  ['C', 'V', 'G', 'G', 'G', 'G', 'S', 'L'],
+  ['T', 'S', 'A', 'C', 'G', 'G', 'A', 'L'],
+  ['V', 'P', 'P', 'P', 'P', 'P', 'R', 'L'],
+  ['G', 'G', 'R', 'G', 'G', 'G', 'G', 'L'],
   ['C', 'G', 'G', 'V', 'S', 'C', 'G', 'L'],
   ['S', 'G', 'R', 'G', 'T', 'R', 'V', 'L'],
   ['0', 'F', 'F', 'F', 'F', 'F', 'F', 'F']
@@ -33,7 +33,7 @@ const tileImages = {
 
 // Descrições personalizadas para tiles andáveis 'P'
 const tileDescriptionsP = {
-  "3_0": {
+  "1_3": {
     titulo: "Lição 01 - Básico: Introdução ao Word",
     texto: "Aqui começa a sua jornada! Descubra o que é o Microsoft Word.",
     link: "./licao-word-iniciante.html"
@@ -63,7 +63,7 @@ const tileDescriptionsP = {
     texto: "Use o corretor ortográfico e outras ferramentas de revisão.",
     link: "./revisao.html"
   },
-  "1_3": {
+  "0_4": {
     titulo: "Atalho de Teclado",
     texto: "Melhore sua produtividade com atalhos úteis.",
     link: "./atalhos.html"
@@ -170,12 +170,12 @@ updatePlayerPosition();
 
 const player = document.createElement("div");
 player.id = "player";
-player.style.backgroundImage = "url('./img-wd/25.png')";
+player.style.backgroundImage = "url('./img-wd/23.png')";
 gameArea.appendChild(player);
 
-let playerX = 3;
-let playerY = 0;
-let currentDirection = "down";
+let playerX = 1;
+let playerY = 3;
+let currentDirection = "left";
 
 function updatePlayerSprite(direction) {
   const sprites = {
@@ -255,7 +255,7 @@ updatePlayerPosition();
 
 // Exibir automaticamente a primeira descrição ao carregar a página
 (function showInitialTileInfo() {
-  const key = "3_0";
+  const key = "1_3";
   const desc = tileDescriptionsP[key];
   if (desc) {
     tileInfo.innerHTML = `
