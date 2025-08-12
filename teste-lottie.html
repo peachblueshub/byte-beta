@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gatinho Lottie</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #eef4f7;
+    }
+    #animacao-gatinho {
+      width: 500px;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+
+<div>
+  <div id="animacao-gatinho"></div>
+</div>
+
+<script>
+const animacao = lottie.loadAnimation({
+  container: document.getElementById('animacao-gatinho'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: 'teste-lottie.json'  // aqui aponta pro arquivo JSON que você criou
+});
+</script>
+
+</body>
+</html>
+
+
