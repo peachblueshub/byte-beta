@@ -1,3 +1,74 @@
+// Tela de carregamento
+
+const loadingText = document.getElementById("loading-text");
+const progressBar = document.getElementById("progress-bar");
+const loadingScreen = document.getElementById("loading-screen");
+
+let totalRecursos = 0;
+let carregados = 0;
+
+function contarRecursos() {
+  const imgs = Array.from(document.images);
+  const links = Array.from(document.querySelectorAll('link[rel="stylesheet"]'));
+  const scripts = Array.from(document.querySelectorAll('script[src]'));
+
+  const todos = [...imgs, ...links, ...scripts];
+
+  // Conta apenas os que ainda não carregaram
+  totalRecursos = todos.length;
+  if (totalRecursos === 0) totalRecursos = 1;
+
+  todos.forEach(recurso => {
+    if (recurso.tagName === "IMG") {
+      if (recurso.complete) {
+        recursoCarregado();
+      } else {
+        recurso.addEventListener("load", recursoCarregado);
+        recurso.addEventListener("error", recursoCarregado);
+      }
+    }
+    else if (recurso.tagName === "LINK") {
+      if (recurso.sheet) {
+        recursoCarregado();
+      } else {
+        recurso.addEventListener("load", recursoCarregado);
+        recurso.addEventListener("error", recursoCarregado);
+      }
+    }
+    else if (recurso.tagName === "SCRIPT") {
+      if (recurso.readyState === "complete") {
+        recursoCarregado();
+      } else {
+        recurso.addEventListener("load", recursoCarregado);
+        recurso.addEventListener("error", recursoCarregado);
+      }
+    }
+  });
+}
+
+function recursoCarregado() {
+  carregados++;
+  let progresso = Math.round((carregados / totalRecursos) * 100);
+  if (progresso > 100) progresso = 100;
+  progressBar.style.width = progresso + "%";
+  loadingText.textContent = `Carregando... ${progresso}%`;
+
+  if (progresso >= 100) {
+    setTimeout(() => {
+      loadingScreen.classList.add("slide-up");
+      setTimeout(() => {
+        loadingScreen.style.display = "none";
+      }, 800);
+    }, 300);
+  }
+}
+
+// Inicia contagem
+contarRecursos();
+
+
+// Estrutura do mapa
+
 const gameArea = document.getElementById("gameArea");
 const tileInfo = document.getElementById("tileInfo");
 

@@ -1,0 +1,76 @@
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+    <meta charset="UTF-8">
+    <title>Lição - Formatações</title>
+    <link rel="stylesheet" href="./css/style-01-licao-02-word-basico.css">
+    <link rel="stylesheet" href="./css/loading.css">
+<script src="./js/loading.js" defer></script>
+    <!-- Ícones Google -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+
+<!-- Carregamento -->
+
+<div id="loading-screen">
+  <img src="./img-wd/byte.gif" alt="Carregando..." />
+  <p id="loading-text">Carregando... 0%</p>
+  <div id="loading-bar-container">
+    <div id="loading-bar"></div>
+  </div>
+</div>
+
+
+    <!-- Painel superior direito com pontos, vidas e barra de progresso -->
+<section id="top-bar" aria-label="Painel superior com pontos, vidas e progresso">
+
+  <section id="progress-bar-container" aria-label="Barra de progresso do usuário" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <div id="progress-bar"></div>
+  </section>
+
+  <section id="status-container" aria-label="Status do usuário com pontos e vidas">
+    <section class="status-item" role="region" aria-label="Pontos do usuário">
+      <span class="material-icons" aria-hidden="true">pets</span>
+      <span id="score" aria-live="polite" aria-atomic="true">10</span>
+    </section>
+
+    <section class="status-item" role="region" aria-label="Vidas restantes">
+      <span class="material-icons" aria-hidden="true">favorite</span>
+      <span id="lives" aria-live="polite" aria-atomic="true">7</span>
+    </section>
+  </section>
+
+</section>
+
+
+
+
+
+    <!-- Jogo -->
+
+    <div id="game-container" role="main">
+
+    <div id="message" aria-live="polite"></div>
+
+    <div id="columns">
+    <div class="column" id="icons" role="list" aria-label="Ícones de formatação">
+    <button class="option" data-pair="bold" role="listitem" aria-pressed="false"><b>B</b></button>
+    <button class="option" data-pair="italic" role="listitem" aria-pressed="false"><i>I</i></button>
+    <button class="option" data-pair="underline" role="listitem" aria-pressed="false"><u>S</u></button>
+    <button class="option" data-pair="strike" role="listitem" aria-pressed="false"><s>ABC</s></button>
+    </div>
+
+    <div class="column" id="descriptions" role="list" aria-label="Descrições das formatações">
+    <button class="option" data-pair="strike" role="listitem" aria-pressed="false">Tachado – Adiciona uma linha sobre o texto</button>
+    <button class="option" data-pair="italic" role="listitem" aria-pressed="false">Itálico – Inclina levemente o texto</button>
+    <button class="option" data-pair="bold" role="listitem" aria-pressed="false">Negrito – Deixa o texto mais escuro e destacado</button>
+    <button class="option" data-pair="underline" role="listitem" aria-pressed="false">Sublinhado – Adiciona uma linha abaixo do texto</button>
+    </div>
+    </div>
+    </div>
+
+
+    <script src="./js/script-01-licao-02-word-basico.js"></script>
+    </body>
+    </html>

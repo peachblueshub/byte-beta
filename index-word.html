@@ -12,6 +12,16 @@
 </head>
 <body>
 
+<!-- Tela de carregamento -->
+<div id="loading-screen">
+  <img src="./img-wd/byte.gif" alt="Carregando..." />
+  <p id="loading-text">Carregando... 0%</p>
+  <div id="progress-bar-container">
+    <div id="progress-bar"></div>
+  </div>
+</div>
+
+
   <!-- Menu lateral -->
   <nav id="navegacao-trilha" aria-label="Navegação lateral">
     <p class="boasvindas-usuario">Usuário</p>
@@ -32,7 +42,7 @@
     <span id="valorVidas">0</span>
   </button>
   <div class="dropdown-menu" id="menuVidas">
-    <!-- <p><strong>Ronrons</strong></p> -->
+    <p><strong>Vidas</strong></p>
     <p>Você ainda tem vidas. Continue aprendendo!</p>
   </div>
 </div>
@@ -44,7 +54,7 @@
     <span id="valorPontuacao">0</span>
   </button>
   <div class="dropdown-menu" id="menuPontuacao">
-    <!-- <p><strong>Ronrons</strong></p> -->
+      <p><strong>Ronrons</strong></p>
     <p><strong>Ronrons são os pontos</strong> do Byte. Você ganha Ronrons ao completar lições e, com eles, pode desbloquear itens especiais.</p>
   </div>
 </div>
