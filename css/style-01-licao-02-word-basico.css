@@ -143,6 +143,6 @@ body {
 .option.error-shake {
   animation: shake 0.5s;
   background-color: #ff4b4b !important;
-  border: 2px solid #141414; !important;
+  border: 2px solid #141414 !important;
   color: white !important;
 }
