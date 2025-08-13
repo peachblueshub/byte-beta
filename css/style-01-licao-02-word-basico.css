@@ -1,74 +1,37 @@
 body {
-  font-family: Arial, sans-serif;
   background: #FFFBEE;
   margin: 0;
   padding: 0;
+  font-family: "Barlow", sans-serif;
+  min-height: 100vh;
 }
-/* menus lateral */
 
-
-/* navegação trilha */
-#navegacao-trilha {
+/* Topo */
+#topo-interface {
   position: fixed;
   top: 30px;
-  right: 50px;
+  left: 0;
+  width: 100%;
+  height: 40px;
   display: flex;
-  flex-direction: row; /* Horizontal */
-  align-items: center; /* Alinhamento vertical central */
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 50px;
+  z-index: 1000;
+}
+
+/* Navegação trilha */
+#navegacao-trilha {
+  display: flex;
+  align-items: center;
   gap: 12px;
-  z-index: 15;
+  padding: 0 20px;
 }
 
-.boasvindas-usuario {
-  color: #FFFBEE;
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.botao-trilha {
-  background-color: #FFFBEE;
-  border: 2px solid #141414;
-  padding: 10px 18px;
-  font-family: "Barlow", sans-serif;
-  font-size: 1.1rem;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #141414;
-  text-align: center;
-  font-weight: 400;
-  transition: box-shadow 0.1s;
-}
-
-
-#botaoSair.botao-trilha {
-  background-color: #FFFFFF00;
-  border: none;
-  color: #FFFBEE;
-  filter: none;
-  font-weight: 600;
-}
-
-.botao-trilha:hover {
-  transform: translateY(0px); /* move para baixo */
-  box-shadow: 0px 5px 0px #141414 /* aumenta a sombra */
-}
-
-.botao-trilha.ativo {
-  background-color: #FFFBEE;
-  color: #409bff;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.botao-trilha.ativo:hover {
-  background-color: #409bff;
-  color: #FFFBEE; 
-}
-
-
-/* Dropdown menu */
-.dropdown {
+/* Dropdown */
+.dropdown,
+.pontuacao-dropdown,
+.vidas-dropdown {
   position: relative;
 }
 
@@ -94,7 +57,6 @@ body {
   background: none;
   border: none;
   padding: 10px 20px;
-  font-family: "Barlow", sans-serif;
   font-size: 1rem;
   text-align: left;
   cursor: pointer;
@@ -102,41 +64,70 @@ body {
 }
 
 .dropdown-option:hover {
-  /* background-color: #BABABA; */
   font-weight: 700;
 }
 
-/* Dropdown Pontos */
-
-.pontuacao-dropdown {
-  position: relative;
-}
-
-.pontuacao-dropdown button {
+/* Botões de topo */
+.pontuacao-dropdown button,
+.vidas-dropdown button,
+.botao-trilha {
+  min-width: 100px;
+  height: 40px;
+  padding: 0 16px;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
-  color: #FFB031;
-    cursor: pointer;
+  font-size: 1rem;
+  font-family: "Barlow", sans-serif;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  background-color: #FFFBEE;
+  border: 2px solid #141414;
+  color: #141414;
+  transition: background-color;
 }
 
+.pontuacao-dropdown button:hover {
+  background: #FFB031;
+  color: #FFFBEE;
+}
+
+.vidas-dropdown button:hover {
+  background: #FF4043;
+  color: #FFFBEE;
+}
+
+.botao-trilha:hover {
+  background-color: #BABABA;
+  filter: drop-shadow(0px 5px #141414);
+}
+
+.botao-trilha.ativo {
+  background-color: #409BFF;
+  color: #FFFBEE;
+  font-weight: 700;
+}
+
+#botaoSair.botao-trilha {
+  font-weight: 600;
+}
+
+/* Valores */
 #valorPontuacao {
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #FFB031;
-
 }
 
-.pontuacao-dropdown button:hover{
-  background:#FFB031;
-  color:#FFFBEE;
+#valorVidas {
+  font-weight: 700;
+  color: #FF4043;
 }
 
-.botao-trilha:hover #valorPontuacao {
-  background-color: #ffb031;
-  color: #FFFBEE; 
-}
-
+/* Menu pontuação */
 #menuPontuacao {
   position: absolute;
   top: 110%;
@@ -149,7 +140,7 @@ body {
   flex-direction: column;
   z-index: 100;
   width: 280px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #141414;
 }
 
@@ -161,82 +152,18 @@ body {
   margin-bottom: 8px;
 }
 
-
-/* Dropdown Vidas */
-
-.vidas-dropdown {
-  position: relative;
-}
-
-.vidas-dropdown button {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #FF4043;
-    cursor: pointer;
-}
-
-#valorVidas {
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: #FF4043;
-
-}
-
-.vidas-dropdown button:hover{
-  background:#FF4043;
-  color:#FFFBEE;
-}
-
-.botao-trilha:hover #valorVidas {
-  background-color: #FF4043;
-  color: #FFFBEE; 
-}
-
-#menuVidas {
-  position: absolute;
-  top: 110%;
-  right: 0;
-  background-color: #FFFBEE;
-  border: 2px solid #141414;
-  border-radius: 10px;
-  padding: 12px 16px;
-  display: none;
-  flex-direction: column;
-  z-index: 100;
-  width: 280px;
-  font-size: 0.95rem;
-  color: #141414;
-}
-
-#menuVidas.mostrar {
-  display: flex;
-}
-
-#menuVidas p {
-  margin-bottom: 8px;
-}
-
-
-
-
-
-
-
-/* barra de progresso */
-
+/* Barra de progresso */
 .barra-progresso-container {
-  position: fixed;
-  top: 0;
+  position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 50%;
+  width: 40%;
+  max-width: 500px;
   height: 24px;
   background-color: #D9D9D9;
   border: 2px solid #141414;
   border-radius: 30px;
   overflow: hidden;
-  z-index: 1000;
 }
 
 .barra-progresso {
@@ -245,59 +172,7 @@ body {
   transition: width 0.4s ease;
 }
 
-/* menu lição */
-
-#navegacao-trilha {
-  position: fixed;
-  top: 30px;
-  right: 50px;
-  display: flex;
-  flex-direction: row; /* Horizontal */
-  align-items: center; /* Alinhamento vertical central */
-  gap: 12px;
-  z-index: 15;
-}
-
-.boasvindas-usuario {
-  color: #141414;
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.botao-trilha {
-  background-color: #FFFBEE;
-  border: 2px solid #141414;
-  padding: 10px 18px;
-  font-family: "Barlow", sans-serif;
-  font-size: 1.1rem;
-  border-radius: 10px;
-  /* cursor: pointer; */
-  text-decoration: none;
-  color: #141414;
-  text-align: center;
-  transition: background-color;
-}
-
-.botao-trilha:hover {
-  background-color: #BABABA;
-    filter: drop-shadow(0px 5px #141414);
-}
-
-.botao-trilha.ativo {
-  background-color: #409BFF;
-  color: #FFFBEE;
-  font-weight: 700;
-}
-
-
-/* Ícones */
-.material-icons {
-  font-size: 24px;
-  line-height: 24px;
-}
-
-/* Mensagem */
+/* Mensagens e layout do jogo */
 #message {
   height: 20px;
   font-weight: bold;
@@ -305,14 +180,12 @@ body {
   text-align: center;
 }
 
-/* Container do jogo */
 #game-container {
   max-width: 700px;
   margin: 80px auto 40px;
   text-align: center;
 }
 
-/* Layout de colunas */
 #columns {
   display: flex;
   justify-content: space-around;
@@ -325,7 +198,7 @@ body {
   gap: 10px;
 }
 
-/* Botões */
+/* Botões de opções */
 .option {
   padding: 10px;
   font-size: 16px;
@@ -348,26 +221,27 @@ body {
   pointer-events: none;
 }
 
-/* Selecionado */
 .option.selected {
   background: #cde4ff;
   border-color: #2196f3;
 }
 
-/* Animação de shake para erro */
+/* Animação de erro */
 @keyframes shake {
-  0% { transform: translateX(0); }
-  20% { transform: translateX(-5px); }
-  40% { transform: translateX(5px); }
-  60% { transform: translateX(-5px); }
-  80% { transform: translateX(5px); }
-  100% { transform: translateX(0); }
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
 }
 
-/* Classe para erro */
 .option.error-shake {
   animation: shake 0.5s;
   background-color: #ff4b4b !important;
   border: 2px solid #141414 !important;
   color: white !important;
+}
+
+/* Ícones */
+.material-icons {
+  font-size: 24px;
+  line-height: 24px;
 }

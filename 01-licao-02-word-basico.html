@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>Lição - Formatações</title>
     <link rel="stylesheet" href="./css/style-01-licao-02-word-basico.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Bebas+Neue&family=Boldonse&family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./css/loading.css">
 <script src="./js/loading.js" defer></script>
     <!-- Ícones Google -->
@@ -14,59 +19,49 @@
 <!-- Carregamento -->
 
 <div id="loading-screen">
-<img src="./img-wd/byte.gif" alt="Carregando..." />
+<img src="./img/30.png" alt="Carregando..." />
 <p id="loading-text">Carregando... 0%</p>
 <div id="loading-bar-container">
 <div id="loading-bar"></div>
 </div>
 </div>
+<!-- Topo com barra + menu -->
+<div id="topo-interface">
+  
+  <!-- Barra de progresso -->
+  <section id="progress-bar-container" class="barra-progresso-container" aria-label="Progresso do usuário" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <section id="progress-bar" class="barra-progresso" style="width: 0%;"></section>
+  </section>
 
-<!-- Barra de Progresso -->
-<section id="progress-bar-container" class="barra-progresso-container" aria-label="Progresso do usuário" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-  <section id="progress-bar" class="barra-progresso" style="width: 0%;"></section>
-</section>
+  <!-- Menu lateral -->
+  <nav id="navegacao-trilha" aria-label="Navegação lateral">
+    <p class="boasvindas-usuario">Usuário</p>
 
-<!-- Menu lateral -->
-<nav id="navegacao-trilha" aria-label="Navegação lateral">
-  <p class="boasvindas-usuario">Usuário</p>
-
-  <!-- Botão Word -->
-  <div class="dropdown">
-    <button class="botao-trilha ativo" id="btnWord" title="Você está na trilha do Word">Word</button>
-    <div class="dropdown-menu" id="menuWord">
-      <button class="dropdown-option" data-opcao="dificuldade">Alterar módulo</button>
-      <button class="dropdown-option" data-opcao="curso">Alterar curso</button>
+    <div class="dropdown">
+      <button class="botao-trilha ativo" id="btnWord">Word</button>
+      <div class="dropdown-menu" id="menuWord">
+        <button class="dropdown-option" data-opcao="dificuldade">Alterar módulo</button>
+        <button class="dropdown-option" data-opcao="curso">Alterar curso</button>
+      </div>
     </div>
-  </div>
 
-  <!-- Vidas -->
-  <div class="vidas-dropdown">
-    <button class="botao-trilha" id="botaoVidas" title="Clique para ver mais">
-      <span class="material-icons">favorite</span>
-      <span id="valorVidas">0</span>
-    </button>
-    <div class="dropdown-menu" id="menuVidas">
-      <p><strong>Vidas</strong></p>
-      <p>Você ainda tem vidas. Continue aprendendo!</p>
+    <div class="vidas-dropdown">
+      <button class="botao-trilha" id="botaoVidas">
+        <span class="material-icons">favorite</span>
+        <span id="valorVidas">0</span>
+      </button>
     </div>
-  </div>
 
-  <!-- Pontuação -->
-  <div class="pontuacao-dropdown">
-    <button class="botao-trilha" id="botaoPontuacao" title="Clique para ver mais">
-      <span class="material-icons">pets</span>
-      <span id="valorPontuacao">0</span>
-    </button>
-    <div class="dropdown-menu" id="menuPontuacao">
-      <p><strong>Ronrons</strong></p>
-      <p><strong>Ronrons são os pontos</strong> do Byte...</p>
+    <div class="pontuacao-dropdown">
+      <button class="botao-trilha" id="botaoPontuacao">
+        <span class="material-icons">pets</span>
+        <span id="valorPontuacao">0</span>
+      </button>
     </div>
-  </div>
 
-  <a href="index.html" class="botao-trilha" id="botaoSair">Sair</a>
-</nav>
-
-
+    <a href="index-word.html" class="botao-trilha" id="botaoSair">Sair</a>
+  </nav>
+</div>
 
 
     <!-- Jogo -->
