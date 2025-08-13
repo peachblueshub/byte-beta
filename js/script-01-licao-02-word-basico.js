@@ -8,18 +8,19 @@ const cooldownKey = "cooldownUntil";
 let cooldownUntil = localStorage.getItem(cooldownKey);
 
 // // Checa se está no cooldown de 24h
-// if (cooldownUntil && Date.now() < cooldownUntil) {
-//   document.body.innerHTML = "<h1 style='text-align:center;margin-top:50px;'>Você perdeu todas as vidas! Volte em 24 horas para tentar novamente.</h1>";
-// } else {
-//   localStorage.removeItem(cooldownKey);
-// }
+if (cooldownUntil && Date.now() < cooldownUntil) {
+ document.body.innerHTML = "<h1 style='text-align:center;margin-top:50px;'>Você perdeu todas as vidas! Volte em 24 horas para tentar novamente.</h1>";
+ } else {
+   localStorage.removeItem(cooldownKey);
+ }
 
-// function shuffleArray(array) {
-//   for (let i = array.length - 1; i > 0; i--) {
-//     const j = Math.floor(Math.random() * (i + 1));
-//     [array[i], array[j]] = [array[j], array[i]];
-//   }
-// }
+ function shuffleArray(array) {
+   for (let i = array.length - 1; i > 0; i--) {
+     const j = Math.floor(Math.random() * (i + 1));
+     [array[i], array[j]] = [array[j], array[i]];
+   }
+ }
+
 
 function shuffleOptions() {
   // Ícones
@@ -38,8 +39,9 @@ function shuffleOptions() {
 function updateProgressBar() {
   let progress = (matchedPairs / totalPairs) * 100;
   const progressBar = document.getElementById("progress-bar");
-  progressBar.style.width = progress + "%";
-  // Atualiza aria-valuenow para acessibilidade
+  if (progressBar) {
+    progressBar.style.width = progress + "%";
+  }
   const container = document.getElementById("progress-bar-container");
   if (container) {
     container.setAttribute("aria-valuenow", progress.toFixed(0));
@@ -47,12 +49,13 @@ function updateProgressBar() {
 }
 
 function updateLives() {
-  document.getElementById("lives").textContent = lives;
+  document.getElementById("valorVidas").textContent = lives;
 }
 
 function updateScore() {
-  document.getElementById("score").textContent = score;
+  document.getElementById("valorPontuacao").textContent = score;
 }
+
 
 function showMessage(msg, type) {
   const message = document.getElementById("message");

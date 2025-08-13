@@ -4,67 +4,292 @@ body {
   margin: 0;
   padding: 0;
 }
-#top-bar {
+/* menus lateral */
+
+
+/* navegação trilha */
+#navegacao-trilha {
   position: fixed;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  max-width: 420px;
-  height: 40px;
-  margin: 0 auto;
-  background: #FFFBEE;
-  
-  border-radius: 15px;
+  top: 30px;
+  right: 50px;
   display: flex;
-  align-items: center;
-  justify-content: center; /* centraliza a barra no espaço disponível */
-  font-size: 18px;
-  z-index: 1000;
-  padding: 0 15px;
-  box-sizing: border-box;
-  gap: 20px;
+  flex-direction: row; /* Horizontal */
+  align-items: center; /* Alinhamento vertical central */
+  gap: 12px;
+  z-index: 15;
 }
 
-/* Barra de progresso */
-#progress-bar-container {
-  width: 250px;
-  height: 24px;
-  background: #e0e0e0;
+.boasvindas-usuario {
+  color: #FFFBEE;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.botao-trilha {
+  background-color: #FFFBEE;
   border: 2px solid #141414;
-  border-radius: 20px;
-  overflow: hidden;
-  flex-shrink: 0;
+  padding: 10px 18px;
+  font-family: "Barlow", sans-serif;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #141414;
+  text-align: center;
+  font-weight: 400;
+  transition: box-shadow 0.1s;
 }
 
-/* Barra verde */
-#progress-bar {
-  width: 0%;
-  height: 100%;
-  background: #409bff;
-  transition: width 0.4s ease;
+
+#botaoSair.botao-trilha {
+  background-color: #FFFFFF00;
+  border: none;
+  color: #FFFBEE;
+  filter: none;
+  font-weight: 600;
 }
 
-/* Container para pontos e vidas */
-#status-container {
+.botao-trilha:hover {
+  transform: translateY(0px); /* move para baixo */
+  box-shadow: 0px 5px 0px #141414 /* aumenta a sombra */
+}
+
+.botao-trilha.ativo {
+  background-color: #FFFBEE;
+  color: #409bff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.botao-trilha.ativo:hover {
+  background-color: #409bff;
+  color: #FFFBEE; 
+}
+
+
+/* Dropdown menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background-color: #FFFBEE;
+  border: 2px solid #141414;
+  border-radius: 10px;
+  padding: 8px 0;
+  display: none;
+  flex-direction: column;
+  z-index: 100;
+  width: max-content;
+}
+
+.dropdown-menu.mostrar {
   display: flex;
-  gap: 20px;
-  align-items: center;
-  margin-left: auto; /* empurra para extrema direita */
-  flex-shrink: 0;
 }
 
-/* Cada bloco de pontos ou vidas */
-.status-item {
+.dropdown-option {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  font-family: "Barlow", sans-serif;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  color: #141414;
+}
+
+.dropdown-option:hover {
+  /* background-color: #BABABA; */
+  font-weight: 700;
+}
+
+/* Dropdown Pontos */
+
+.pontuacao-dropdown {
+  position: relative;
+}
+
+.pontuacao-dropdown button {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-weight: bold;
-  height: 24px;
-  line-height: 24px;
-  min-width: 60px;
-  justify-content: center;
-  color: #ff9800;
+  color: #FFB031;
+    cursor: pointer;
 }
+
+#valorPontuacao {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #FFB031;
+
+}
+
+.pontuacao-dropdown button:hover{
+  background:#FFB031;
+  color:#FFFBEE;
+}
+
+.botao-trilha:hover #valorPontuacao {
+  background-color: #ffb031;
+  color: #FFFBEE; 
+}
+
+#menuPontuacao {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: #FFFBEE;
+  border: 2px solid #141414;
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: none;
+  flex-direction: column;
+  z-index: 100;
+  width: 280px;
+  font-size: 0.95rem;
+  color: #141414;
+}
+
+#menuPontuacao.mostrar {
+  display: flex;
+}
+
+#menuPontuacao p {
+  margin-bottom: 8px;
+}
+
+
+/* Dropdown Vidas */
+
+.vidas-dropdown {
+  position: relative;
+}
+
+.vidas-dropdown button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #FF4043;
+    cursor: pointer;
+}
+
+#valorVidas {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #FF4043;
+
+}
+
+.vidas-dropdown button:hover{
+  background:#FF4043;
+  color:#FFFBEE;
+}
+
+.botao-trilha:hover #valorVidas {
+  background-color: #FF4043;
+  color: #FFFBEE; 
+}
+
+#menuVidas {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: #FFFBEE;
+  border: 2px solid #141414;
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: none;
+  flex-direction: column;
+  z-index: 100;
+  width: 280px;
+  font-size: 0.95rem;
+  color: #141414;
+}
+
+#menuVidas.mostrar {
+  display: flex;
+}
+
+#menuVidas p {
+  margin-bottom: 8px;
+}
+
+
+
+
+
+
+
+/* barra de progresso */
+
+.barra-progresso-container {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 24px;
+  background-color: #D9D9D9;
+  border: 2px solid #141414;
+  border-radius: 30px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.barra-progresso {
+  height: 100%;
+  background-color: #409BFF;
+  transition: width 0.4s ease;
+}
+
+/* menu lição */
+
+#navegacao-trilha {
+  position: fixed;
+  top: 30px;
+  right: 50px;
+  display: flex;
+  flex-direction: row; /* Horizontal */
+  align-items: center; /* Alinhamento vertical central */
+  gap: 12px;
+  z-index: 15;
+}
+
+.boasvindas-usuario {
+  color: #141414;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.botao-trilha {
+  background-color: #FFFBEE;
+  border: 2px solid #141414;
+  padding: 10px 18px;
+  font-family: "Barlow", sans-serif;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  /* cursor: pointer; */
+  text-decoration: none;
+  color: #141414;
+  text-align: center;
+  transition: background-color;
+}
+
+.botao-trilha:hover {
+  background-color: #BABABA;
+    filter: drop-shadow(0px 5px #141414);
+}
+
+.botao-trilha.ativo {
+  background-color: #409BFF;
+  color: #FFFBEE;
+  font-weight: 700;
+}
+
 
 /* Ícones */
 .material-icons {
