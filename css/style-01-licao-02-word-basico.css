@@ -12,20 +12,22 @@ body {
   top: 30px;
   left: 0;
   width: 100%;
-  height: 40px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center; /* barra de progresso no centro */
   align-items: center;
-  padding-right: 50px;
+  padding: 0 20px;
   z-index: 1000;
 }
 
 /* Navegação trilha */
 #navegacao-trilha {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 0 20px;
+  gap: 14px;
 }
 
 /* Dropdown */
@@ -50,40 +52,30 @@ body {
 }
 
 /* Botões de topo */
+.botao-trilha,
 .pontuacao-dropdown button,
-.vidas-dropdown button,
-.botao-trilha {
-  min-width: 70px;
-  height: 40px;
-  padding: 0 16px;
-  box-sizing: border-box;
+.vidas-dropdown button {
+  min-width: 120px;
+  height: 38px;
+  padding: 0 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   font-size: 1rem;
   font-family: "Barlow", sans-serif;
-  border-radius: 10px;
-  text-decoration: none;
-  text-align: center;
-  background-color: #FFFBEE;
   border: 2px solid #141414;
+  background-color: #FFFBEE;
   color: #141414;
-  transition: background-color;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+  box-sizing: border-box;
 }
 
-.pontuacao-dropdown button:hover {
-  background: #FFB031;
-  color: #FFFBEE;
-}
-
+.botao-trilha:hover,
+.pontuacao-dropdown button:hover,
 .vidas-dropdown button:hover {
-  background: #FF4043;
-  color: #FFFBEE;
-}
-
-.botao-trilha:hover {
-  filter: drop-shadow(0px 5px #141414);
+  background-color: #BABABA;
 }
 
 .botao-trilha.ativo {
@@ -92,55 +84,29 @@ body {
   font-weight: 700;
 }
 
-#botaoSair.botao-trilha {
-  font-weight: 600;
+/* Cores diferenciadas para dropdowns especiais */
+.pontuacao-dropdown button:hover {
+  background-color: #FFB031;
+  color: #FFFBEE;
 }
 
-/* Valores */
-#valorPontuacao {
-  font-weight: 700;
-  font-size: 1rem;
-  color: #FFB031;
+.vidas-dropdown button:hover {
+  background-color: #FF4043;
+  color: #FFFBEE;
 }
 
-#valorVidas {
-  font-weight: 700;
-  color: #FF4043;
+/* Ícones uniformes */
+.material-icons {
+  font-size: 20px;
+  line-height: 20px;
 }
 
-/* Menu pontuação */
-#menuPontuacao {
-  position: absolute;
-  top: 110%;
-  right: 0;
-  background-color: #FFFBEE;
-  border: 2px solid #141414;
-  border-radius: 10px;
-  padding: 12px 16px;
-  display: none;
-  flex-direction: column;
-  z-index: 100;
-  width: 280px;
-  font-size: 1rem;
-  color: #141414;
-}
-
-#menuPontuacao.mostrar {
-  display: flex;
-}
-
-#menuPontuacao p {
-  margin-bottom: 8px;
-}
 
 /* Barra de progresso */
 .barra-progresso-container {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40%;
-  max-width: 500px;
-  height: 24px;
+  width: 35%;
+  max-width: 420px;
+  height: 26px;
   background-color: #D9D9D9;
   border: 2px solid #141414;
   border-radius: 30px;
