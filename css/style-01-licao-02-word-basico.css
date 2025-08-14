@@ -137,7 +137,7 @@ body {
   width: 100%;
   max-width: 600px;
   height: 26px;
-  background-color: #FFFBEE;
+  background-color: #BABABA88;
   border: 2px solid #141414;
   border-radius: 30px;
   overflow: hidden;
@@ -159,7 +159,7 @@ body {
 
 #game-container {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%); /* centraliza no meio */
   max-width: none; /* remove limite fixo */
@@ -169,14 +169,15 @@ body {
 
 #columns {
   display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
+  justify-content: center; /* centraliza as colunas */
+  gap: 20px; /* controla distância horizontal entre colunas */
+  margin-top: 10px; /* menos espaço acima */
 }
 
 .column {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px; /* menos espaço entre opções na vertical */
 }
 
 /* Botões de opções */
@@ -192,7 +193,7 @@ body {
 }
 
 .option:hover {
-  background: #BABABA;
+  background: #BABABA88;
 }
 
 .option.correct {
@@ -203,7 +204,7 @@ body {
 }
 
 .option.selected {
-  background: #BABABA;
+  background: #BABABA88;
   border-color: #141414;
 }
 
