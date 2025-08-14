@@ -133,10 +133,10 @@ const tileDescriptionsP = {
     texto: "Aqui começa a sua jornada! Descubra o que é o Microsoft Word.",
     link: "./licao-word-iniciante.html"
   },
-  "3_1": {
-    titulo: "Formatar Texto",
-    texto: "Aprenda a aplicar negrito, itálico e sublinhado.",
-    link: "./formatar-texto.html"
+  "2_3": {
+    titulo: "Lição 02 - Básico: Formatar Texto",
+    texto: "Aprenda a aplicar negrito, itálico, sublinhado e tachado.",
+    link: "./01-licao-02-word-basico.html"
   },
   "4_1": {
     titulo: "Inserir Imagens",
