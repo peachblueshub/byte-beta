@@ -1,0 +1,73 @@
+body {
+  font-family: "Barlow", sans-serif;
+  background: #FFFBEE;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.lesson-container {
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 550px;
+  width: 90%;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 28px;
+  color: #409BFF;
+  margin-bottom: 25px;
+}
+
+.enunciado p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #141414;
+}
+
+.opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.option {
+  padding: 12px;
+  border: 2px solid #141414;
+  border-radius: 15px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.option:hover {
+  background: #BABABA88;
+  color: #141414;
+}
+
+.option:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+#feedback {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.confetti {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  pointer-events: none; /* não bloqueia cliques */
+  z-index: 9999;
+}

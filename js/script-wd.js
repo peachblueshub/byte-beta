@@ -138,10 +138,10 @@ const tileDescriptionsP = {
     texto: "Aprenda a aplicar negrito, itálico, sublinhado e tachado.",
     link: "./01-licao-02-word-basico.html"
   },
-  "4_1": {
-    titulo: "Inserir Imagens",
-    texto: "Veja como adicionar e posicionar imagens em seu documento.",
-    link: "./inserir-imagens.html"
+  "3_3": {
+    titulo: "Lição 03 - Básico: Resolva um Problema",
+    texto: "Maria precisa destacar o seu documento. Ajude-a nessa tarefa.",
+    link: "./01-licao-03-word-basico.html"
   },
   "5_1": {
     titulo: "Cabeçalho e Rodapé",
