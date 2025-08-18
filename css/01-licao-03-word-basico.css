@@ -7,7 +7,153 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+    overflow: hidden;
 }
+
+
+/* Topo */
+#topo-interface {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* barra de progresso no centro */
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+/* Navegação trilha */
+#navegacao-trilha {
+  position: fixed; /* fixa na tela, não depende do container */
+  right: 20px;
+  top: 05%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: nowrap; /* evita quebrar linha */
+  max-width: calc(100% - 40px); /* impede de passar da tela */
+}
+
+/* Dropdown */
+.dropdown,
+.pontuacao-dropdown,
+.vidas-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  z-index: 100;
+  width: max-content;
+}
+
+/* Botões de topo */
+.botao-trilha,
+.pontuacao-dropdown button,
+.vidas-dropdown button {
+  width: 80px; /* largura fixa */
+  height: 45px; /* altura fixa */
+  padding: 10px 18px; /* espaçamento interno */
+  display: flex;
+  flex-direction: row; /* ícone e número lado a lado */
+  align-items: center;
+  justify-content: center;
+  gap: 6px; /* espaço entre ícone e número */
+  font-size: 1.1rem;
+  font-family: "Barlow", sans-serif;
+  border: 2px solid #141414;
+  background-color: #FFFBEE;
+  color: #141414;
+  border-radius: 10px;
+  box-sizing: border-box;
+  transition: box-shadow 0.1s;
+  text-align: center;
+} 
+
+.boasvindas-usuario{
+  font-weight: 600;
+}
+
+.botao-trilha .material-icons,
+.pontuacao-dropdown button .material-icons,
+.vidas-dropdown button .material-icons {
+  font-size: 20px; /* tamanho do ícone */
+  line-height: 1;
+}
+
+.botao-trilha.ativo {
+  background-color: #409BFF;
+  color: #FFFBEE;
+  font-weight: 800;
+}
+
+.botao-trilha.ativo:hover {
+  transform: translateY(0px); /* move para baixo */
+  box-shadow: 0px 5px 0px #141414 /* aumenta a sombra */
+}
+
+/* Cores diferenciadas para dropdowns especiais */
+.pontuacao-dropdown button{
+  color: #FFB031;
+  font-weight: 800;
+}
+
+.pontuacao-dropdown button:hover {
+  background-color: #FFB031;
+  color: #FFFBEE;
+  transform: translateY(0px); /* move para baixo */
+  box-shadow: 0px 5px 0px #141414 /* aumenta a sombra */
+}
+
+.vidas-dropdown button{
+  color: #FF4043;
+  font-weight: 800;
+}
+
+.vidas-dropdown button:hover {
+  background-color: #FF4043;
+  color: #FFFBEE;
+  transform: translateY(0px); /* move para baixo */
+  box-shadow: 0px 5px 0px #141414 /* aumenta a sombra */
+}
+
+#botaoSair {
+  border: 0;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Ícones uniformes */
+.material-icons {
+  font-size: 0.9rem;
+  line-height: 20px;
+}
+
+/* Barra de progresso */
+.barra-progresso-container {
+  width: 100%;
+  max-width: 600px;
+  height: 26px;
+  background-color: #BABABA88;
+  border: 2px solid #141414;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.barra-progresso {
+  height: 100%;
+  background-color: #409BFF;
+  transition: width 0.4s ease;
+}
+
+/* Jogo */
 
 .lesson-container {
   padding: 30px;

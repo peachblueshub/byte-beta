@@ -29,6 +29,48 @@
 </div>
 </div>
 
+
+<!-- Topo com barra + menu -->
+<div id="topo-interface">
+  
+  <!-- Barra de progresso -->
+  <section id="progress-bar-container" class="barra-progresso-container" aria-label="Progresso do usuário" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <section id="progress-bar" class="barra-progresso" style="width: 0%;"></section>
+  </section>
+
+  <!-- Menu lateral -->
+  <nav id="navegacao-trilha" aria-label="Navegação lateral">
+    <p class="boasvindas-usuario">Usuário</p>
+
+    <div class="dropdown">
+      <button class="botao-trilha ativo" id="btnWord">Word</button>
+      <div class="dropdown-menu" id="menuWord">
+        <button class="dropdown-option" data-opcao="dificuldade">Alterar módulo</button>
+        <button class="dropdown-option" data-opcao="curso">Alterar curso</button>
+      </div>
+    </div>
+
+    <div class="vidas-dropdown">
+      <button class="botao-trilha" id="botaoVidas">
+        <span class="material-icons">favorite</span>
+        <span id="valorVidas">0</span>
+      </button>
+    </div>
+
+    <div class="pontuacao-dropdown">
+      <button class="botao-trilha" id="botaoPontuacao">
+        <span class="material-icons">pets</span>
+        <span id="valorPontuacao">0</span>
+      </button>
+    </div>
+
+    <a href="index-word.html" class="botao-trilha" id="botaoSair">Sair</a>
+  </nav>
+</div>
+
+
+<!-- Jogo -->
+
   <main class="lesson-container">
     <header>
     <h1>Destacando um Texto</h1>
