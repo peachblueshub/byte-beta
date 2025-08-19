@@ -72,15 +72,24 @@
 <!-- Jogo -->
 
   <main class="lesson-container">
+
+<section class="lesson-top">
+  <section class="lesson-img">
+    <img src="./img/31.png" alt="Ilustração" />
+  </section>
+  <section class="lesson-text">
+
     <header>
     <h1>Destacando um Texto</h1>
     </header>
 
     <section class="enunciado">
       <p>
-        Maria está escrevendo um relatório e quer <strong>destacar uma palavra ou frase importante</strong> para chamar atenção do leitor. Qual é a formatação que ela deve usar?
+      O Byte está escrevendo um relatório e quer <strong>destacar uma palavra ou frase importante</strong> para chamar atenção do leitor. Qual é a formatação que ele deve usar?
       </p>
     </section>
+  </section>
+  </section>
 
     <section class="opcoes" role="list" aria-label="Alternativas da pergunta">
       <button class="option" data-correct="false" role="listitem">Sublinhado</button>
@@ -88,11 +97,13 @@
       <button class="option" data-correct="false" role="listitem">Itálico</button>
     </section>
 
-    <figure class="confetti">
-      <div id="lottie-confetti" aria-label="Animação de confete"></div>
-    </figure>
-
     <section id="feedback" aria-live="polite"></section>
+
+<!-- Botão Finalizar (inicialmente escondido) -->
+<div id="finalizar-container" style="display:none; margin-top:20px;">
+  <a href="fim-modulo.html" id="btnFinalizar">Finalizar Lição</a>
+</div>
+
   </main>
 
   <script src="./js/01-licao-03-word-basico.js"></script>

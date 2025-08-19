@@ -14,35 +14,46 @@
 <body>
 
 
-  <!-- TOPO FIXO COM MENU + BARRA DE PROGRESSO -->
-<div class="topo-interface">
-  <!-- Menu -->
+
+<!-- Topo com barra + menu -->
+<div id="topo-interface">
+  
+  <!-- Barra de progresso -->
+  <section id="progress-bar-container" class="barra-progresso-container" aria-label="Progresso do usuário" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <section id="progress-bar" class="barra-progresso" style="width: 100%;"></section>
+  </section>
+
+  <!-- Menu lateral -->
   <nav id="navegacao-trilha" aria-label="Navegação lateral">
     <p class="boasvindas-usuario">Usuário</p>
-    <button class="botao-trilha ativo" title="Você está na trilha do Word">Word</button>
-    <a href="index-word.html" class="botao-trilha">Sair</a>
-  </nav>
 
-  <!-- Barra de Progresso -->
-  <section class="barra-progresso-container" aria-label="Progresso do usuário">
-    <section class="barra-progresso" id="progressoLicoes" style="width: 100%;"></section>
-  </section>
+    <div class="dropdown">
+      <button class="botao-trilha ativo" id="btnWord">Word</button>
+      <div class="dropdown-menu" id="menuWord">
+        <button class="dropdown-option" data-opcao="dificuldade">Alterar módulo</button>
+        <button class="dropdown-option" data-opcao="curso">Alterar curso</button>
+      </div>
+    </div>
+
+    <div class="vidas-dropdown">
+      <button class="botao-trilha" id="botaoVidas">
+        <span class="material-icons">favorite</span>
+        <span id="valorVidas">0</span>
+      </button>
+    </div>
+
+    <div class="pontuacao-dropdown">
+      <button class="botao-trilha" id="botaoPontuacao">
+        <span class="material-icons">pets</span>
+        <span id="valorPontuacao">0</span>
+      </button>
+    </div>
+
+    <a href="index-word.html" class="botao-trilha" id="botaoSair">Sair</a>
+  </nav>
 </div>
 
-    <!-- ----------------------- BARRA DE PROGRESSO -----------------------
-    
-  <div class="barra-progresso-container" aria-label="Progresso do usuário">
-    <div class="barra-progresso" id="progressoLicoes" style="width:100%;"></div>
-  </div>
 
-    <------------------------ MENU ------------------------------------>
-
-  <!-- <nav id="navegacao-trilha" aria-label="Navegação lateral">
-    <p class="boasvindas-usuario">Usuário</p>
-    <button class="botao-trilha ativo" title="Você está na trilha do Word">Word</button>
-    <a href="mapa-word.html" class="botao-trilha">Sair</a>
-  </nav> --> 
-<body>
 <main class="pagina-concluida">
 <section class="container-concluido">
 <figure>

@@ -3,11 +3,8 @@ body {
   background: #FFFBEE;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-    overflow: hidden;
+  height: 100%;
+  overflow: hidden;
 }
 
 
@@ -155,7 +152,47 @@ body {
 
 /* Jogo */
 
+.lesson-top {
+  display: flex;
+  align-items: center; /* centraliza verticalmente */
+  gap: 20px; /* espaço entre imagem e texto */
+  margin-bottom: 25px;
+  text-align: left; /* texto alinhado à esquerda */
+}
+
+.lesson-img {
+  flex: 0 0 110px; /* largura fixa para a imagem */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lesson-img img {
+  max-width: 100%;
+  height: auto;
+}
+
+.lesson-text {
+  flex: 1; /* ocupa o resto do espaço */
+}
+
+.lesson-text header h1 {
+  font-size: 28px;
+  color: #409BFF;
+  margin-bottom: 15px;
+  text-align: left;
+  font-weight: 800;
+}
+
+.lesson-text .enunciado p {
+  font-size: 18px;
+  color: #141414;
+  margin: 0;
+  text-align: justify;
+}
+
 .lesson-container {
+  margin: 100px auto 40px auto; /* centraliza horizontalmente */
   padding: 30px;
   border-radius: 20px;
   max-width: 550px;
@@ -200,6 +237,34 @@ header h1 {
   cursor: not-allowed;
   opacity: 0.6;
 }
+
+
+/* Alternativa correta destacada */
+.option.correct {
+  background-color: #4CAF50 !important; /* verde */
+  color: #fff !important;
+  border-color: #388E3C;
+}
+
+/* Botão de finalizar */
+#btnFinalizar {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #409BFF;
+  color: #FFFBEE;
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  border: 2px solid #141414;
+  transition: 0.3s;
+}
+
+#btnFinalizar:hover {
+  background-color: #3078cc;
+}
+
+
 
 #feedback {
   margin-top: 20px;

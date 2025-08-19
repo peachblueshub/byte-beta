@@ -115,6 +115,10 @@ body {
   color: #FFFBEE; 
 }
 
+#botaoSair:hover {
+ box-shadow: none;
+}
+
 /* mapa da área */
 
 .gameContainer {

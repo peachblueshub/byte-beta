@@ -140,7 +140,7 @@ const tileDescriptionsP = {
   },
   "3_3": {
     titulo: "Lição 03 - Básico: Resolva um Problema",
-    texto: "Maria precisa destacar o seu documento. Ajude-a nessa tarefa.",
+    texto: "O Byte precisa destacar o texto de um documento. Ajude-o nessa tarefa.",
     link: "./01-licao-03-word-basico.html"
   },
   "5_1": {
