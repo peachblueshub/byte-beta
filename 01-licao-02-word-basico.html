@@ -19,7 +19,7 @@
 <!-- Carregamento -->
 
 <div id="loading-screen">
-<img src="./img/30.png" alt="Carregando..." />
+<img src="./img/40.png" alt="Carregando..." />
 <p id="loading-text">Carregando... 0%</p>
 <div id="loading-bar-container">
 <div id="loading-bar"></div>
@@ -68,31 +68,36 @@
     <!-- Jogo -->
 
     <div id="game-container" role="main">
-
-  <div class="lesson-header">
-  <img src="./img/33.png" alt="Mascote da lição" class="lesson-image">
-  <h1 class="lesson-title">Selecione a formatação correta:</h1>
-  </div>
-
-    <div id="message" aria-live="polite"></div>
-
-    <div id="columns">
-    <div class="column" id="icons" role="list" aria-label="Ícones de formatação">
-    <button class="option" data-pair="bold" role="listitem" aria-pressed="false"><b>B</b></button>
-    <button class="option" data-pair="italic" role="listitem" aria-pressed="false"><i>I</i></button>
-    <button class="option" data-pair="underline" role="listitem" aria-pressed="false"><u>S</u></button>
-    <button class="option" data-pair="strike" role="listitem" aria-pressed="false"><s>ABC</s></button>
+    
+      <div class="lesson-header">
+        <img src="./img/33.png" alt="Mascote da lição" class="lesson-image">
+        <h1 class="lesson-title">Selecione a formatação correta:</h1>
+      </div>
+    
+      <div id="message" aria-live="polite"></div>
+    
+      <div id="columns">
+        <div class="column" id="icons" role="list" aria-label="Ícones de formatação">
+          <button class="option" data-pair="bold" role="listitem" aria-pressed="false"><b>B</b></button>
+          <button class="option" data-pair="italic" role="listitem" aria-pressed="false"><i>I</i></button>
+          <button class="option" data-pair="underline" role="listitem" aria-pressed="false"><u>S</u></button>
+          <button class="option" data-pair="strike" role="listitem" aria-pressed="false"><s>ABC</s></button>
+        </div>
+    
+        <div class="column" id="descriptions" role="list" aria-label="Descrições das formatações">
+          <button class="option" data-pair="strike" role="listitem" aria-pressed="false">Tachado</button>
+          <button class="option" data-pair="italic" role="listitem" aria-pressed="false">Itálico</button>
+          <button class="option" data-pair="bold" role="listitem" aria-pressed="false">Negrito</button>
+          <button class="option" data-pair="underline" role="listitem" aria-pressed="false">Sublinhado</button>
+        </div>
+      </div>
     </div>
 
-    <div class="column" id="descriptions" role="list" aria-label="Descrições das formatações">
-    <button class="option" data-pair="strike" role="listitem" aria-pressed="false">Tachado</button>
-    <button class="option" data-pair="italic" role="listitem" aria-pressed="false">Itálico</button>
-    <button class="option" data-pair="bold" role="listitem" aria-pressed="false">Negrito</button>
-    <button class="option" data-pair="underline" role="listitem" aria-pressed="false">Sublinhado</button>
-    </div>
-    </div>
+      <div id="finalizar-container" style="display: none; text-align: center; margin-top: 20px;">
+    <a href="fim-modulo.html" id="botaoFinalizar">Finalizar Lição</a>
     </div>
 
+  
 
     <script src="./js/script-01-licao-02-word-basico.js"></script>
     </body>

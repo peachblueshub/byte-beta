@@ -250,18 +250,19 @@ header h1 {
 #btnFinalizar {
   display: inline-block;
   padding: 12px 20px;
-  background-color: #409BFF;
+  background-color: #FFB031;
   color: #FFFBEE;
   font-weight: 700;
-  border-radius: 12px;
+  border-radius: 50px;
   text-decoration: none;
   font-size: 18px;
   border: 2px solid #141414;
-  transition: 0.3s;
+  transition: 0.1s;
 }
 
 #btnFinalizar:hover {
-  background-color: #3078cc;
+    transform: translateY(0px); /* move para baixo */
+  box-shadow: 0px 5px 0px #141414 /* aumenta a sombra */
 }
 
 
