@@ -1,0 +1,283 @@
+body {
+font-family: "Barlow", sans-serif;
+background: #FFFBEE;
+margin: 0;
+padding: 0;
+}
+
+    
+/* Topo */
+#topo-interface {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* barra de progresso no centro */
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+/* Navegação trilha */
+#navegacao-trilha {
+  position: fixed; /* fixa na tela, não depende do container */
+  right: 20px;
+  top: 05%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: nowrap; /* evita quebrar linha */
+  max-width: calc(100% - 40px); /* impede de passar da tela */
+}
+
+/* Dropdown */
+.dropdown,
+.pontuacao-dropdown,
+.vidas-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  z-index: 100;
+  width: max-content;
+}
+
+/* Botões de topo */
+.botao-trilha,
+.pontuacao-dropdown button,
+.vidas-dropdown button {
+  width: 80px; /* largura fixa */
+  height: 45px; /* altura fixa */
+  padding: 10px 18px; /* espaçamento interno */
+  display: flex;
+  flex-direction: row; /* ícone e número lado a lado */
+  align-items: center;
+  justify-content: center;
+  gap: 6px; /* espaço entre ícone e número */
+  font-size: 1.1rem;
+  font-family: "Barlow", sans-serif;
+  border: 2px solid #141414;
+  background-color: #FFFBEE;
+  color: #141414;
+  border-radius: 10px;
+  box-sizing: border-box;
+  transition: box-shadow 0.1s;
+  text-align: center;
+} 
+
+.boasvindas-usuario{
+  font-weight: 600;
+}
+
+.botao-trilha .material-icons,
+.pontuacao-dropdown button .material-icons,
+.vidas-dropdown button .material-icons {
+  font-size: 20px; /* tamanho do ícone */
+  line-height: 1;
+}
+
+.botao-trilha.ativo {
+  background-color: #409BFF;
+  color: #FFFBEE;
+  font-weight: 800;
+}
+
+.botao-trilha.ativo:hover {
+  transform: translateY(0px); /* move para baixo */
+  box-shadow: 0px 5px 0px #141414 /* aumenta a sombra */
+}
+
+/* Cores diferenciadas para dropdowns especiais */
+.pontuacao-dropdown button{
+  color: #FFB031;
+  font-weight: 800;
+}
+
+.pontuacao-dropdown button:hover {
+  background-color: #FFB031;
+  color: #FFFBEE;
+  transform: translateY(0px); /* move para baixo */
+  box-shadow: 0px 5px 0px #141414 /* aumenta a sombra */
+}
+
+.vidas-dropdown button{
+  color: #FF4043;
+  font-weight: 800;
+}
+
+.vidas-dropdown button:hover {
+  background-color: #FF4043;
+  color: #FFFBEE;
+  transform: translateY(0px); /* move para baixo */
+  box-shadow: 0px 5px 0px #141414 /* aumenta a sombra */
+}
+
+#botaoSair {
+  border: 0;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Ícones uniformes */
+.material-icons {
+  font-size: 0.9rem;
+  line-height: 20px;
+}
+
+/* Barra de progresso */
+.barra-progresso-container {
+  width: 100%;
+  max-width: 600px;
+  height: 26px;
+  background-color: #BABABA88;
+  border: 2px solid #141414;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.barra-progresso {
+  height: 100%;
+  background-color: #409BFF;
+  transition: width 0.4s ease;
+}
+
+
+/* Container centralizado */
+.container {
+  width: 600px;         /* mesma largura da barra de progresso */
+  margin: 150px auto 50px; /* centralizado horizontalmente */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* Balões de mensagem */
+.mensagem {
+  display: none;
+  width: 100%;           /* ocupa toda largura do container */
+  padding: 14px 16px;
+  margin: 10px 0;
+  border: 2px solid #141414;
+  border-radius: 20px;
+  box-shadow: 0 5px 0px #141414;
+  background: #fff;
+  animation: fadeIn 0.5s ease-in-out;
+  display: flex;         /* para alinhar avatar e texto */
+  align-items: center;
+  box-sizing: border-box;
+}
+
+
+/* Avatar dentro do balão */
+.mensagem img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+/* Texto dentro do balão */
+.mensagem p {
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+  flex: 1; /* ocupa espaço restante */
+  text-align: left;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #409BFF;
+}
+
+/* Alternativas */
+.alternativas {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  width: 100%;          /* mesmo tamanho do container */
+  margin-top: 10px;
+}
+
+.alternativas button {
+  width: 100%;           /* ocupa toda largura */
+  padding: 12px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  background: #f2f2f2;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.alternativas button:hover {
+  background: #ddd;
+}
+
+.alternativas button.correto {
+  background: #b6f2b0;
+}
+
+.alternativas button.errado {
+  background: #f5b0b0;
+  animation: shake 0.4s;
+}
+
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+    }
+
+    /* Barra de progresso */
+    .progress-container {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 20px;
+      background: #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: #4caf50;
+      transition: width 0.5s;
+    }
+
+    /* Botão finalizar */
+    #finalizarBtn {
+      display: none;
+      margin: 30px auto;
+      padding: 12px 20px;
+      background: #409bff;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #finalizarBtn:hover {
+      background: #3070c6;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
