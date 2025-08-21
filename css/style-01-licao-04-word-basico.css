@@ -207,11 +207,12 @@ padding: 0;
 
 /* Alternativas */
 .alternativas {
-    font-family: "Barlow", sans-serif;
+font-family: "Barlow", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
+
 }
 
 .alternativas button {
@@ -225,6 +226,7 @@ padding: 0;
   background: #B6B6B688;
   transition: 0.3s;
   text-align: center;
+    font-size: 1rem;
 }
 
 .alternativas button:hover {
@@ -233,10 +235,14 @@ padding: 0;
 
 .alternativas button.correto {
   background: #58cc02;
+  color: #141414;
+  font-weight: 600;
 }
 
 .alternativas button.errado {
   background: #ff4b4b;
+  color: #141414;
+  font-weight: 600;
   animation: shake 0.4s;
 }
 
