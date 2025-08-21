@@ -2,7 +2,7 @@
 function atualizarBarraProgresso(numeroLicaoAtual) {
   const totalLicoes = 3;
   const progresso = Math.min((numeroLicaoAtual / totalLicoes) * 100, 100);
-  document.getElementById("progressoLicoes").style.width = progresso + "%";
+  document.getElementById("progress-bar").style.width = progresso + "%";
 }
 
 // CUTSCENE
@@ -24,6 +24,7 @@ function irParaLicao(numero) {
   // mostra a lição correspondente
   document.getElementById('licao' + numero).classList.add('ativa');
 }
+
 let palavrasSelecionadas = {};
 
 function selecionar(botao, licao) {

@@ -1,11 +1,11 @@
-
 body {
-  font-family: "Barlow", sans-serif;
   background: #FFFBEE;
   margin: 0;
   padding: 0;
+  font-family: "Barlow", sans-serif;
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 
@@ -24,15 +24,15 @@ body {
 
 /* Navegação trilha */
 #navegacao-trilha {
-  position: fixed; /* fixa na tela, não depende do container */
+  position: fixed;
   right: 20px;
-  top: 05%;
-  transform: translateY(-50%);
+  top: 30px; /* fica alinhado ao topo, mesmo nível da barra */
   display: flex;
   align-items: center;
   gap: 14px;
-  flex-wrap: nowrap; /* evita quebrar linha */
-  max-width: calc(100% - 40px); /* impede de passar da tela */
+  flex-wrap: nowrap;
+  max-width: calc(100% - 40px);
+  z-index: 1001;
 }
 
 /* Dropdown */
@@ -153,11 +153,13 @@ body {
 
 /* container central */
 main {
+  margin-top: 120px;  /* espaço para a barra de progresso e o menu */
+  padding: 20px;
   max-width: 1000px;
   width: 100%;
-  padding: 60px 40px;
-  border-radius: 50px;
-  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
 }
 
 /* telas (cutscene e lições) */
