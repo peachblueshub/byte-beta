@@ -143,10 +143,10 @@ const tileDescriptionsP = {
     texto: "O Byte precisa destacar o texto de um documento. Ajude-o nessa tarefa.",
     link: "./01-licao-03-word-basico.html"
   },
-  "5_1": {
-    titulo: "Cabeçalho e Rodapé",
-    texto: "Entenda como configurar cabeçalhos e rodapés com praticidade.",
-    link: "./cabecalho-roda.html"
+  "4_3": {
+    titulo: "Lição 04 - Básico: Chat com o Byte",
+    texto: "Você tem uma nova mensagem! Faça um currículo junto com o Byte.",
+    link: "./01-licao-04-word-basico.html"
   },
   "5_2": {
     titulo: "Salvar e Compartilhar",

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Lição - Formatar Currículo</title>
-      <link rel="stylesheet" href="./css/style-01-licao-04-word-basico.css">
+  <link rel="stylesheet" href="./css/style-01-licao-04-word-basico.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Bebas+Neue&family=Boldonse&family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
@@ -13,30 +13,24 @@
 <script src="./js/loading.js" defer></script>
     <!-- Ícones Google -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body>
-
-    
+    </head>
+    <body>
 
 <!-- Carregamento -->
-
 <div id="loading-screen">
-<img src="./img/40.png" alt="Carregando..." />
-<p id="loading-text">Carregando... 0%</p>
-<div id="loading-bar-container">
-<div id="loading-bar"></div>
-</div>
+  <img src="./img/40.png" alt="Carregando..." />
+  <p id="loading-text">Carregando... 0%</p>
+  <div id="loading-bar-container">
+    <div id="loading-bar"></div>
+  </div>
 </div>
 
 <!-- Topo com barra + menu -->
 <div id="topo-interface">
-  
-  <!-- Barra de progresso -->
   <section id="progress-bar-container" class="barra-progresso-container" aria-label="Progresso do usuário" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
     <section id="progress-bar" class="barra-progresso" style="width: 0%;"></section>
   </section>
 
-  <!-- Menu lateral -->
   <nav id="navegacao-trilha" aria-label="Navegação lateral">
     <p class="boasvindas-usuario">Usuário</p>
 
@@ -66,10 +60,12 @@
   </nav>
 </div>
 
-  <!-- Conteúdo -->
-  <div class="container" id="licao">
-    <div class="mensagem">
-      <img src="https://i.ibb.co/4jYFzFq/avatar.png" alt="avatar">
+<!-- Conteúdo -->
+<div class="container" id="licao">
+
+  <div class="mensagem">
+    <img src="./img/33.png" alt="avatar">
+    <div class="conteudo">
       <p>Estou criando meu currículo, devo escrever tudo em qual fonte?</p>
       <div class="alternativas">
         <button data-correto="false">Comic Sans</button>
@@ -77,9 +73,11 @@
         <button data-correto="false">Papyrus</button>
       </div>
     </div>
+  </div>
 
-    <div class="mensagem">
-      <img src="https://i.ibb.co/4jYFzFq/avatar.png" alt="avatar">
+  <div class="mensagem">
+    <img src="./img/33.png" alt="avatar">
+    <div class="conteudo">
       <p>Para os títulos das seções, como devo destacar?</p>
       <div class="alternativas">
         <button data-correto="true">Negrito</button>
@@ -87,9 +85,11 @@
         <button data-correto="false">Caixa alta com cores fortes</button>
       </div>
     </div>
+  </div>
 
-    <div class="mensagem">
-      <img src="https://i.ibb.co/4jYFzFq/avatar.png" alt="avatar">
+  <div class="mensagem">
+    <img src="./img/33.png" alt="avatar">
+    <div class="conteudo">
       <p>E o alinhamento do texto, o que é mais adequado?</p>
       <div class="alternativas">
         <button data-correto="false">Centralizado</button>
@@ -97,9 +97,11 @@
         <button data-correto="false">Justificado com espaçamento grande</button>
       </div>
     </div>
+  </div>
 
-    <div class="mensagem">
-      <img src="https://i.ibb.co/4jYFzFq/avatar.png" alt="avatar">
+  <div class="mensagem">
+    <img src="./img/33.png" alt="avatar">
+    <div class="conteudo">
       <p>Qual é o tamanho de fonte indicado para o corpo do currículo?</p>
       <div class="alternativas">
         <button data-correto="false">8</button>
@@ -107,11 +109,13 @@
         <button data-correto="false">18</button>
       </div>
     </div>
+  </div>
 
-    <div class="mensagem">
-      <img src="https://i.ibb.co/4jYFzFq/avatar.png" alt="avatar">
+  <div class="mensagem">
+    <img src="./img/33.png" alt="avatar">
+    <div class="conteudo">
       <p>Para destacar informações importantes, qual é a melhor prática?</p>
-      <div class="alternativas">
+      <div class="alternativas">    
         <button data-correto="false">Usar várias cores chamativas</button>
         <button data-correto="true">Negrito em pontos chave</button>
         <button data-correto="false">Itálico em tudo</button>
@@ -119,12 +123,13 @@
     </div>
   </div>
 
-  <!-- Botão Finalizar -->
-  <div style="text-align: center;">
-    <a href="final.html"><button id="finalizarBtn">Finalizar Lição</button></a>
-  </div>
+</div>
 
-      <script src="./js/script-01-licao-04-word-basico.js"></script>
+<!-- Botão Finalizar -->
+<div style="text-align: center;">
+  <a href="./fim-modulo.html"><button id="finalizarBtn">Finalizar Lição</button></a>
+</div>
 
+<script src="./js/script-01-licao-04-word-basico.js"></script>
 </body>
 </html>

@@ -1,45 +1,57 @@
-  const mensagens = document.querySelectorAll(".mensagem");
-    const progressBar = document.getElementById("progress-bar");
-    const finalizarBtn = document.getElementById("finalizarBtn");
+const mensagens = document.querySelectorAll(".mensagem");
+const progressBar = document.getElementById("progress-bar");
+const finalizarBtn = document.getElementById("finalizarBtn");
 
-    let progresso = 0;
-    const total = mensagens.length;
+let progresso = 0;
+const total = mensagens.length;
 
-    function iniciarLicao() {
-      progresso = 0;
-      progressBar.style.width = "0%";
-      finalizarBtn.style.display = "none";
+// Função para iniciar a lição e mostrar a primeira mensagem
+function iniciarLicao() {
+  mensagens.forEach((m, i) => {
+    if (i === 0) m.style.display = "flex";
+    else m.style.display = "none";
 
-      mensagens.forEach(m => m.style.display = "none");
-
-      mensagens[0].style.display = "block";
-    }
-
-    iniciarLicao();
-
-    mensagens.forEach((mensagem, index) => {
-      const botoes = mensagem.querySelectorAll("button");
-
-      botoes.forEach(btn => {
-        btn.addEventListener("click", () => {
-          if (btn.dataset.correto === "true") {
-            btn.classList.add("correto");
-            progresso++;
-            progressBar.style.width = (progresso / total) * 100 + "%";
-
-            if (mensagens[index + 1]) {
-              mensagens[index + 1].style.display = "block";
-            } else {
-              finalizarBtn.style.display = "inline-block";
-            }
-          } else {
-            btn.classList.add("errado");
-
-            // Espera a animação de shake terminar e reseta a lição
-            setTimeout(() => {
-              iniciarLicao();
-            }, 800);
-          }
-        });
-      });
+    const botoes = m.querySelectorAll("button");
+    botoes.forEach(btn => {
+      btn.classList.remove("correto", "errado");
+      btn.disabled = false;
     });
+  });
+
+  progresso = 0;
+  progressBar.style.width = "0%";
+  finalizarBtn.style.display = "none";
+}
+
+iniciarLicao();
+
+mensagens.forEach((mensagem, index) => {
+  const botoes = mensagem.querySelectorAll("button");
+
+  botoes.forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (btn.dataset.correto === "true" && !btn.classList.contains("correto")) {
+        // Acerto
+        btn.classList.add("correto");
+        btn.disabled = true;
+        progresso++;
+        progressBar.style.width = (progresso / total) * 100 + "%";
+
+        if (mensagens[index + 1]) {
+          mensagens[index + 1].style.display = "flex";
+        } else {
+          finalizarBtn.style.display = "inline-block";
+        }
+      } else if (btn.dataset.correto === "false") {
+        // Erro
+        btn.classList.add("errado");
+        btn.disabled = true;
+
+        setTimeout(() => {
+          btn.classList.remove("errado");
+          btn.disabled = false;
+        }, 800);
+      }
+    });
+  });
+});
