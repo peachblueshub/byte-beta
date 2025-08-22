@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>BYTE — Fase Mario: Word Básico</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="./css/style-01-licao-05-word-basico.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Bebas+Neue&family=Boldonse&family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/loading.css">
+<script src="./js/loading.js" defer></script>
+</head>
+<body>
+  <header class="hud">
+    <div class="hud-left">
+      <div class="hearts" id="hearts" aria-label="Vidas">
+        <span class="heart" title="vida"></span>
+        <span class="heart" title="vida"></span>
+        <span class="heart" title="vida"></span>
+      </div>
+      <div class="progress-wrap" aria-label="Progresso">
+        <div class="progress" id="progress"></div>
+      </div>
+    </div>
+    <div class="hud-right">
+      <button id="btnReiniciar" class="btn small" aria-label="Reiniciar fase">↻ Reiniciar</button>
+    </div>
+  </header>
+
+  <main class="stage">
+    <!-- Mundo/Trilha -->
+    <div class="world" id="world" aria-hidden="true">
+      <div class="ground"></div>
+      <div class="checkpoint c1"></div>
+      <div class="checkpoint c2"></div>
+      <div class="checkpoint c3"></div>
+      <div class="checkpoint c4"></div>
+      <div class="checkpoint c5"></div>
+      <div class="flag"></div>
+      <div class="player" id="player" role="img" aria-label="Personagem"></div>
+    </div>
+
+    <!-- Painel de Perguntas -->
+    <section class="panel" id="panel">
+      <h1 class="panel-title">Monte o currículo completo do Byte!</h1>
+      <p class="panel-subtitle" id="questionText">Escolha a alternativa correta para avançar!</p>
+      <div class="options" id="options" role="group" aria-label="Opções de resposta"></div>
+      <div class="feedback" id="feedback" aria-live="polite"></div>
+
+      <div class="nav">
+        <button id="btnDica" class="btn ghost">💡 Dica</button>
+        <button id="btnPular" class="btn ghost">⏭ Pular (-1 vida)</button>
+      </div>
+    </section>
+
+    <!-- Tela de Conclusão -->
+    <section class="finish hidden" id="finish">
+      <h2>Parabéns! 🏁</h2>
+      <p>Você concluiu a fase do Word Básico.</p>
+      <a class="btn" id="nextLink" href="conclusao.html">Ir para a página de conclusão</a>
+      <button class="btn ghost" id="btnJogarNovamente">Jogar novamente</button>
+    </section>
+
+    <!-- Toast -->
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </main>
+
+  <script src="./js/script-01-licao-05-word-basico.js"></script>
+</body>
+</html>
