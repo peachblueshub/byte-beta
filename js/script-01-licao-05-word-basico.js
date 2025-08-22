@@ -6,7 +6,7 @@ const QUESTIONS = [
     options: [
       { label: "Escrever seus dados pessoais", correct: true, tip: "Comece pelo básico: nome, endereço e contato." },
       { label: "Escolher a cor do currículo", correct: false, tip: "Isso vem depois!" },
-      { label: "Adicionar hobbies", correct: false, tip: "Hobbies vêm no final." },
+      { label: "Adicionar hobbies", correct: false, tip: "Hobbies vêm no final." }
     ]
   },
   {
@@ -14,8 +14,8 @@ const QUESTIONS = [
     badge: "2",
     options: [
       { label: "No início do currículo", correct: false, tip: "Experiência vem depois dos dados pessoais." },
-      { label: "Depois dos dados pessoais", correct: true, tip: "Perfeito!" },
-      { label: "No rodapé", correct: false, tip: "Rodapé não é lugar para isso." },
+      { label: "Depois dos dados pessoais", correct: true, tip: "Perfeito! Coloque depois dos dados básicos." },
+      { label: "No rodapé", correct: false, tip: "Rodapé não é lugar para isso." }
     ]
   },
   {
@@ -24,10 +24,38 @@ const QUESTIONS = [
     options: [
       { label: "Formação acadêmica", correct: true, tip: "Isso mesmo!" },
       { label: "Habilidades", correct: false, tip: "Habilidades vêm depois." },
-      { label: "Referências", correct: false, tip: "Referências no final." },
+      { label: "Referências", correct: false, tip: "Referências no final." }
+    ]
+  },
+  {
+    text: "Como você deve organizar suas experiências profissionais?",
+    badge: "4",
+    options: [
+      { label: "Em ordem alfabética", correct: false, tip: "Não é alfabética." },
+      { label: "Da mais recente para a mais antiga", correct: true, tip: "Correto! Assim o recrutador vê primeiro o mais relevante." },
+      { label: "Da mais antiga para a mais recente", correct: false, tip: "Ao contrário do recomendado." }
+    ]
+  },
+  {
+    text: "Qual fonte é mais adequada para currículos formais?",
+    badge: "5",
+    options: [
+      { label: "Comic Sans", correct: false, tip: "Essa não é profissional." },
+      { label: "Arial ou Calibri", correct: true, tip: "Perfeito! Fontes limpas e legíveis." },
+      { label: "Papyrus", correct: false, tip: "Evite fontes decorativas." }
+    ]
+  },
+  {
+    text: "O que deve ser evitado em um currículo?",
+    badge: "6",
+    options: [
+      { label: "Erros de digitação e gramática", correct: true, tip: "Sempre revise seu currículo." },
+      { label: "Informações de contato atualizadas", correct: false, tip: "Essas devem sempre estar presentes." },
+      { label: "Experiência relevante", correct: false, tip: "Inclua sempre experiências relevantes." }
     ]
   }
 ];
+
 
 const TOTAL_STEPS = QUESTIONS.length;
 const STEP_X = 16; // % de movimento por acerto

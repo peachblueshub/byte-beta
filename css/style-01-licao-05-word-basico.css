@@ -301,7 +301,7 @@ font-family: "Barlow", sans-serif;
 
 .finish{
   position:absolute; inset:0; display:grid; place-items:center; text-align:center;
-  background: radial-gradient(ellipse at center, rgba(255,255,255,.95), rgba(255,255,255,.9));
+  background: #FFFBEE;
   z-index:10;
 }
 .finish.hidden{display:none}
