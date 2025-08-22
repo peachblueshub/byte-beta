@@ -1,55 +1,32 @@
 // ---------- Configuração da Fase ----------
 const QUESTIONS = [
   {
-    id: 1,
-    text: "Título do documento: qual opção define um Título centralizado corretamente?",
+    text: "Qual é a primeira etapa para criar um currículo?",
+    badge: "1",
     options: [
-      { label: "Normal, 14 pt, alinhado à esquerda", correct: false, tip: "Use o estilo de TÍTULO e centralize." },
-      { label: "Título, 24 pt, centralizado", correct: true, tip: "Isso! Estilo Título já padroniza." },
-      { label: "Cabeçalho, 10 pt, justificado", correct: false, tip: "Cabeçalho ≠ Título do documento." },
-    ],
-    badge: "Títulos & Alinhamento",
+      { label: "Escrever seus dados pessoais", correct: true, tip: "Comece pelo básico: nome, endereço e contato." },
+      { label: "Escolher a cor do currículo", correct: false, tip: "Isso vem depois!" },
+      { label: "Adicionar hobbies", correct: false, tip: "Hobbies vêm no final." },
+    ]
   },
   {
-    id: 2,
-    text: "Formatar texto: o que fazer com 'Objetivo' e 'Experiências'?",
+    text: "Onde você coloca a experiência profissional?",
+    badge: "2",
     options: [
-      { label: "Objetivo em itálico; Experiências em riscado", correct: false, tip: "Riscado? Só se for correção." },
-      { label: "Objetivo em negrito; Experiências sublinhado", correct: true, tip: "Perfeito para destacar seções." },
-      { label: "Ambos em caixa alta e cor vermelha", correct: false, tip: "Evite poluição visual." },
-    ],
-    badge: "Formatação",
+      { label: "No início do currículo", correct: false, tip: "Experiência vem depois dos dados pessoais." },
+      { label: "Depois dos dados pessoais", correct: true, tip: "Perfeito!" },
+      { label: "No rodapé", correct: false, tip: "Rodapé não é lugar para isso." },
+    ]
   },
   {
-    id: 3,
-    text: "Lista: como criar as habilidades?",
+    text: "Qual seção deve conter sua formação acadêmica?",
+    badge: "3",
     options: [
-      { label: "Digitar tudo em uma linha separada por vírgulas", correct: false, tip: "Use listas para semântica." },
-      { label: "Inserir uma lista com marcadores e adicionar cada habilidade", correct: true, tip: "Listas são ideais pra itens." },
-      { label: "Inserir uma tabela com uma coluna e várias linhas", correct: false, tip: "Tabela não é lista." },
-    ],
-    badge: "Listas",
-  },
-  {
-    id: 4,
-    text: "Imagem: onde inserir a foto do Byte?",
-    options: [
-      { label: "Inserir > Imagens > Este dispositivo… e posicionar no cabeçalho", correct: false, tip: "Cabeçalho, só se for logotipo." },
-      { label: "Inserir > Imagens > Este dispositivo… e alinhar à direita no topo do currículo", correct: true, tip: "Top à direita é um local comum." },
-      { label: "Layout > Quebras > Próxima Página", correct: false, tip: "Isso é sobre quebras, não imagem." },
-    ],
-    badge: "Imagens",
-  },
-  {
-    id: 5,
-    text: "Salvar: qual é a forma recomendada?",
-    options: [
-      { label: "Arquivo > Salvar como… e escolher .docx", correct: true, tip: "Formato editável e padrão." },
-      { label: "Ctrl+Z", correct: false, tip: "Ctrl+Z desfaz; não salva." },
-      { label: "Arquivo > Imprimir", correct: false, tip: "Imprimir ≠ salvar." },
-    ],
-    badge: "Salvar",
-  },
+      { label: "Formação acadêmica", correct: true, tip: "Isso mesmo!" },
+      { label: "Habilidades", correct: false, tip: "Habilidades vêm depois." },
+      { label: "Referências", correct: false, tip: "Referências no final." },
+    ]
+  }
 ];
 
 const TOTAL_STEPS = QUESTIONS.length;
@@ -62,15 +39,13 @@ const els = {
   options: document.getElementById('options'),
   questionText: document.getElementById('questionText'),
   feedback: document.getElementById('feedback'),
-  progress: document.getElementById('progress'),
-  hearts: document.getElementById('hearts'),
+  progress: document.getElementById('progress-bar'), // corrige id
+  valorVidas: document.getElementById('valorVidas'),  // vidas no topo
   finish: document.getElementById('finish'),
-  btnReiniciar: document.getElementById('btnReiniciar'),
   btnJogarNovamente: document.getElementById('btnJogarNovamente'),
   btnDica: document.getElementById('btnDica'),
   btnPular: document.getElementById('btnPular'),
   toast: document.getElementById('toast'),
-  nextLink: document.getElementById('nextLink'),
 };
 
 let state = {
@@ -83,23 +58,27 @@ let state = {
 function setPlayerX(percent){
   els.player.style.setProperty('--x', `${percent}%`);
 }
+
 function animateRun(ms=500){
   els.player.classList.add('run');
   setTimeout(()=> els.player.classList.remove('run'), ms);
 }
+
 function setProgress(){
   const pct = Math.round((state.step / TOTAL_STEPS) * 100);
   els.progress.style.width = `${pct}%`;
 }
+
 function setHearts(){
-  const nodes = Array.from(els.hearts.querySelectorAll('.heart'));
-  nodes.forEach((n,i)=> n.classList.toggle('off', i > state.lives-1));
+  els.valorVidas.textContent = state.lives;
 }
+
 function toast(msg){
   els.toast.textContent = msg;
   els.toast.classList.add('show');
   setTimeout(()=> els.toast.classList.remove('show'), 1400);
 }
+
 function shakePanel(){
   els.panel.classList.add('shake');
   setTimeout(()=> els.panel.classList.remove('shake'), 480);
@@ -116,10 +95,7 @@ function renderQuestion(){
     btn.type = 'button';
     btn.className = 'option';
     btn.setAttribute('aria-label', `Opção ${idx+1}: ${opt.label}`);
-    btn.innerHTML = `
-      <span class="opt-label">${opt.label}</span>
-      <span class="badge">${q.badge}</span>
-    `;
+    btn.innerHTML = `<span class="opt-label">${opt.label}</span> <span class="badge">${q.badge}</span>`;
     btn.addEventListener('click', ()=> handleAnswer(opt, btn));
     els.options.appendChild(btn);
   });
@@ -176,7 +152,6 @@ function advance(){
 }
 
 function finishLevel(){
-  // Enche progresso e move pra bandeira
   els.progress.style.width = '100%';
   setPlayerX(92);
   els.finish.classList.remove('hidden');
@@ -184,7 +159,6 @@ function finishLevel(){
 
 function gameOver(){
   toast('Game Over! Reinicie para tentar de novo.');
-  // bloqueia interações
   els.options.querySelectorAll('button').forEach(b=> b.disabled = true);
 }
 
@@ -199,21 +173,20 @@ function resetGame(){
 }
 
 // ---------- Controles ----------
-els.btnReiniciar.addEventListener('click', resetGame);
 els.btnJogarNovamente.addEventListener('click', resetGame);
+
 els.btnDica.addEventListener('click', ()=>{
   const q = QUESTIONS[state.step];
   if(!q) return;
-  // mostra a dica da primeira opção correta
   const tip = q.options.find(o=>o.correct)?.tip || "Pense nos conceitos básicos!";
-  toast(`Dica: ${tip}`);
+  toast(`💡 Dica: ${tip}`);
 });
+
 els.btnPular.addEventListener('click', ()=>{
   if(state.lives <= 0) return;
   state.lives--;
   setHearts();
   toast('Pergunta pulada! (-1 vida)');
-  // considera como acerto para avançar
   advance();
 });
 
