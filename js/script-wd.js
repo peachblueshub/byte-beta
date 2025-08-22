@@ -148,10 +148,10 @@ const tileDescriptionsP = {
     texto: "Você tem uma nova mensagem! Faça um currículo junto com o Byte.",
     link: "./01-licao-04-word-basico.html"
   },
-  "5_2": {
-    titulo: "Salvar e Compartilhar",
-    texto: "Descubra como salvar e compartilhar seu documento com segurança.",
-    link: "./salvar-compartilhar.html"
+  "5_3": {
+    titulo: "Lição 05 - Básico: Monte um Currículo",
+    texto: "Monte o currículo completo do Byte e reveja todo o conteúdo aprendido até aqui.",
+    link: "./01-licao-05-word-basico.html"
   },
   "0_3": {
     titulo: "Revisão Ortográfica",
