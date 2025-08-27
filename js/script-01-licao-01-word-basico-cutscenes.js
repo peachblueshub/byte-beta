@@ -6,10 +6,11 @@ const dialogues = [
  },
  {
    name: "O que é o Microsoft Word?",
-   text: "Durante as cutscenes, você verá minha fala aqui à direita,\nenquanto eu apareço à esquerda da tela."
+   text: "Você já ouviu falar do Microsoft Word? Não? Sem problemas, eu te explico!\nO Word é um programa de computador que funciona como um caderno digital. Nele você pode escrever textos, fazer listas, criar tabelas e colocar imagens. Ele é usado para coisas importantes, como fazer um currículo, escrever uma carta ou preparar trabalhos da escola. Além disso, tem várias ferramentas que ajudam a deixar o texto bonito, organizado e fácil de compartilhar."
+
  },
  {
-   name: "Ayla",
+   name: "E quais são essas ferramentas?",
    text: "Quando quiser avançar, clique em “Continuar”.\nSe preferir pular o efeito de digitação, use “Mostrar tudo”."
  }
 ];
