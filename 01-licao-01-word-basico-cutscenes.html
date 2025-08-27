@@ -1,0 +1,46 @@
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+    <meta charset="UTF-8">
+    <title>Lição - Formatações</title>
+    <link rel="stylesheet" href="./css/style-01-licao-01-word-basico-cutscenes.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Bebas+Neue&family=Boldonse&family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/loading.css">
+<script src="./js/loading.js" defer></script>
+    <!-- Ícones Google -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+<body>
+<main class="scene">
+<!-- BLOCO SUPERIOR: PERSONAGEM + FALA -->
+<section class="cutscene">
+<!-- Personagem à esquerda -->
+<figure class="character">
+<!-- Troque o src para sua imagem -->
+<img src="./img/30.png" alt="Personagem" />
+<figcaption class="character-name" id="characterName">Ayla</figcaption>
+</figure>
+<!-- Fala à direita -->
+<div class="dialogue" role="region" aria-live="polite">
+<div class="nameplate" id="dialogueName">Ayla</div>
+<p class="text" id="dialogueText"></p>
+<div class="controls">
+<button id="skipType">Mostrar tudo</button>
+<button id="nextLine" class="primary">Continuar ▶</button>
+</div>
+</div>
+</section>
+<!-- BLOCO INFERIOR: ÁREA PARA PRINTSCREEN DO EXEMPLO -->
+<section class="example">
+<div class="example-frame" aria-label="Área para printscreen">
+       <img src="./img/01-word-introducao.png" alt="Printscreen do exemplo" class="example-shot" />
+</div>
+</section>
+</main>
+    <script src="./js/script-01-licao-01-word-basico-cutscenes.js"></script>
+</body>
+</html>
