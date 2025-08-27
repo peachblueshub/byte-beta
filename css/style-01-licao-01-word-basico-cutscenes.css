@@ -9,7 +9,7 @@
  --radius: 25px;
 }
 * { box-sizing: border-box; }
-html, body {
+html, body, button {
  height: 100%;
  background: var(--bg);
  color: var(--text);
@@ -111,10 +111,10 @@ button{
  background: #FFB031;
  color: var(--text);
  border-radius: 30px;
- padding: 10px 15px;
+ padding: 12px 20px;
  font-weight: 600;
  transition: transform .05s ease;
- font-size: 1rem;
+ font-size: 1.1rem;
 }
 button:hover{ background: #1d222b; border-color: #3a414f; }
 button:active{ transform: translateY(1px); }
