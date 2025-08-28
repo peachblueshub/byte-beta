@@ -1,5 +1,5 @@
 // ===== Configurações =====
-const END_REDIRECT = "./proxima-pagina.html"; // ajuste o destino final
+const END_REDIRECT = "./licao-word-iniciante.html";
 
 // Cutscene com imagem do exemplo para cada fala
 const dialogues = [
@@ -10,14 +10,25 @@ const dialogues = [
   },
   {
     name: "O que é o Microsoft Word?",
-    text: "O Microsoft Word é como um caderno digital no computador, onde você pode escrever textos, listas, tabelas e inserir imagens. Ele é muito usado para criar documentos importantes. Além disso, oferece ferramentas que deixam o texto organizado e fácil de compartilhar.",
+    text: "O Microsoft Word é como um caderno digital no computador, onde você pode escrever textos, listas, tabelas e inserir imagens. Ele é muito usado para criar documentos importantes. Além disso, oferece ferramentas que deixam o texto organizado e fácil de ler e compartilhar.",
     example: "./img/02-word-exemplos.png"
   },
   {
-    name: "O que é o Microsoft Word?",
+    name: "Importante saber!",
     text: "A versão que você está vendo é a Microsoft Office 365, mas não se preocupe - se você tiver acesso a uma versão anterior a essa, todas as ferramentas ensinadas aqui também funcionarão nas outras!",
     example: "./img/03-word-ferramentas.png"
+  },
+  {
+    name: "Por onde começar?",
+    text: "Para começar um novo documento, clique em Arquivo > Novo ou use o atalho Ctrl+N. Isso abre uma página em branco pronta para você escrever ou inserir elementos. Criar documentos é o primeiro passo para colocar suas ideias no papel digital.",
+    example: "./img/03-word-ferramentas.png"
   }
+  // ,
+  // {
+  //   name: "O que são fontes?",
+  //   text: "No Word, você encontra ferramentas como negrito, itálico, sublinhado e tachado, que ajudam a destacar partes do texto. Também é possível alterar tamanhos e cores de fonte para deixar seus documentos mais claros e organizados. Essas opções tornam seu texto mais profissional e fácil de ler.",
+  //   example: "./img/03-word-ferramentas.png"
+  // }
 ];
 
 // ===== Elementos =====
