@@ -5,17 +5,17 @@ const END_REDIRECT = "./proxima-pagina.html"; // ajuste o destino final
 const dialogues = [
   {
     name: "Seja bem-vindo!",
-    text: "Eu sou o Byte. Vamos começar nossa aventura pelo Microsoft Word.\nPronta(o) para aprender?",
+    text: "Eu sou o Byte e estarei ao seu lado nessa jornada pelo Microsoft Word. Juntos, vamos aprender de um jeito simples e direto, sem complicação. Tudo pronto para aplicar esse conhecimento no seu dia a dia profissional?",
     example: "./img/01-word-introducao.png"
   },
   {
     name: "O que é o Microsoft Word?",
-    text: "Você já ouviu falar do Microsoft Word? Não? Sem problemas, eu te explico!\nO Word é um programa de computador que funciona como um caderno digital. Nele você pode escrever textos, fazer listas, criar tabelas e colocar imagens. Ele é usado para coisas importantes, como fazer um currículo, escrever uma carta ou preparar trabalhos da escola. Além disso, tem várias ferramentas que ajudam a deixar o texto bonito, organizado e fácil de compartilhar.",
+    text: "O Microsoft Word é como um caderno digital no computador, onde você pode escrever textos, listas, tabelas e inserir imagens. Ele é muito usado para criar documentos importantes. Além disso, oferece ferramentas que deixam o texto organizado e fácil de compartilhar.",
     example: "./img/02-word-exemplos.png"
   },
   {
-    name: "E quais são essas ferramentas?",
-    text: "Quando quiser avançar, clique em “Próximo”.\nSe quiser rever, use “Voltar”.",
+    name: "O que é o Microsoft Word?",
+    text: "A versão que você está vendo é a Microsoft Office 365, mas não se preocupe - se você tiver acesso a uma versão anterior a essa, todas as ferramentas ensinadas aqui também funcionarão nas outras!",
     example: "./img/03-word-ferramentas.png"
   }
 ];
