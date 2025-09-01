@@ -18,12 +18,6 @@ const dialogues = [
     text: "Para começar um novo documento, clique em Arquivo > Novo ou use o atalho Ctrl+N. Isso abre uma página em branco pronta para você escrever ou inserir elementos. Criar documentos é o primeiro passo para colocar suas ideias no papel digital. Vamos abrir um novo documento e colocar os seus conhecimentos em prática!",
     example: "./img/03-word-ferramentas.png"
   }
-  // ,
-  // {
-  //   name: "O que são fontes?",
-  //   text: "No Word, você encontra ferramentas como negrito, itálico, sublinhado e tachado, que ajudam a destacar partes do texto. Também é possível alterar tamanhos e cores de fonte para deixar seus documentos mais claros e organizados. Essas opções tornam seu texto mais profissional e fácil de ler.",
-  //   example: "./img/03-word-ferramentas.png"
-  // }
 ];
 
 // ===== Elementos =====
