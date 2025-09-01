@@ -43,7 +43,7 @@ main.scene{
   padding: 14px;
 }
 .character img{
-  width: 50%;
+  width: 90%;
   height: auto;
   object-fit: contain;
   border-radius: 14px;

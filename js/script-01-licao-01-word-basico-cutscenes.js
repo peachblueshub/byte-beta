@@ -5,22 +5,17 @@ const END_REDIRECT = "./licao-word-iniciante.html";
 const dialogues = [
   {
     name: "Seja bem-vindo!",
-    text: "Eu sou o Byte e estarei ao seu lado nessa jornada pelo Microsoft Word. Juntos, vamos aprender de um jeito simples e direto, sem complicação. Tudo pronto para aplicar esse conhecimento no seu dia a dia profissional?",
+    text: "Eu sou o Byte e estarei ao seu lado nessa jornada pelo Microsoft Word e editores de texto similares, como o LibreOffice Writer e Google Docs. Juntos, vamos aprender de um jeito simples e direto, sem complicação. Tudo pronto para aplicar esse conhecimento no seu dia a dia profissional?",
     example: "./img/word-intro.svg"
   },
   {
     name: "O que é o Microsoft Word?",
-    text: "O Microsoft Word é como um caderno digital no computador, onde você pode escrever textos, listas, tabelas e inserir imagens. Ele é muito usado para criar documentos importantes. Além disso, oferece ferramentas que deixam o texto organizado e fácil de ler e compartilhar.",
+    text: "O Microsoft Word é um editor de texto digital, onde você pode escrever, inserir imagens e criar tabelas. Ele é muito usado para criar documentos importantes. Além disso, oferece ferramentas que deixam o texto organizado e fácil de ler e compartilhar como, por exemplo os estilos em negrito e itálico.",
     example: "./img/word-intro-02.svg"
   },
   {
-    name: "Importante saber!",
-    text: "A versão que você está vendo é a Microsoft Office 365, mas não se preocupe - se você tiver acesso a uma versão anterior a essa, todas as ferramentas ensinadas aqui também funcionarão nas outras!",
-    example: "./img/03-word-ferramentas.png"
-  },
-  {
     name: "Por onde começar?",
-    text: "Para começar um novo documento, clique em Arquivo > Novo ou use o atalho Ctrl+N. Isso abre uma página em branco pronta para você escrever ou inserir elementos. Criar documentos é o primeiro passo para colocar suas ideias no papel digital.",
+    text: "Para começar um novo documento, clique em Arquivo > Novo ou use o atalho Ctrl+N. Isso abre uma página em branco pronta para você escrever ou inserir elementos. Criar documentos é o primeiro passo para colocar suas ideias no papel digital. Vamos abrir um novo documento e colocar os seus conhecimentos em prática!",
     example: "./img/03-word-ferramentas.png"
   }
   // ,
