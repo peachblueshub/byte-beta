@@ -140,7 +140,7 @@ button:disabled{
 /* EXEMPLO (área para printscreen) */
 .example{
   background: #409BFF;
-  border-radius: var(--radius);
+  border: 20px 20px 20px 20px;
   padding: 16px;
   border: 2px solid #141414;
 }
