@@ -6,12 +6,12 @@ const dialogues = [
   {
     name: "Seja bem-vindo!",
     text: "Eu sou o Byte e estarei ao seu lado nessa jornada pelo Microsoft Word. Juntos, vamos aprender de um jeito simples e direto, sem complicação. Tudo pronto para aplicar esse conhecimento no seu dia a dia profissional?",
-    example: "./img/01-word-introducao.png"
+    example: "./img/word-intro.svg"
   },
   {
     name: "O que é o Microsoft Word?",
     text: "O Microsoft Word é como um caderno digital no computador, onde você pode escrever textos, listas, tabelas e inserir imagens. Ele é muito usado para criar documentos importantes. Além disso, oferece ferramentas que deixam o texto organizado e fácil de ler e compartilhar.",
-    example: "./img/02-word-exemplos.png"
+    example: "./img/word-intro-02.svg"
   },
   {
     name: "Importante saber!",
