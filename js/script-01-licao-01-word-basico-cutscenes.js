@@ -16,7 +16,7 @@ const dialogues = [
   {
     name: "Por onde começar?",
     text: "Para começar um novo documento, clique em Arquivo > Novo ou use o atalho Ctrl+N. Isso abre uma página em branco pronta para você escrever ou inserir elementos. Criar documentos é o primeiro passo para colocar suas ideias no papel digital. Vamos abrir um novo documento e colocar os seus conhecimentos em prática!",
-    example: "./img/03-word-ferramentas.png"
+    example: "./img/word-intro-03.svg"
   }
 ];
 
@@ -74,7 +74,7 @@ function showLine(i){
   // Atualiza controles
   prevBtn.disabled = (i === 0);
   if (i === dialogues.length - 1){
-    nextBtn.textContent = "Concluído";
+    nextBtn.textContent = "Vamos começar!";
   } else {
     nextBtn.textContent = "Próximo";
   }
