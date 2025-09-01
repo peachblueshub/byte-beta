@@ -140,7 +140,7 @@ button:disabled{
 /* EXEMPLO (área para printscreen) */
 .example{
   background: #409BFF;
-  border: 20px 20px 20px 20px;
+  border-radius: 20px;
   padding: 16px;
   border: 2px solid #141414;
 }
@@ -160,7 +160,7 @@ button:disabled{
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 10px;
+  border-radius: 20px;
   cursor: zoom-in;
 }
 
