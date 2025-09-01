@@ -1,30 +1,31 @@
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-    <meta charset="UTF-8">
-    <title>Lição - Formatações</title>
-    <link rel="stylesheet" href="./css/style-01-licao-02-word-basico.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>BYTE — Fase Mario: Word Básico</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="./css/style-01-licao-05-word-basico.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Bebas+Neue&family=Boldonse&family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./css/loading.css">
 <script src="./js/loading.js" defer></script>
-    <!-- Ícones Google -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    </head>
-    <body>
+</head>
+<body>
 
 <!-- Carregamento -->
 
 <div id="loading-screen">
-<img src="./img/30.png" alt="Carregando..." />
+<img src="./img/40.png" alt="Carregando..." />
 <p id="loading-text">Carregando... 0%</p>
 <div id="loading-bar-container">
 <div id="loading-bar"></div>
 </div>
 </div>
+
 <!-- Topo com barra + menu -->
 <div id="topo-interface">
   
@@ -64,38 +65,44 @@
 </div>
 
 
-    <!-- Jogo -->
-
-    <div id="game-container" role="main">
-    
-      <div class="lesson-header">
-        <img src="./img/33.png" alt="Mascote da lição" class="lesson-image">
-        <h1 class="lesson-title">Selecione a formatação correta:</h1>
-      </div>
-    
-      <div id="message" aria-live="polite"></div>
-    
-      <div id="columns">
-        <div class="column" id="icons" role="list" aria-label="Ícones de formatação">
-          <button class="option" data-pair="bold" role="listitem" aria-pressed="false"><b>B</b></button>
-          <button class="option" data-pair="italic" role="listitem" aria-pressed="false"><i>I</i></button>
-          <button class="option" data-pair="underline" role="listitem" aria-pressed="false"><u>S</u></button>
-          <button class="option" data-pair="strike" role="listitem" aria-pressed="false"><s>ABC</s></button>
-        </div>
-    
-        <div class="column" id="descriptions" role="list" aria-label="Descrições das formatações">
-          <button class="option" data-pair="strike" role="listitem" aria-pressed="false">Tachado</button>
-          <button class="option" data-pair="italic" role="listitem" aria-pressed="false">Itálico</button>
-          <button class="option" data-pair="bold" role="listitem" aria-pressed="false">Negrito</button>
-          <button class="option" data-pair="underline" role="listitem" aria-pressed="false">Sublinhado</button>
-        </div>
-      </div>
+  <main class="stage">
+    <!-- Mundo/Trilha -->
+    <div class="world" id="world" aria-hidden="true">
+      <div class="ground"></div>
+      <div class="checkpoint c1"></div>
+      <div class="checkpoint c2"></div>
+      <div class="checkpoint c3"></div>
+      <div class="checkpoint c4"></div>
+      <div class="checkpoint c5"></div>
+      <div class="flag"></div>
+      <div class="player" id="player" role="img" aria-label="Personagem"></div>
     </div>
 
-      <div id="finalizar-container" style="display: none; text-align: center; margin-top: 20px;">
-    <a href="fim-modulo.html" id="botaoFinalizar">Finalizar Lição</a>
-    </div>
+    <!-- Painel de Perguntas -->
+    <section class="panel" id="panel">
+      <h1 class="panel-title">Monte o currículo completo do Byte!</h1>
+      <p class="panel-subtitle" id="questionText">Escolha a alternativa correta para avançar!</p>
+      <div class="options" id="options" role="group" aria-label="Opções de resposta"></div>
+      <div class="feedback" id="feedback" aria-live="polite"></div>
 
-    <script src="./js/script-01-licao-02-word-basico.js"></script>
-    </body>
-    </html>
+      <div class="nav">
+        <button id="btnDica" class="btn ghost">💡 Dica</button>
+        <button id="btnPular" class="btn ghost">⏭ Pular (-1 vida)</button>
+      </div>
+    </section>
+
+    <!-- Tela de Conclusão -->
+    <section class="finish hidden" id="finish">
+      <h2>Parabéns! 🏁</h2>
+      <p>Você concluiu a fase do Word Básico.</p>
+      <a class="btn" id="nextLink" href="./fim-modulo.html">Ir para a página de conclusão</a>
+      <button class="btn ghost" id="btnJogarNovamente">Jogar novamente</button>
+    </section>
+
+    <!-- Toast -->
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </main>
+
+  <script src="./js/script-01-licao-05-word-basico.js"></script>
+</body>
+</html>

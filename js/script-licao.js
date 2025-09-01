@@ -2,10 +2,11 @@
 function atualizarBarraProgresso(numeroLicaoAtual) {
   const totalLicoes = 3;
   const progresso = Math.min((numeroLicaoAtual / totalLicoes) * 100, 100);
-  document.getElementById("progressoLicoes").style.width = progresso + "%";
+  document.getElementById("progress-bar").style.width = progresso + "%";
 }
 
-// CUTSCENE
+// --- CUTSCENES REMOVIDAS ---
+// Se quiser, pode manter as funções, mas não vamos chamá-las
 function mostrarCutscene2() {
   document.getElementById('cutscene1').classList.remove('ativa');
   document.getElementById('cutscene2').classList.add('ativa');
@@ -24,17 +25,19 @@ function irParaLicao(numero) {
   // mostra a lição correspondente
   document.getElementById('licao' + numero).classList.add('ativa');
 }
+
+// chama direto a primeira lição ao carregar a página
+window.addEventListener('DOMContentLoaded', () => {
+  irParaLicao(1);
+});
+
 let palavrasSelecionadas = {};
 
 function selecionar(botao, licao) {
-  // remove seleção anterior
   const opcoes = document.querySelectorAll(`#licao${licao} .palavra`);
   opcoes.forEach(btn => btn.classList.remove('selecionada'));
   
-  // marca a nova seleção
   botao.classList.add('selecionada');
-  
-  // salva a seleção
   palavrasSelecionadas[licao] = botao;
 }
 
@@ -58,17 +61,14 @@ function confirmarResposta(licao) {
   const espaco = document.getElementById(`espaco${licao}`);
   const palavra = selecionado.textContent.trim();
 
-  // evita reprocessar uma lição já respondida
   if (espaco.textContent !== '________') return;
 
-  // limpa seleções e marca apenas o selecionado
   const opcoes = document.querySelectorAll(`#licao${licao} .palavra`);
   opcoes.forEach(opcao => {
     opcao.classList.remove('selecionada');
     opcao.disabled = true;
   });
 
-  // marca o estado da opção confirmada
   if (palavra === respostaCerta) {
     selecionado.classList.add('certa');
     atualizarBarraProgresso(licao);
@@ -77,7 +77,6 @@ function confirmarResposta(licao) {
     selecionado.classList.add('errada');
   }
 
-  // exibe explicação
   const explicacao = document.getElementById(`explicacao${licao}`);
   if (palavra === respostaCerta) {
     explicacao.innerHTML = explicacoesCertas[licao];
@@ -88,11 +87,9 @@ function confirmarResposta(licao) {
   }
   explicacao.style.display = 'block';
 
-  // esconde o botão CONFIRMAR
   const btnConfirmar = document.getElementById(`confirmar${licao}`);
   btnConfirmar.style.display = 'none';
 
-  // se correta, mostra Próxima lição
   if (palavra === respostaCerta) {
     document.getElementById(`botaoProxima${licao}`).style.display = 'inline-block';
   }

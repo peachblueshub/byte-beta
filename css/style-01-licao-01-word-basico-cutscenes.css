@@ -1,0 +1,223 @@
+:root{
+  --bg: #FFFBEE;
+  --panel: #409BFF;
+  --text: #e9eef6;
+  --muted: #a8b0bd;
+  --accent: #FFFBEE;
+  --bubble: #409BFF;
+  --radius: 30px;
+  --shadow: 0 12px 30px rgba(0,0,0,.18);
+}
+* { box-sizing: border-box; }
+html, body, button {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Barlow", sans-serif;
+  margin: 0;
+}
+
+main.scene{
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 16px;
+  display: grid;
+  gap: 20px;
+}
+
+.cutscene{
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 20px;
+  /* Sem fundo azul aqui: o azul agora é só no bubble .dialogue */
+  border-radius: var(--radius);
+  min-height: 100px;
+}
+
+/* MASCOTE (esquerda) */
+.character{
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+}
+.character img{
+  width: 50%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 14px;
+}
+
+/* Balão */
+.dialogue {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--bubble);
+  border-radius: 20px;
+  padding: 20px 30px 50px;
+  min-height: 50px;
+  border: 2px solid #141414;
+}
+
+/* Rabicho da borda (preto) */
+.dialogue::after {
+  content: "";
+  position: absolute;
+  left: -42px; /* -40px menos 2px da borda */
+  top: 55px;
+  width: 0;
+  height: 0;
+  border: 25px solid transparent;
+  border-right-color: #409BFF;
+}
+
+/* Rabicho do preenchimento (cor do balão) */
+.dialogue::before {
+  content: "";
+  position: absolute;
+  left: -40px;
+  top: 60px;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-right-color: #141414;
+}
+
+.nameplate{
+  align-self: flex-start;
+  font-weight: 800;
+  color: #FFFBEE;
+  border-radius: 999px;
+  text-transform: none;
+  font-size: 1.6rem;
+}
+
+.text{
+  line-height: 1.6;
+  font-size: 1.1rem;
+  color: var(--text);
+  min-height: 120px;
+  white-space: pre-wrap; /* permite \n nas falas */
+}
+
+/* CONTROLES */
+.controls{
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+button{
+  cursor: pointer;
+  border: 2px solid #141414;
+  color: #141414;
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-weight: 700;
+  transition: transform .05s ease;
+  font-size: 1.05rem;
+}
+button:active{ transform: translateY(1px); }
+button:hover{  box-shadow: 0px 5px 0px #141414;  }
+button.primary{
+  background: #FFB031;
+  color: #141414;
+  border: 2px solid #141414;
+}
+button:disabled{
+  opacity: .6;
+  cursor: not-allowed;
+  box-shadow: none;
+  background: #BABABA;
+}
+
+/* EXEMPLO (área para printscreen) */
+.example{
+  background: #409BFF;
+  border-radius: var(--radius);
+  padding: 16px;
+  border: 2px solid #141414;
+}
+.example-frame{
+  position: relative;
+  width: 100%;
+  min-height: 220px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 0;
+  overflow: hidden;
+  background: #0c355e;
+}
+.example-shot{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  cursor: zoom-in;
+}
+
+/* Dica "clique para ampliar" */
+.zoom-hint{
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  background: rgba(0,0,0,.45);
+  color: #fff;
+  font-size: .9rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+/* MODAL tela inteira */
+.modal{
+  position: fixed;
+  inset: 0;
+  background: #409BFF;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.modal.open{ display: flex; }
+.modal img{
+  max-width: 92vw;
+  max-height: 92vh;
+  border-radius: 12px;
+}
+.modal-close{
+  position: fixed;
+  top: 5px;
+  right: 10px;
+  background: #409BFF;
+  color: #141414;
+  border: 0;
+  border-radius: 999px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* RESPONSIVO */
+@media (max-width: 860px){
+  .cutscene{
+    grid-template-columns: 1fr;
+  }
+  .dialogue{
+    padding-bottom: 84px;
+  }
+  /* Rabicho agora aponta para cima (pois o mascote fica acima) */
+  .dialogue::after{
+    left: 40px;
+    top: -18px;
+    border: 10px solid transparent;
+    border-bottom-color: var(--bubble);
+  }
+}

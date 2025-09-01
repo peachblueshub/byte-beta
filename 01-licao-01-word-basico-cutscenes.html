@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>BYTE | Aprenda Word do seu jeito</title>
+
+  <link rel="stylesheet" href="./css/style-01-licao-01-word-basico-cutscenes.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Bebas+Neue&family=Boldonse&family=Oswald:wght@200..700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/loading.css">
+  <script src="./js/loading.js" defer></script>
+</head>
+<body>
+
+<!-- Carregamento -->
+
+<div id="loading-screen">
+<img src="./img/40.png" alt="Carregando..." />
+<p id="loading-text">Carregando... 0%</p>
+<div id="loading-bar-container">
+<div id="loading-bar"></div>
+</div>
+</div>
+
+<main class="scene">
+  <!-- BLOCO SUPERIOR: MASCOTE + FALA -->
+  <section class="cutscene">
+    <!-- Mascote à esquerda (fora do bloco azul; o azul agora é só o bubble da fala) -->
+    <figure class="character" aria-label="Mascote Byte">
+      <img src="./img/30.png" alt="Mascote Byte" />
+    </figure>
+
+    <!-- Fala à direita como bubble -->
+    <div class="dialogue" role="region" aria-live="polite">
+      <div class="nameplate" id="dialogueName">Byte</div>
+      <p class="text" id="dialogueText"></p>
+
+      <div class="controls">
+        <button id="prevLine" aria-label="Voltar para fala anterior">Voltar</button>
+        <button id="nextLine" class="primary" aria-label="Ir para próxima fala">Próximo</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCO INFERIOR: ÁREA PARA PRINTSCREEN DO EXEMPLO -->
+  <section class="example">
+    <div class="example-frame" aria-label="Área para printscreen">
+      <div class="zoom-hint" aria-hidden="true">clique para ampliar</div>
+      <img src="./img/01-word-introducao.png" alt="Print do exemplo" class="example-shot" id="exampleShot"/>
+    </div>
+  </section>
+</main>
+
+<!-- MODAL DE TELA INTEIRA PARA AMPLIAR IMAGEM -->
+<div class="modal" id="imgModal" aria-hidden="true" role="dialog" aria-label="Imagem ampliada">
+  <button class="modal-close" id="modalClose" aria-label="Fechar imagem ampliada">
+    <span class="material-icons">close</span>
+  </button>
+  <img id="modalImg" alt="Imagem ampliada do exemplo">
+</div>
+
+<script src="./js/script-01-licao-01-word-basico-cutscenes.js"></script>
+</body>
+</html>

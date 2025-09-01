@@ -133,25 +133,25 @@ const tileDescriptionsP = {
     texto: "Aqui começa a sua jornada! Descubra o que é o Microsoft Word.",
     link: "./licao-word-iniciante.html"
   },
-  "3_1": {
-    titulo: "Formatar Texto",
-    texto: "Aprenda a aplicar negrito, itálico e sublinhado.",
-    link: "./formatar-texto.html"
+  "2_3": {
+    titulo: "Lição 02 - Básico: Formatar Texto",
+    texto: "Aprenda a aplicar negrito, itálico, sublinhado e tachado.",
+    link: "./01-licao-02-word-basico.html"
   },
-  "4_1": {
-    titulo: "Inserir Imagens",
-    texto: "Veja como adicionar e posicionar imagens em seu documento.",
-    link: "./inserir-imagens.html"
+  "3_3": {
+    titulo: "Lição 03 - Básico: Resolva um Problema",
+    texto: "O Byte precisa destacar o texto de um documento. Ajude-o nessa tarefa.",
+    link: "./01-licao-03-word-basico.html"
   },
-  "5_1": {
-    titulo: "Cabeçalho e Rodapé",
-    texto: "Entenda como configurar cabeçalhos e rodapés com praticidade.",
-    link: "./cabecalho-roda.html"
+  "4_3": {
+    titulo: "Lição 04 - Básico: Chat com o Byte",
+    texto: "Você tem uma nova mensagem! Faça um currículo junto com o Byte.",
+    link: "./01-licao-04-word-basico.html"
   },
-  "5_2": {
-    titulo: "Salvar e Compartilhar",
-    texto: "Descubra como salvar e compartilhar seu documento com segurança.",
-    link: "./salvar-compartilhar.html"
+  "5_3": {
+    titulo: "Lição 05 - Básico: Monte um Currículo",
+    texto: "Monte o currículo completo do Byte e reveja todo o conteúdo aprendido até aqui.",
+    link: "./01-licao-05-word-basico.html"
   },
   "0_3": {
     titulo: "Revisão Ortográfica",

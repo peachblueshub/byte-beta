@@ -104,11 +104,15 @@ document.querySelectorAll(".option").forEach(option => {
         markCorrect(selectedDescription);
         matchedPairs++;
         updateProgressBar();
-        showMessage("Correto!", "success");
+        // showMessage("Correto!", "success");
 
-        if (matchedPairs === totalPairs) {
-          showMessage("Parabéns! Lição concluída!", "success");
-        }
+if (matchedPairs === totalPairs) {
+  showMessage("Parabéns! Lição concluída!", "success");
+
+  // Mostra o botão de finalizar
+  document.getElementById("finalizar-container").style.display = "block";
+}
+
         resetSelection();
       } else {
         // Animação de erro

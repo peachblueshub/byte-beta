@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lição - Destacar Texto</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/01-licao-03-word-basico.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Bebas+Neue&family=Boldonse&family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/loading.css">    
+    <script src="./js/loading.js" defer></script>
+    </head>
+
+</head>
+<body>
+
+<!-- Carregamento -->
+
+<div id="loading-screen">
+<img src="./img/40.png" alt="Carregando..." />
+<p id="loading-text">Carregando... 0%</p>
+<div id="loading-bar-container">
+<div id="loading-bar"></div>
+</div>
+</div>
+
+
+<!-- Topo com barra + menu -->
+<div id="topo-interface">
+  
+  <!-- Barra de progresso -->
+  <section id="progress-bar-container" class="barra-progresso-container" aria-label="Progresso do usuário" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <section id="progress-bar" class="barra-progresso" style="width: 0%;"></section>
+  </section>
+
+  <!-- Menu lateral -->
+  <nav id="navegacao-trilha" aria-label="Navegação lateral">
+    <p class="boasvindas-usuario">Usuário</p>
+
+    <div class="dropdown">
+      <button class="botao-trilha ativo" id="btnWord">Word</button>
+      <div class="dropdown-menu" id="menuWord">
+        <button class="dropdown-option" data-opcao="dificuldade">Alterar módulo</button>
+        <button class="dropdown-option" data-opcao="curso">Alterar curso</button>
+      </div>
+    </div>
+
+    <div class="vidas-dropdown">
+      <button class="botao-trilha" id="botaoVidas">
+        <span class="material-icons">favorite</span>
+        <span id="valorVidas">0</span>
+      </button>
+    </div>
+
+    <div class="pontuacao-dropdown">
+      <button class="botao-trilha" id="botaoPontuacao">
+        <span class="material-icons">pets</span>
+        <span id="valorPontuacao">0</span>
+      </button>
+    </div>
+
+    <a href="index-word.html" class="botao-trilha" id="botaoSair">Sair</a>
+  </nav>
+</div>
+
+
+<!-- Jogo -->
+
+  <main class="lesson-container">
+
+<section class="lesson-top">
+  <section class="lesson-img">
+    <img src="./img/31.png" alt="Ilustração" />
+  </section>
+  <section class="lesson-text">
+
+    <header>
+    <h1>Destacando um Texto</h1>
+    </header>
+
+    <section class="enunciado">
+      <p>
+      O Byte está escrevendo um relatório e quer <strong>destacar uma palavra ou frase importante</strong> para chamar atenção do leitor. Qual é a formatação que ele deve usar?
+      </p>
+    </section>
+  </section>
+  </section>
+
+    <section class="opcoes" role="list" aria-label="Alternativas da pergunta">
+      <button class="option" data-correct="false" role="listitem">Sublinhado</button>
+      <button class="option" data-correct="true" role="listitem">Negrito</button>
+      <button class="option" data-correct="false" role="listitem">Itálico</button>
+    </section>
+
+    <section id="feedback" aria-live="polite"></section>
+
+<!-- Botão Finalizar (inicialmente escondido) -->
+<div id="finalizar-container" style="display:none; margin-top:20px;">
+  <a href="fim-modulo.html" id="btnFinalizar">Finalizar Lição</a>
+</div>
+
+  </main>
+
+  <script src="./js/01-licao-03-word-basico.js"></script>
+</body>
+</html>
