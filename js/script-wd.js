@@ -131,7 +131,7 @@ const tileDescriptionsP = {
   "1_3": {
     titulo: "Lição 01 - Básico: Introdução ao Word",
     texto: "Aqui começa a sua jornada! Descubra o que é o Microsoft Word.",
-    link: "./licao-word-iniciante.html"
+    link: "./01-licao-01-word-basico-cutscenes.html"
   },
   "2_3": {
     titulo: "Lição 02 - Básico: Formatar Texto",
