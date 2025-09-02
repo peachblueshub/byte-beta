@@ -1,12 +1,12 @@
-/* Remove barras de rolagem */
-html, body {
+body {
+  font-family: "Barlow", sans-serif;
+  background: #FFFBEE;
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden; /* remove scroll */
-  background: #FFFBEE;
-  font-family: "Barlow", sans-serif;
+  overflow: hidden;
 }
+
 
 /* Topo */
 #topo-interface {
@@ -23,13 +23,15 @@ html, body {
 
 /* Navegação trilha */
 #navegacao-trilha {
-  position: absolute;
+  position: fixed; /* fixa na tela, não depende do container */
   right: 20px;
-  top: 50%;
+  top: 05%;
   transform: translateY(-50%);
   display: flex;
   align-items: center;
   gap: 14px;
+  flex-wrap: nowrap; /* evita quebrar linha */
+  max-width: calc(100% - 40px); /* impede de passar da tela */
 }
 
 /* Dropdown */
@@ -43,10 +45,6 @@ html, body {
   position: absolute;
   top: 110%;
   left: 0;
-  background-color: #FFFBEE;
-  border: 2px solid #141414;
-  border-radius: 10px;
-  padding: 8px 0;
   display: none;
   flex-direction: column;
   z-index: 100;
@@ -57,59 +55,90 @@ html, body {
 .botao-trilha,
 .pontuacao-dropdown button,
 .vidas-dropdown button {
-  min-width: 120px;
-  height: 38px;
-  padding: 0 18px;
+  width: 80px; /* largura fixa */
+  height: 45px; /* altura fixa */
+  padding: 10px 18px; /* espaçamento interno */
   display: flex;
+  flex-direction: row; /* ícone e número lado a lado */
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  font-size: 1rem;
+  gap: 6px; /* espaço entre ícone e número */
+  font-size: 1.1rem;
   font-family: "Barlow", sans-serif;
   border: 2px solid #141414;
   background-color: #FFFBEE;
   color: #141414;
-  border-radius: 8px;
-  transition: background-color 0.2s;
+  border-radius: 10px;
   box-sizing: border-box;
+  transition: box-shadow 0.1s;
+  text-align: center;
+} 
+
+.boasvindas-usuario{
+  font-weight: 600;
 }
 
-.botao-trilha:hover,
-.pontuacao-dropdown button:hover,
-.vidas-dropdown button:hover {
-  background-color: #BABABA;
+.botao-trilha .material-icons,
+.pontuacao-dropdown button .material-icons,
+.vidas-dropdown button .material-icons {
+  font-size: 20px; /* tamanho do ícone */
+  line-height: 1;
 }
 
 .botao-trilha.ativo {
   background-color: #409BFF;
   color: #FFFBEE;
-  font-weight: 700;
+  font-weight: 800;
+}
+
+.botao-trilha.ativo:hover {
+  transform: translateY(0px); /* move para baixo */
+  box-shadow: 0px 5px 0px #141414 /* aumenta a sombra */
 }
 
 /* Cores diferenciadas para dropdowns especiais */
+.pontuacao-dropdown button{
+  color: #FFB031;
+  font-weight: 800;
+}
+
 .pontuacao-dropdown button:hover {
   background-color: #FFB031;
   color: #FFFBEE;
+  transform: translateY(0px); /* move para baixo */
+  box-shadow: 0px 5px 0px #141414 /* aumenta a sombra */
+}
+
+.vidas-dropdown button{
+  color: #FF4043;
+  font-weight: 800;
 }
 
 .vidas-dropdown button:hover {
   background-color: #FF4043;
   color: #FFFBEE;
+  transform: translateY(0px); /* move para baixo */
+  box-shadow: 0px 5px 0px #141414 /* aumenta a sombra */
+}
+
+#botaoSair {
+  border: 0;
+  font-weight: 500;
+  text-decoration: none;
 }
 
 /* Ícones uniformes */
 .material-icons {
-  font-size: 20px;
+  font-size: 0.9rem;
   line-height: 20px;
 }
 
-
 /* Barra de progresso */
 .barra-progresso-container {
-  width: 35%;
-  max-width: 420px;
+  width: 100%;
+  max-width: 600px;
   height: 26px;
-  background-color: #D9D9D9;
+  background-color: #BABABA88;
   border: 2px solid #141414;
   border-radius: 30px;
   overflow: hidden;
@@ -119,6 +148,11 @@ html, body {
   height: 100%;
   background-color: #409BFF;
   transition: width 0.4s ease;
+}
+
+.lesson-title{
+  color: #409BFF;
+  font-size: 3rem;
 }
 
 /* Mensagens e layout do jogo */
