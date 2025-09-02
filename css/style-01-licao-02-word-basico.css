@@ -1,9 +1,11 @@
-body {
-  background: #FFFBEE;
+/* Remove barras de rolagem */
+html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  overflow: hidden; /* remove scroll */
+  background: #FFFBEE;
   font-family: "Barlow", sans-serif;
-  min-height: 100vh;
 }
 
 /* Topo */
@@ -128,21 +130,28 @@ body {
 }
 
 #game-container {
-  max-width: 700px;
-  margin: 80px auto 40px;
+  height: 100vh;                  /* ocupa a altura toda da tela */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;        /* centraliza verticalmente */
+  align-items: center;            /* centraliza horizontalmente */
   text-align: center;
+  margin: 0;                      /* remove margem extra */
+  gap: 20px;                      /* espaçamento interno entre título, mensagem, colunas etc */
 }
 
 #columns {
   display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
+  justify-content: center;        /* centraliza as colunas */
+  align-items: flex-start;
+  gap: 10px;                      /* espaçamento horizontal entre colunas */
+  margin-top: 10px;
 }
 
 .column {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 10px;                      /* espaçamento vertical entre itens da mesma coluna */
 }
 
 /* Botões de opções */
@@ -186,6 +195,26 @@ body {
   border: 2px solid #141414 !important;
   color: white !important;
 }
+
+/* Cabeçalho da lição */
+.lesson-header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centraliza imagem + título */
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.lesson-header .lesson-image {
+  width: 50px;
+  height: auto;
+}
+
+.lesson-header .lesson-title {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
 
 /* Ícones */
 .material-icons {
