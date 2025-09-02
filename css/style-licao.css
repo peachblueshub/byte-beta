@@ -1,11 +1,10 @@
 body {
+  font-family: "Barlow", sans-serif;
   background: #FFFBEE;
   margin: 0;
   padding: 0;
-  font-family: "Barlow", sans-serif;
   height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 
@@ -24,15 +23,15 @@ body {
 
 /* Navegação trilha */
 #navegacao-trilha {
-  position: fixed;
+  position: fixed; /* fixa na tela, não depende do container */
   right: 20px;
-  top: 30px; /* fica alinhado ao topo, mesmo nível da barra */
+  top: 05%;
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
   gap: 14px;
-  flex-wrap: nowrap;
-  max-width: calc(100% - 40px);
-  z-index: 1001;
+  flex-wrap: nowrap; /* evita quebrar linha */
+  max-width: calc(100% - 40px); /* impede de passar da tela */
 }
 
 /* Dropdown */
