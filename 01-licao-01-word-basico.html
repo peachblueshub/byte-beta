@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>BYTE - Aprenda Word do seu jeito</title>
+  <link rel="icon" type="image/x-icon" href="fav.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./css/style-01-licao-01-word-basico.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Bebas+Neue&family=Boldonse&family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/loading.css">
+<script src="./js/loading.js" defer></script>
+    <!-- Ícones Google -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+
+<!-- Carregamento -->
+
+<div id="loading-screen">
+<img src="./img/30.png" alt="Carregando..." />
+<p id="loading-text">Carregando... 0%</p>
+<div id="loading-bar-container">
+<div id="loading-bar"></div>
+</div>
+</div>
+<!-- Topo com barra + menu -->
+<div id="topo-interface">
+  
+  <!-- Barra de progresso -->
+  <section id="progress-bar-container" class="barra-progresso-container" aria-label="Progresso do usuário" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <section id="progress-bar" class="barra-progresso" style="width: 0%;"></section>
+  </section>
+
+  <!-- Menu lateral -->
+  <nav id="navegacao-trilha" aria-label="Navegação lateral">
+    <p class="boasvindas-usuario">Usuário</p>
+
+    <div class="dropdown">
+      <button class="botao-trilha ativo" id="btnWord">Word</button>
+      <div class="dropdown-menu" id="menuWord">
+        <button class="dropdown-option" data-opcao="dificuldade">Alterar módulo</button>
+        <button class="dropdown-option" data-opcao="curso">Alterar curso</button>
+      </div>
+    </div>
+
+    <div class="vidas-dropdown">
+      <button class="botao-trilha" id="botaoVidas">
+        <span class="material-icons">favorite</span>
+        <span id="valorVidas">0</span>
+      </button>
+    </div>
+
+    <div class="pontuacao-dropdown">
+      <button class="botao-trilha" id="botaoPontuacao">
+        <span class="material-icons">pets</span>
+        <span id="valorPontuacao">0</span>
+      </button>
+    </div>
+
+    <a href="index-word.html" class="botao-trilha" id="botaoSair">Sair</a>
+  </nav>
+</div>
+
+
+  <main>
+
+    <!------------------------- CUTSCENES ------------------------->
+
+    <!-- CUTSCENE 1 -->
+    <article id="cutscene1" class="tela ativa" aria-labelledby="tituloCutscene1">
+    <header class="cutscene-conteudo">
+    <img src="./img/04.svg" alt="byte explicando" class="imagem-byte" />
+    <section class="texto-cutscene" id="tituloCutscene1">
+    <h1 class="boasvindas-licao">Seja bem-vindo!</h1>
+    <h2>Eu sou o Byte, e vou te contar um pouco sobre o Microsoft Word.</h2>
+    <p>
+    O Word é um editor de textos. Você pode digitar, formatar e organizar documentos como cartas, currículos e muito mais!
+    </p>
+
+    <figure>
+    <img src="./img/01-word-introducao.png" alt="Introdução Word">
+    <figcaption>Este é o Microsoft Word!</figcaption>
+    </figure>
+
+    </section>
+    </header>
+    <nav class="botoes-esquerda-direita" aria-label="Navegação da cutscene 1">
+    <button class="botao" type="button" onclick="irParaLicao(1)">Pular</button>
+    <button class="botao" type="button" onclick="mostrarCutscene2()">Próximo</button>
+    </nav>
+    </article>
+
+    <!-- CUTSCENE 2 -->
+    <article id="cutscene2" class="tela" aria-labelledby="tituloCutscene2">
+    <header class="cutscene-conteudo">
+    <img src="./img/04.svg" alt="byte explicando" class="imagem-byte" />
+    <section class="texto-cutscene" id="tituloCutscene2">
+    <h2>A edição é tudo...</h2>
+    <p>
+    No Word você também pode mudar a <strong>fonte</strong>, o <strong>tamanho</strong> e a <strong>cor</strong> do texto para deixá-lo mais bonito.
+    </p>
+
+    <figure>
+    <img src="./img/02-word-introducao.png" alt="Introdução Word">
+    <figcaption>A parte destacada em <strong>azul</strong> mostra as opções de edição.</figcaption>
+    </figure>
+
+    </section>
+    </header>
+    <nav class="botoes-esquerda-direita" aria-label="Navegação da cutscene 2">
+    <button class="botao" type="button" onclick="irParaLicao(1)">Pular</button>
+    <button class="botao" type="button" onclick="mostrarCutscene3()">Próximo</button>
+    </nav>
+    </article>
+
+    <!-- CUTSCENE 3 -->
+    <article id="cutscene3" class="tela" aria-labelledby="tituloCutscene3">
+    <header class="cutscene-conteudo">
+    <img src="./img/04.svg" alt="byte explicando" class="imagem-byte" />
+    <section class="texto-cutscene" id="tituloCutscene3">
+    <!-- <h1>Cuidado!</h1> -->
+    <h2>Atente-se para não perder o que já foi feito.</h2>
+    <p>
+    Ao terminar um documento, lembre-se de <strong>salvar</strong> seu trabalho. Assim, você garante que nada será perdido.
+    </p>
+
+    <figure>
+    <img src="./img/03-word-introducao.png" alt="Introdução Word">
+    <figcaption>Na parte em <strong>azul</strong> você pode manter o seu documento a salvo!</figcaption>
+    </figure>
+
+    <!-- <h3>Agora que você já sabe, vamos começar?</h3> -->
+
+    </section>
+    </header>
+    <nav class="botoes-direita" aria-label="Navegação da cutscene 3">
+    <button class="botao" type="button" onclick="irParaLicao(1)">Começar Lição</button>
+    </nav>
+    </article>
+
+    <!------------------------- LIÇÕES WORD: INICIANTE ------------------------->
+
+<!-- LIÇÃO 1 -->
+<article id="licao1" class="tela" aria-labelledby="tituloLicao1">
+  <header class="cabecalho-licao">
+    <div class="imagem-licao">
+      <img id="imagemLicao1" src="./img/30.png" alt="Reação do Byte">
+    </div>
+    <div class="texto-licao">
+      <h1 id="tituloLicao1">Lição 1: O que é o Word?</h1>
+      <h2 class="subtitulo-licao">Complete a frase abaixo:</h2>
+    </div>
+  </header>
+
+  <p class="frase">O Word é usado para <span id="espaco1" aria-live="polite">________</span> textos.</p>
+
+  <nav class="opcoes" aria-label="Escolha a resposta da lição 1">
+    <button class="palavra" type="button" onclick="selecionar(this, 1)">editar</button>
+    <button class="palavra" type="button" onclick="selecionar(this, 1)">desenhar</button>
+    <button class="palavra" type="button" onclick="selecionar(this, 1)">navegar</button>
+  </nav>
+
+  <aside id="explicacao1" class="explicacao" role="region" aria-live="polite" style="display: none;"></aside>
+
+  <footer class="botoes-controle" aria-label="Controles da lição 1">
+    <button class="botao" type="button" onclick="reiniciarLicao(1)">Revisar</button>
+    <button id="confirmar1" class="botao confirmar" type="button" onclick="confirmarResposta(1)">Confirmar</button>
+    <button id="botaoProxima1" class="botao" style="display: none;" type="button" onclick="irParaLicao(2)">Próxima Lição</button>
+  </footer>
+</article>
+
+
+<!-- LIÇÃO 2 -->
+<article id="licao2" class="tela" aria-labelledby="tituloLicao2">
+  <header class="cabecalho-licao">
+    <div class="imagem-licao">
+      <img id="imagemLicao2" src="./img/30.png" alt="Reação do Byte">
+    </div>
+    <div class="texto-licao">
+      <h1 id="tituloLicao2">Lição 2: Personalização de texto</h1>
+      <h2 class="subtitulo-licao">Escolha a palavra correta:</h2>
+    </div>
+  </header>
+
+  <p class="frase">Com o Word, é possível mudar a <span id="espaco2" aria-live="polite">________</span> do texto.</p>
+
+  <nav class="opcoes" aria-label="Escolha a resposta da lição 2">
+    <button class="palavra" type="button" onclick="selecionar(this, 2)">idioma</button>
+    <button class="palavra" type="button" onclick="selecionar(this, 2)">papel</button>
+    <button class="palavra" type="button" onclick="selecionar(this, 2)">fonte</button>
+  </nav>
+
+  <aside id="explicacao2" class="explicacao" role="region" aria-live="polite" style="display: none;"></aside>
+
+  <footer class="botoes-controle" aria-label="Controles da lição 2">
+    <button class="botao" type="button" onclick="reiniciarLicao(2)">Revisar</button>
+    <button id="confirmar2" class="botao confirmar" type="button" onclick="confirmarResposta(2)">Confirmar</button>
+    <button id="botaoProxima2" class="botao" style="display: none;" type="button" onclick="irParaLicao(3)">Próxima Lição</button>
+  </footer>
+</article>
+
+
+<!-- LIÇÃO 3 -->
+<article id="licao3" class="tela" aria-labelledby="tituloLicao3">
+  <header class="cabecalho-licao">
+    <div class="imagem-licao">
+      <img id="imagemLicao3" src="./img/30.png" alt="Reação do Byte">
+    </div>
+    <div class="texto-licao">
+      <h1 id="tituloLicao3">Lição 3: Salvando seu trabalho</h1>
+      <h2 class="subtitulo-licao">Complete a frase:</h2>
+    </div>
+  </header>
+
+  <p class="frase">Para não perder o seu documento, você deve <span id="espaco3" aria-live="polite">________</span> o arquivo.</p>
+
+  <nav class="opcoes" aria-label="Escolha a resposta da lição 3">
+    <button class="palavra" type="button" onclick="selecionar(this, 3)">imprimir</button>
+    <button class="palavra" type="button" onclick="selecionar(this, 3)">salvar</button>
+    <button class="palavra" type="button" onclick="selecionar(this, 3)">fechar</button>
+  </nav>
+
+  <aside id="explicacao3" class="explicacao" role="region" aria-live="polite" style="display: none;"></aside>
+
+  <footer class="botoes-controle" aria-label="Controles da lição 3">
+    <button class="botao" type="button" onclick="reiniciarLicao(3)">Revisar</button>
+    <button id="confirmar3" class="botao confirmar" type="button" onclick="confirmarResposta(3)">Confirmar</button>
+    <button id="botaoProxima3" class="botao" style="display: none;" type="button" onclick="window.location.href='fim-modulo.html'">Finalizar</button>
+  </footer>
+</article>
+
+
+
+  </main>
+
+  <script src="./js/script-01-licao-01-word-basico.js"></script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 // ===== Configurações =====
-const END_REDIRECT = "./licao-word-iniciante.html";
+const END_REDIRECT = "./01-licao-01-word-basico.html";
 
 // Cutscene com imagem do exemplo para cada fala
 const dialogues = [
