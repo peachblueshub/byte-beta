@@ -74,10 +74,10 @@ if (palavra === respostaCerta) {
   selecionado.classList.add('certa');
   atualizarBarraProgresso(licao);
   espaco.textContent = respostaCerta;
-  document.getElementById(`imagemLicao${licao}`).src = "./img/02.png"; // ✅
+  document.getElementById(`imagemLicao${licao}`).src = "./img/12-happy.svg"; // ✅
 } else {
   selecionado.classList.add('errada');
-  document.getElementById(`imagemLicao${licao}`).src = "./img/31.png"; // ❌
+  document.getElementById(`imagemLicao${licao}`).src = "./img/10-sad.svg"; // ❌
 }
 
 
