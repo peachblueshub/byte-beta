@@ -120,6 +120,6 @@ function reiniciarLicao(licao) {
   });
 
   // 🔄 volta para imagem neutra
-  document.getElementById(`imagemLicao${licao}`).src = "./img/30.png";
+  document.getElementById(`imagemLicao${licao}`).src = "./img/11-neutral.svg";
 }
 
