@@ -74,10 +74,10 @@ if (palavra === respostaCerta) {
   selecionado.classList.add('certa');
   atualizarBarraProgresso(licao);
   espaco.textContent = respostaCerta;
-  document.getElementById(`imagemLicao${licao}`).src = "./img/12-happy.svg"; // ✅
+  document.getElementById(`imagemLicao${licao}`).src = "./img/44-happy.png"; // ✅
 } else {
   selecionado.classList.add('errada');
-  document.getElementById(`imagemLicao${licao}`).src = "./img/10-sad.svg"; // ❌
+  document.getElementById(`imagemLicao${licao}`).src = "./img/43-sad.png"; // ❌
 }
 
 
@@ -120,6 +120,6 @@ function reiniciarLicao(licao) {
   });
 
   // 🔄 volta para imagem neutra
-  document.getElementById(`imagemLicao${licao}`).src = "./img/11-neutral.svg";
+  document.getElementById(`imagemLicao${licao}`).src = "./img/42-neutral.png";
 }
 

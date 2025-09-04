@@ -178,17 +178,17 @@ main {
   padding: 60px 40px;
   border: 2px solid #141414;
   border-radius: 50px;
-    
+
   display: flex;
   align-items: center;
   gap: 30px; 
   margin-bottom: 10px;
 }
 
-.imagem-byte {
+/* .imagem-byte {
   width: 30%;
   height: auto;
-}
+} */
 
 .cabecalho-licao {
   display: flex;
@@ -201,7 +201,6 @@ main {
   max-width: 200px;
   height: auto;
 }
-
 
 .texto-licao h1 {
   color:#409BFF;
@@ -279,7 +278,6 @@ figcaption{
 }
 
 /* navegação entre telas */
-
 /* botões principais da cutscene (pular, próximo) */
 .botoes-esquerda-direita {
   display: flex;
