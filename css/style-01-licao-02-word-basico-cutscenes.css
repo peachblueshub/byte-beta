@@ -18,7 +18,7 @@ body {
 
 .stage {
     position: relative;
-    height: 460px;
+    height: 550px;
     perspective: 1200px;
 }
 
@@ -55,7 +55,7 @@ body {
 
 
 .example {
-    width: 75%;
+    width: 100%;
     justify-content: center;
 }
 
