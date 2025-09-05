@@ -5,14 +5,25 @@
       background: #FFFBEE;
       min-height:100svh;
       display:grid; place-items:center;
+      font-family: Barlow;
     }
 
-    .app{ width:min(720px, 92vw); }
+    .app{
+        width:min(720px, 92vw);
+    }
 
-    .stage{ position:relative; height:460px; perspective:1200px; }
+    .stage{
+        position:relative;
+        height:460px;
+        perspective:1200px; 
+    }
 
     .stack{
-      position:absolute; inset:0; margin:auto; width:min(540px, 92%); height:100%;
+      position:absolute;
+      inset:0;
+      margin:auto;
+      width:min(540px, 92%);
+      height:100%;
     }
 
     .card{
@@ -26,17 +37,45 @@
       transition: transform .6s cubic-bezier(.22,1,.36,1), opacity .35s ease, filter .4s ease;
     }
 
-    .card h2{ margin:0; font-size:28px; color:#FFFBEE; }
-    .card p{ margin:0; color:#FFFBEE; line-height:1.5; }
+    .card h2{
+        margin:0;
+        font-size:28px;
+        color:#FFFBEE;
+    }
 
-    .badge{ font-size:12px; letter-spacing:.3px; color:#141414; background:#FFB031; border:1px solid #141414; padding:6px 10px; border-radius:999px; width:max-content; }
+    .card p{
+        margin:0;
+        color:#FFFBEE;
+        line-height:1.5;
+    }
+
+    .badge{ 
+        font-size:12px;
+        letter-spacing:.3px;
+        color:#141414;
+        background:#FFB031;
+        border:1px solid #141414;
+        padding:6px 10px;
+        border-radius:999px;
+        width:max-content;
+    }
 
     .footer{
-      display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:auto; color: #FFFBEE;
+      display:flex; 
+      justify-content:space-between; 
+      align-items:center; 
+      gap:12px; 
+      margin-top:auto; 
+      color: #FFFBEE;
     }
 
     button{
-      cursor:pointer; border:0; padding:14px 18px; border-radius:15px; font-weight:700; letter-spacing:.2px;
+      cursor:pointer; 
+      border:0; 
+      padding:14px 18px; 
+      border-radius:15px; 
+      font-weight:700; 
+      letter-spacing:.2px;
       background:#FFB031;
       border: 1px solid #141414;
       transition: box-shadow .1s ease;
@@ -51,4 +90,7 @@
         pointer-events:none; 
     }
 
-    .card.top:hover{ transform: translateY(var(--y,0px)) scale(var(--s,1)) rotate(var(--r,0deg)) translateZ(0) rotateX(0.0001deg); filter:brightness(1.06); }
+    .card.top:hover{ 
+        transform: translateY(var(--y,0px)) scale(var(--s,1)) rotate(var(--r,0deg)) translateZ(0) rotateX(0.0001deg); 
+        filter:brightness(1.06); 
+    }
