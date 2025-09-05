@@ -1,3 +1,11 @@
+  :root {
+    --bg-color: #FFFBEE;    /* background color */
+    --line-color: #14141430;  /* grid line color */
+    --grid-size: 40px;      /* distance between grid lines */
+    --line-thickness: 1px;  /* thickness of grid lines */
+  }
+
+
 * {
     box-sizing: border-box;
 }
@@ -5,7 +13,12 @@
 body {
     margin: 0;
     font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
-    background: #FFFBEE;
+    background-color: var(--bg-color);
+    background-image: 
+    linear-gradient(var(--line-color) var(--line-thickness), transparent 0),
+    linear-gradient(90deg, var(--line-color) var(--line-thickness), transparent 0);
+    background-size: var(--grid-size) var(--grid-size);
+    background-repeat: repeat;
     min-height: 100svh;
     display: grid;
     place-items: center;
