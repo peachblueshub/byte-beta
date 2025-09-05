@@ -1,62 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stacked Cards – Next Animation</title>
-  <style>
-
-    *{ box-sizing: border-box; }
-    body{
-      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
-      background: #FFFBEE;
-      min-height:100svh;
-      display:grid; place-items:center;
-    }
-
-    .app{ width:min(720px, 92vw); }
-
-    .stage{ position:relative; height:460px; perspective:1200px; }
-
-    .stack{
-      position:absolute; inset:0; margin:auto; width:min(540px, 92%); height:100%;
-    }
-
-    .card{
-      position:absolute; inset:0; margin:auto; width:100%; height:100%;
-      background:#409BFF;
-      border:1px solid #141414;
-      border-radius:24px;
-      padding:28px 28px 88px;
-      display:flex; flex-direction:column; gap:14px;
-      transform-origin: 50% 100%;
-      transition: transform .6s cubic-bezier(.22,1,.36,1), opacity .35s ease, filter .4s ease;
-    }
-
-    .card h2{ margin:0; font-size:28px; color:#FFFBEE; }
-    .card p{ margin:0; color:#FFFBEE; line-height:1.5; }
-
-    .badge{ font-size:12px; letter-spacing:.3px; color:#141414; background:#FFB031; border:1px solid #141414; padding:6px 10px; border-radius:999px; width:max-content; }
-
-    .footer{
-      display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:auto; color: #FFFBEE;
-    }
-
-    button{
-      cursor:pointer; border:0; padding:14px 18px; border-radius:15px; font-weight:700; letter-spacing:.2px;
-      background:#FFB031;
-      border: 1px solid #141414;
-      box-shadow: 0 5px 0px #141414;
-      transition: transform .15s ease, box-shadow .2s ease, opacity .2s ease;
-    }
-    button:active{ transform:translateY(1px); box-shadow: 0 8px 14px rgba(96,165,250,.18); }
-    button.ghost{ background:transparent; color:#e5e7eb; border:1px solid rgba(255,255,255,.12); box-shadow:none; }
-
-    .swipe-out{ pointer-events:none; }
-
-    .card.top:hover{ transform: translateY(var(--y,0px)) scale(var(--s,1)) rotate(var(--r,0deg)) translateZ(0) rotateX(0.0001deg); filter:brightness(1.06); }
-  </style>
-</head>
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+    <meta charset="UTF-8">
+    <title>Lição - Formatações</title>
+    <link rel="stylesheet" href="./css/style-01-licao-02-word-basico-cutscenes.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Bebas+Neue&family=Boldonse&family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/loading.css">
+<script src="./js/loading.js" defer></script>
+    <!-- Ícones Google -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
 <body>
   <div class="app">
     <div class="stage">
@@ -105,88 +62,7 @@
 
   </div>
 
-  <script>
-    const MAX_VISIBLE = 4;
-    const PEEK_Y = 14;
-    const SCALE_STEP = 0.04;
-    const LOOP = false;
-    const FINAL_URL = "./01-licao-02-word-basico.html";
-
-    const stack = document.getElementById('stack');
-    const cards = Array.from(stack.querySelectorAll('.card'));
-    const nextButtons = stack.querySelectorAll('.next');
-
-    let current = 0;
-
-    function layout(){
-      const n = cards.length;
-      const visible = Math.min(MAX_VISIBLE, n);
-      for (let i = 0; i < n; i++){
-        const pos = (i - current + n) % n;
-        const el = cards[i];
-        if (pos < visible){
-          el.style.opacity = 1;
-          el.style.zIndex = String(100 - pos);
-          const y = pos * PEEK_Y;
-          const s = 1 - pos * SCALE_STEP;
-          el.style.transform = `translateY(${y}px) scale(${s})`;
-          el.classList.toggle('top', pos === 0);
-          el.setAttribute('aria-hidden', pos !== 0);
-        } else {
-          el.style.opacity = 0;
-          el.style.zIndex = '0';
-          el.style.transform = `translateY(${visible * PEEK_Y}px) scale(${1 - visible * SCALE_STEP})`;
-          el.setAttribute('aria-hidden', 'true');
-        }
-      }
-    }
-
-    function atLastCard(){
-      return ((current % cards.length) === (cards.length - 1));
-    }
-
-    function handleNext(){
-      if (!LOOP && atLastCard()){
-        const lastEl = cards[(current) % cards.length];
-        const url = FINAL_URL || lastEl.dataset.finalUrl;
-        if (url){
-          window.location.href = url; return;
-        }
-        return;
-      }
-
-      const n = cards.length;
-      const topIndex = current % n;
-      const top = cards[topIndex];
-
-      top.classList.add('swipe-out');
-      const exitDir = (topIndex % 2 === 0) ? 1 : -1;
-      top.style.transition = 'transform .55s cubic-bezier(.22,1,.36,1), opacity .45s ease';
-      top.style.transform += ` translateX(${exitDir*110}%) rotate(${exitDir*8}deg)`;
-      top.style.opacity = '0';
-
-      const others = cards.filter((_, i) => i !== topIndex);
-      others.forEach((el) => {
-        el.style.transition = 'transform .55s cubic-bezier(.22,1,.36,1), opacity .35s ease';
-      });
-
-      const onDone = () => {
-        top.removeEventListener('transitionend', onDone);
-        top.classList.remove('swipe-out');
-        top.style.transition = '';
-        others.forEach(el => el.style.transition = '');
-        current = (current + 1) % n;
-        layout();
-      };
-      top.addEventListener('transitionend', onDone, { once:true });
-    }
-
-    nextButtons.forEach(btn => btn.addEventListener('click', handleNext));
-    layout();
-
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === 'ArrowRight'){ handleNext(); }
-    });
-  </script>
+  
+    <script src="./js/script-01-licao-02-word-basico-cutscenes.js"></script>
 </body>
 </html>
