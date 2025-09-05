@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>BYTE | Aprenda Word do seu jeito</title>
+
+  <link rel="stylesheet" href="./css/style-01-licao-02-word-basico-cutscenes.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Bebas+Neue&family=Boldonse&family=Oswald:wght@200..700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/loading.css">
+  <script src="./js/loading.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <div class="title">Stacked Cards</div>
+      <div class="progress" aria-hidden="true"><div class="bar" id="progress"></div></div>
+      <button id="reset" class="ghost" title="Reset">Reset</button>
+    </div>
+
+    <div class="stage">
+      <div class="stack" id="stack">
+        <!-- Duplicate/alter these cards as you like -->
+        <article class="card" data-title="Intro">
+          <span class="badge">Card 1</span>
+          <h2>Welcome</h2>
+          <p>Use the button below to advance. Cards are stacked with depth, scale and motion.</p>
+          <div class="footer">
+            <span>Tip: animate out → reorder → relayout.</span>
+            <button class="next">Next →</button>
+          </div>
+        </article>
+
+        <article class="card" data-title="Features">
+          <span class="badge">Card 2</span>
+          <h2>Smooth Depth</h2>
+          <p>Each click slides the top card out while the rest glide up to fill the gap.</p>
+          <div class="footer">
+            <span>All CSS transitions, no libs.</span>
+            <button class="next">Next →</button>
+          </div>
+        </article>
+
+        <article class="card" data-title="Numbers">
+          <span class="badge">Card 3</span>
+          <h2>Accessible</h2>
+          <p>Buttons are focusable and ARIA-friendly. Works with any content size.</p>
+          <div class="footer">
+            <span>Progress updates as you go.</span>
+            <button class="next">Next →</button>
+          </div>
+        </article>
+
+        <article class="card" data-title="Finish" data-final-url="thanks.html">
+          <span class="badge">Card 4</span>
+          <h2>Finish</h2>
+          <p>By default, the stack loops. Set <code>LOOP = false</code> to stop or use <code>data-final-url</code> to redirect here.</p>
+          <div class="footer">
+            <span>Customize exit: left/right/up.</span>
+            <button class="next">Next →</button>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="hint">Want to redirect on last card? Add <code>data-final-url</code> on it or set <code>FINAL_URL</code> in JS.</div>
+  </div>
+
+<script src="./js/script-01-licao-02-word-basico-cutscenes.js"></script>
+</body>
+</html>
