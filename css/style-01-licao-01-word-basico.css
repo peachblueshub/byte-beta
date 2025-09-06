@@ -65,7 +65,7 @@ body {
   gap: 6px; /* espaço entre ícone e número */
   font-size: 1.1rem;
   font-family: "Barlow", sans-serif;
-  border: 2px solid #141414;
+  border: 1px solid #141414;
   background-color: #FFFBEE;
   color: #141414;
   border-radius: 10px;
@@ -139,7 +139,7 @@ body {
   max-width: 600px;
   height: 26px;
   background-color: #BABABA88;
-  border: 2px solid #141414;
+  border: 1px solid #141414;
   border-radius: 30px;
   overflow: hidden;
 }
@@ -176,7 +176,7 @@ main {
   max-width: 1200px;
   width: 100%;
   padding: 60px 40px;
-  border: 2px solid #141414;
+  border: 1px solid #141414;
   border-radius: 50px;
 
   display: flex;
@@ -262,7 +262,7 @@ figcaption{
   font-family: "Barlow", sans-serif;
   font-size: 1.2rem;
   font-weight: 600;
-  border: 2px solid #141414;
+  border: 1px solid #141414;
   border-radius: 50px;
   cursor: pointer;
   transition: drop-shadow;
@@ -344,7 +344,7 @@ h1 {
 .opcoes .palavra {
   font-size: 1.2rem;
   background-color: #FFFBEE;
-  border: 2px solid #141414;
+  border: 1px solid #141414;
   padding: 12px 22px;
   border-radius: 20px;
   cursor: pointer;
