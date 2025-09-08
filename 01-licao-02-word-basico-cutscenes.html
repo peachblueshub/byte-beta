@@ -21,6 +21,42 @@
 </head>
 
 <body>
+
+<!-- Topo com barra + menu -->
+<div id="topo-interface">
+  
+  <!-- Menu lateral -->
+  <nav id="navegacao-trilha" aria-label="Navegação lateral">
+    <p class="boasvindas-usuario">Usuário</p>
+
+    <div class="dropdown">
+      <button class="botao-trilha ativo" id="btnWord">Word</button>
+      <div class="dropdown-menu" id="menuWord">
+        <button class="dropdown-option" data-opcao="dificuldade">Alterar módulo</button>
+        <button class="dropdown-option" data-opcao="curso">Alterar curso</button>
+      </div>
+    </div>
+
+    <div class="vidas-dropdown">
+      <button class="botao-trilha" id="botaoVidas">
+        <span class="material-icons">favorite</span>
+        <span id="valorVidas">0</span>
+      </button>
+    </div>
+
+    <div class="pontuacao-dropdown">
+      <button class="botao-trilha" id="botaoPontuacao">
+        <span class="material-icons">pets</span>
+        <span id="valorPontuacao">0</span>
+      </button>
+    </div>
+
+    <a href="index-word.html" class="botao-trilha" id="botaoSair">Sair</a>
+  </nav>
+</div>
+
+
+
     <div class="app">
         <div class="stage">
             <div class="stack" id="stack">
