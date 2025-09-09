@@ -136,7 +136,7 @@ const tileDescriptionsP = {
   "2_3": {
     titulo: "Lição 02 - Básico: Formatar Texto",
     texto: "Aprenda a aplicar negrito, itálico, sublinhado e tachado.",
-    link: "./01-licao-02-word-basico.html"
+    link: "./01-licao-02-word-basico-cutscenes.html"
   },
   "3_3": {
     titulo: "Lição 03 - Básico: Resolva um Problema",
