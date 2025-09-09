@@ -209,15 +209,15 @@ main {
 
 .texto-licao h1,
 .texto-licao .subtitulo-licao {
-  text-align: center; /* garante alinhamento do texto */
+  /* text-align: center; garante alinhamento do texto */
 }
 
 .subtitulo-licao {
   font-size: 1.3rem;
   font-weight: 500;
-  margin: 10;
-    padding-right: 70px;
-  color: #333;
+  /* margin: 10; */
+  padding-right: 100px;
+  color: #141414;
 }
 
 
