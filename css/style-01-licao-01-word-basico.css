@@ -185,20 +185,17 @@ main {
   margin-bottom: 10px;
 }
 
-/* .imagem-byte {
-  width: 30%;
-  height: auto;
-} */
 
 .cabecalho-licao {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20px;
+  align-items: center;       /* imagem e texto alinhados ao centro */
+  justify-content: center;   /* centraliza o conjunto */
+  /* gap: 10px;                 espaço entre imagem e texto */
+  text-align: center;        /* centraliza os textos */
 }
 
 .imagem-licao img {
-  max-width: 200px;
+  max-width: 400px;
   height: auto;
 }
 
@@ -207,12 +204,19 @@ main {
   font-weight: 700;
   font-size: 2.5rem;
   margin: 0 0 10px 0;
+  padding-right: 70px;
+}
+
+.texto-licao h1,
+.texto-licao .subtitulo-licao {
+  text-align: center; /* garante alinhamento do texto */
 }
 
 .subtitulo-licao {
   font-size: 1.3rem;
   font-weight: 500;
   margin: 10;
+    padding-right: 70px;
   color: #333;
 }
 
