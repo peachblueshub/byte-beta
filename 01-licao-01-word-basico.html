@@ -146,25 +146,30 @@
 
 <!-- LIÇÃO 1 -->
 <article id="licao1" class="tela" aria-labelledby="tituloLicao1">
-  <header class="cabecalho-licao">
-    <div class="imagem-licao">
-      <img id="imagemLicao1" src="./img/11-neutral.svg" height="400px">
-    </div>
-    <div class="texto-licao">
-      <h1 id="tituloLicao1">Lição 1: O que é o Word?</h1>
-      <h2 class="subtitulo-licao">Complete a frase abaixo:</h2>
-    </div>
-  </header>
+  <div class="container-licao">
+    <header class="cabecalho-licao">
+      <div class="imagem-licao">
+        <img id="imagemLicao1" src="./img/11-neutral.svg" height="400px">
+      </div>
+      <div class="texto-licao">
+        <h1 id="tituloLicao1">Lição 1: O que é o Word?</h1>
+        <h2 class="subtitulo-licao">Complete a frase abaixo:</h2>
+      </div>
+    </header>
 
-  <p class="frase">O Word é usado para <span id="espaco1" aria-live="polite">________</span> textos.</p>
+    <p class="frase">O Microsoft Word é um editor de 
+      <span id="espaco1" aria-live="polite">________</span>, 
+      onde você pode escrever, inserir imagens e criar tabelas.
+    </p>
+
+    <aside id="explicacao1" class="explicacao" role="region" aria-live="polite" style="display: none;"></aside>
+  </div>
 
   <nav class="opcoes" aria-label="Escolha a resposta da lição 1">
-    <button class="palavra" type="button" onclick="selecionar(this, 1)">editar</button>
-    <button class="palavra" type="button" onclick="selecionar(this, 1)">desenhar</button>
-    <button class="palavra" type="button" onclick="selecionar(this, 1)">navegar</button>
+    <button class="palavra" type="button" onclick="selecionar(this, 1)">textos</button>
+    <button class="palavra" type="button" onclick="selecionar(this, 1)">fotos</button>
+    <button class="palavra" type="button" onclick="selecionar(this, 1)">vídeos</button>
   </nav>
-
-  <aside id="explicacao1" class="explicacao" role="region" aria-live="polite" style="display: none;"></aside>
 
   <footer class="botoes-controle" aria-label="Controles da lição 1">
     <button class="botao" type="button" onclick="reiniciarLicao(1)">Revisar</button>
@@ -176,25 +181,29 @@
 
 <!-- LIÇÃO 2 -->
 <article id="licao2" class="tela" aria-labelledby="tituloLicao2">
-  <header class="cabecalho-licao">
-    <div class="imagem-licao">
-      <img id="imagemLicao2" src="./img/42-neutral.png" alt="Reação do Byte">
-    </div>
-    <div class="texto-licao">
-      <h1 id="tituloLicao2">Lição 2: Personalização de texto</h1>
-      <h2 class="subtitulo-licao">Escolha a palavra correta:</h2>
-    </div>
-  </header>
+  <div class="container-licao">
+    <header class="cabecalho-licao">
+      <div class="imagem-licao">
+        <img id="imagemLicao2" src="./img/11-neutral.svg" alt="Reação do Byte">
+      </div>
+      <div class="texto-licao">
+        <h1 id="tituloLicao2">Lição 2: Personalização de texto</h1>
+        <h2 class="subtitulo-licao">Escolha a palavra correta:</h2>
+      </div>
+    </header>
 
-  <p class="frase">Com o Word, é possível mudar a <span id="espaco2" aria-live="polite">________</span> do texto.</p>
+    <p class="frase">Para começar um novo documento no Word, você pode clicar em Arquivo > Novo ou usar o atalho 
+      <span id="espaco2" aria-live="polite">________</span>.
+    </p>
+
+    <aside id="explicacao2" class="explicacao" role="region" aria-live="polite" style="display: none;"></aside>
+  </div>
 
   <nav class="opcoes" aria-label="Escolha a resposta da lição 2">
-    <button class="palavra" type="button" onclick="selecionar(this, 2)">idioma</button>
-    <button class="palavra" type="button" onclick="selecionar(this, 2)">papel</button>
-    <button class="palavra" type="button" onclick="selecionar(this, 2)">fonte</button>
+    <button class="palavra" type="button" onclick="selecionar(this, 2)">Ctrl+P</button>
+    <button class="palavra" type="button" onclick="selecionar(this, 2)">Ctrl+S</button>
+    <button class="palavra" type="button" onclick="selecionar(this, 2)">Ctrl+N</button>
   </nav>
-
-  <aside id="explicacao2" class="explicacao" role="region" aria-live="polite" style="display: none;"></aside>
 
   <footer class="botoes-controle" aria-label="Controles da lição 2">
     <button class="botao" type="button" onclick="reiniciarLicao(2)">Revisar</button>
@@ -206,25 +215,29 @@
 
 <!-- LIÇÃO 3 -->
 <article id="licao3" class="tela" aria-labelledby="tituloLicao3">
-  <header class="cabecalho-licao">
-    <div class="imagem-licao">
-      <img id="imagemLicao3" src="./img/42-neutral.png" alt="Reação do Byte">
-    </div>
-    <div class="texto-licao">
-      <h1 id="tituloLicao3">Lição 3: Salvando seu trabalho</h1>
-      <h2 class="subtitulo-licao">Complete a frase:</h2>
-    </div>
-  </header>
+  <div class="container-licao">
+    <header class="cabecalho-licao">
+      <div class="imagem-licao">
+        <img id="imagemLicao3" src="./img/11-neutral.svg" alt="Reação do Byte">
+      </div>
+      <div class="texto-licao">
+        <h1 id="tituloLicao3">Lição 3: Salvando seu trabalho</h1>
+        <h2 class="subtitulo-licao">Complete a frase:</h2>
+      </div>
+    </header>
 
-  <p class="frase">Para não perder o seu documento, você deve <span id="espaco3" aria-live="polite">________</span> o arquivo.</p>
+    <p class="frase">Além de escrever, o Word permite deixar o texto organizado usando estilos como 
+      <span id="espaco3" aria-live="polite">________</span>.
+    </p>
+
+    <aside id="explicacao3" class="explicacao" role="region" aria-live="polite" style="display: none;"></aside>
+  </div>
 
   <nav class="opcoes" aria-label="Escolha a resposta da lição 3">
-    <button class="palavra" type="button" onclick="selecionar(this, 3)">imprimir</button>
-    <button class="palavra" type="button" onclick="selecionar(this, 3)">salvar</button>
-    <button class="palavra" type="button" onclick="selecionar(this, 3)">fechar</button>
+    <button class="palavra" type="button" onclick="selecionar(this, 3)">ideias</button>
+    <button class="palavra" type="button" onclick="selecionar(this, 3)">fotos</button>
+    <button class="palavra" type="button" onclick="selecionar(this, 3)">músicas</button>
   </nav>
-
-  <aside id="explicacao3" class="explicacao" role="region" aria-live="polite" style="display: none;"></aside>
 
   <footer class="botoes-controle" aria-label="Controles da lição 3">
     <button class="botao" type="button" onclick="reiniciarLicao(3)">Revisar</button>
@@ -232,7 +245,6 @@
     <button id="botaoProxima3" class="botao" style="display: none;" type="button" onclick="window.location.href='fim-modulo.html'">Finalizar</button>
   </footer>
 </article>
-
 
 
   </main>

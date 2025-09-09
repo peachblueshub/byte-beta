@@ -46,9 +46,9 @@ function confirmarResposta(licao) {
   if (!selecionado) return;
 
   const respostasCertas = {
-    1: 'editar',
-    2: 'fonte',
-    3: 'salvar'
+    1: 'textos',
+    2: 'Ctrl+N',
+    3: 'ideias'
   };
 
   const explicacoesCertas = {
@@ -120,6 +120,6 @@ function reiniciarLicao(licao) {
   });
 
   // 🔄 volta para imagem neutra
-  document.getElementById(`imagemLicao${licao}`).src = "./img/42-neutral.png";
+  document.getElementById(`imagemLicao${licao}`).src = "./img/11-neutral.svg";
 }
 

@@ -303,6 +303,15 @@ figcaption{
   gap: 20px;
 }
 
+.container-licao {
+  background: #FFFBEE;
+  border: 1px solid #141414;
+  border-radius: 30px;
+  padding: 30px;
+  margin-bottom: 30px;
+  /* box-shadow: 0 5px 0 #141414; */
+}
+
 /* lição */
 h1 {
   color:#141414;
