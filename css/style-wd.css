@@ -37,7 +37,7 @@ body {
 #progress-bar-container {
   width: 250px;
   height: 20px;
-  border: 2px solid #141414;
+  border: 1px solid #141414;
   background: #FFFBEE;
   border-radius: 20px;
   overflow: hidden;
@@ -77,7 +77,7 @@ body {
 
 .botao-trilha {
   background-color: #FFFBEE;
-  border: 2px solid #141414;
+  border: 1px solid #141414;
   padding: 10px 18px;
   font-family: "Barlow", sans-serif;
   font-size: 1.1rem;
@@ -167,7 +167,7 @@ body {
   top: 20px;
   left: 20px;
   background: #FFFBEE;
-  border: 2px solid #141414;
+  border: 1px solid #141414;
   padding: 10px 15px;
   font-size: 1rem;
   border-radius: 15px;
@@ -181,7 +181,7 @@ body {
   margin-top: 2px;
   padding: 8px 12px;
   background-color: #ffb031;
-  border: 2px solid #141414;
+  border: 1px solid #141414;
   color: #141414;
   border-radius: 20px;
   font-weight: 600;
@@ -251,7 +251,7 @@ body {
   top: 110%;
   left: 0;
   background-color: #FFFBEE;
-  border: 2px solid #141414;
+  border: 1px solid #141414;
   border-radius: 10px;
   padding: 8px 0;
   display: none;
@@ -316,7 +316,7 @@ body {
   top: 110%;
   right: 0;
   background-color: #FFFBEE;
-  border: 2px solid #141414;
+  border: 1px solid #141414;
   border-radius: 10px;
   padding: 12px 16px;
   display: none;
@@ -372,7 +372,7 @@ body {
   top: 110%;
   right: 0;
   background-color: #FFFBEE;
-  border: 2px solid #141414;
+  border: 1px solid #141414;
   border-radius: 10px;
   padding: 12px 16px;
   display: none;
@@ -432,7 +432,7 @@ body {
 /* Card individual */
 .card-opcao {
   background-color: #FFFBEE;
-  border: 2px solid #141414;
+  border: 1px solid #141414;
   border-radius: 20px;
   width: 220px;
   padding: 15px;
@@ -466,7 +466,7 @@ body {
 .card-opcao button {
   background-color: #ffb031;
   color: #141414;
-  border: 2px solid #141414;
+  border: 1px solid #141414;
   padding: 8px 16px;
   border-radius: 20px;
   font-weight: bold;
