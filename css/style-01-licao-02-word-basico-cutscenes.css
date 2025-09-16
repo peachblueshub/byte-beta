@@ -166,8 +166,8 @@ body {
     position: absolute;
     inset: 0;
     margin: auto;
-    width: min(540px, 92%);
-    height: 100%;
+    width: min(750px, 100%);
+    height: 120%;
 }
 
 .card {
