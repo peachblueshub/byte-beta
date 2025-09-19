@@ -65,7 +65,7 @@ body {
   gap: 6px; /* espaço entre ícone e número */
   font-size: 1.1rem;
   font-family: "Barlow", sans-serif;
-  border: 2px solid #141414;
+  border: 1px solid #141414;
   background-color: #FFFBEE;
   color: #141414;
   border-radius: 10px;
@@ -139,7 +139,7 @@ body {
   max-width: 600px;
   height: 26px;
   background-color: #BABABA88;
-  border: 2px solid #141414;
+  border: 1px solid #141414;
   border-radius: 30px;
   overflow: hidden;
 }
@@ -193,7 +193,7 @@ body {
   padding: 10px;
   font-size: 16px;
   background: white;
-  border: 2px solid #141414;
+  border: 1px solid #141414;
   border-radius: 10px;
   cursor: pointer;
   transition: 0.2s;
@@ -206,7 +206,7 @@ body {
 
 .option.correct {
   background: #58cc02;
-  border: 2px solid #141414;
+  border: 1px solid #141414;
   color: white;
   pointer-events: none;
 }
@@ -226,7 +226,7 @@ body {
 .option.error-shake {
   animation: shake 0.5s;
   background-color: #ff4b4b !important;
-  border: 2px solid #141414 !important;
+  border: 1px solid #141414 !important;
   color: white !important;
 }
 

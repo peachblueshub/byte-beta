@@ -566,3 +566,122 @@ body {
 .card-curso-3 {
   background-color: #409BFF; /* Azul lavanda - Word */
 }
+
+/* ============================= */
+/* 📱 Responsividade */
+/* ============================= */
+
+/* Telas até 1200px */
+@media (max-width: 1200px) {
+  #gameArea {
+    width: 90vw;
+    height: auto;
+    aspect-ratio: 10 / 7; /* mantém proporção aproximada */
+  }
+
+  .gameWrapper {
+    max-width: 90vw;
+  }
+
+  .cards-container {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .card-opcao {
+    width: 200px;
+  }
+}
+
+/* Telas até 900px */
+@media (max-width: 900px) {
+  #navegacao-trilha {
+    top: 15px;
+    right: 20px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .botao-trilha {
+    font-size: 1rem;
+    padding: 8px 14px;
+  }
+
+  #tileInfo {
+    min-width: 200px;
+    font-size: 0.9rem;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-opcao {
+    width: 80%;
+    max-width: 300px;
+  }
+}
+
+/* Telas até 600px */
+@media (max-width: 600px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  #loading-screen img {
+    width: 100px;
+  }
+
+  #progress-bar-container {
+    width: 200px;
+    height: 16px;
+  }
+
+  #navegacao-trilha {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  .boasvindas-usuario {
+    font-size: 1rem;
+  }
+
+  #gameArea {
+    width: 100%;
+    height: auto;
+  }
+
+  #player {
+    width: 60px;
+    height: 100px;
+  }
+
+  .footer-fixed img {
+    height: 70px;
+  }
+}
+
+/* Telas até 400px */
+@media (max-width: 400px) {
+  .botao-trilha {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+
+  #tileInfo {
+    left: 10px;
+    right: 10px;
+    min-width: auto;
+    max-width: 90%;
+  }
+
+  .card-opcao {
+    width: 95%;
+  }
+
+  .card-opcao h3 {
+    font-size: 1.3rem;
+  }
+}
