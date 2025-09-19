@@ -220,17 +220,66 @@ button:disabled{
 
 /* RESPONSIVO */
 @media (max-width: 860px){
+  main.scene{
+    padding: 12px;
+    gap: 16px;
+  }
+
   .cutscene{
     grid-template-columns: 1fr;
+    gap: 14px;
   }
+
+  .character img{
+    width: 70%; /* imagem menor em telas pequenas */
+    max-width: 200px;
+  }
+
   .dialogue{
-    padding-bottom: 84px;
+    padding: 16px 20px 72px;
+    font-size: 1rem;
   }
-  /* Rabicho agora aponta para cima (pois o mascote fica acima) */
+
+  /* Rabicho aponta para cima */
   .dialogue::after{
     left: 40px;
     top: -18px;
     border: 10px solid transparent;
     border-bottom-color: var(--bubble);
+  }
+  .dialogue::before{
+    display: none; /* esconde o rabicho preto para não sobrepor errado */
+  }
+
+  .controls{
+    bottom: 10px;
+    gap: 8px;
+  }
+
+  button{
+    font-size: .95rem;
+    padding: 10px 16px;
+  }
+}
+
+/* Ajuste extra para celulares bem pequenos */
+@media (max-width: 500px){
+  .dialogue{
+    padding: 14px 16px 68px;
+  }
+  .nameplate{
+    font-size: 1.2rem;
+  }
+  .text{
+    font-size: 1rem;
+    min-height: 80px;
+  }
+  .controls{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  button{
+    flex: 1 1 auto;
+    min-width: 120px;
   }
 }

@@ -439,3 +439,234 @@ h1 {
   background-color: #C96CFF;
   color: #141414;
 }
+
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
+
+/* Tablets (até 1024px) */
+@media (max-width: 1024px) {
+  .texto-licao h1 {
+    font-size: 2rem;
+    padding-right: 30px;
+  }
+
+  .subtitulo-licao {
+    font-size: 1.1rem;
+    padding-right: 40px;
+  }
+
+  .cutscene-conteudo {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .imagem-licao img {
+    max-width: 150px;
+  }
+
+  .barra-progresso-container {
+    max-width: 400px;
+    height: 20px;
+  }
+}
+
+/* Telas médias baixas (800x600 e menores) */
+@media (max-width: 800px) and (max-height: 600px) {
+  body {
+    overflow-y: auto; /* permite rolagem, evita corte */
+  }
+
+  #topo-interface {
+    flex-direction: column;
+    gap: 8px;
+    top: 10px;
+    padding: 0 10px;
+  }
+
+  #navegacao-trilha {
+    position: static;
+    transform: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .botao-trilha,
+  .pontuacao-dropdown button,
+  .vidas-dropdown button {
+    width: 60px;
+    height: 36px;
+    font-size: 0.85rem;
+    gap: 4px;
+  }
+
+  .barra-progresso-container {
+    max-width: 300px;
+    height: 18px;
+  }
+
+  .cutscene-conteudo {
+    flex-direction: column;
+    text-align: center;
+    border-radius: 20px;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .imagem-licao img {
+    max-width: 120px;
+  }
+
+  .texto-licao h1 {
+    font-size: 1.4rem;
+    padding-right: 0;
+  }
+
+  .subtitulo-licao {
+    font-size: 0.9rem;
+    padding-right: 0;
+  }
+
+  .frase {
+    font-size: 1.2rem;
+  }
+
+  .opcoes {
+    gap: 10px;
+  }
+
+  .opcoes .palavra {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+
+  .texto-cutscene h1 {
+    font-size: 1.4rem;
+  }
+
+  .texto-cutscene p {
+    font-size: 1rem;
+  }
+
+  .container-concluido {
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .imagem-concluido {
+    max-width: 180px;
+  }
+
+  .texto-concluido {
+    font-size: 1.6rem;
+  }
+}
+
+
+/* Celulares grandes (até 768px) */
+@media (max-width: 768px) {
+  #navegacao-trilha {
+    top: 70px;
+    right: 50%;
+    transform: translateX(50%);
+    gap: 8px;
+  }
+
+  .botao-trilha,
+  .pontuacao-dropdown button,
+  .vidas-dropdown button {
+    width: 65px;
+    height: 40px;
+    font-size: 0.9rem;
+    gap: 4px;
+  }
+
+  .texto-licao h1 {
+    font-size: 1.8rem;
+  }
+
+  .subtitulo-licao {
+    font-size: 1rem;
+  }
+
+  .frase {
+    font-size: 1.4rem;
+  }
+
+  .opcoes .palavra {
+    font-size: 1rem;
+    padding: 10px 16px;
+  }
+
+  .texto-concluido {
+    font-size: 2rem;
+  }
+}
+
+/* Celulares pequenos (até 480px) */
+@media (max-width: 480px) {
+  body {
+    overflow-y: auto; /* permite rolagem no celular */
+  }
+
+  #topo-interface {
+    flex-direction: column;
+    gap: 10px;
+    top: 10px;
+  }
+
+  #navegacao-trilha {
+    position: static;
+    transform: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .cutscene-conteudo {
+    border-radius: 20px;
+    padding: 20px;
+  }
+
+  .texto-licao h1 {
+    font-size: 1.5rem;
+    padding-right: 0;
+  }
+
+  .subtitulo-licao {
+    padding-right: 0;
+    font-size: 0.9rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .frase {
+    font-size: 1.2rem;
+  }
+
+  .texto-cutscene h1 {
+    font-size: 1.5rem;
+  }
+
+  .texto-cutscene p {
+    font-size: 1rem;
+  }
+
+  .container-concluido {
+    border-radius: 20px;
+    padding: 20px;
+  }
+
+  .imagem-concluido {
+    max-width: 200px;
+  }
+
+  .texto-concluido {
+    font-size: 1.8rem;
+  }
+}
